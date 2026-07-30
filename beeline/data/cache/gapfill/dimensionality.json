@@ -1,0 +1,24 @@
+{
+  "concept": "dimensionality",
+  "kind": "background",
+  "segment": {
+    "clip_id": "gap_dimensionality",
+    "video_id": "zwAD6dRSVyI",
+    "video_title": "Thinking outside the 10-dimensional box",
+    "youtube_url": "https://www.youtube.com/watch?v=zwAD6dRSVyI",
+    "media_url": "/media/gap_dimensionality.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 232.0,
+    "covers": [
+      "dimensionality"
+    ],
+    "why": "This series assumes dimensionality, and never teaches it. This is where it starts \u2014 dimensionality is a subject, so expect more of it beyond this path.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "The most beautiful formula not enough people understand",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=fsLh-NYhOoU"
+  },
+  "note": "This series assumes you already know dimensionality. It is a subject rather than a single idea, so this is a starting point, not complete coverage."
+}

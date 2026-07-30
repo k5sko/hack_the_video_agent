@@ -32,7 +32,7 @@
       "covers": [
         "query vectors"
       ],
-      "why": "You need to learn about query vectors first because they are essential for understanding how attention mechanisms identify relevant parts of the input.",
+      "why": "Understanding query vectors is essential for grasping how information is queried in attention mechanisms, which sets the stage for value vectors that follow.",
       "source": "corpus"
     },
     {
@@ -46,7 +46,7 @@
       "covers": [
         "value vectors"
       ],
-      "why": "Next, understanding value vectors is crucial since they carry the information that will be weighted based on the queries, determining the output of the attention mechanism.",
+      "why": "Knowing value vectors helps you see how the results from queries are transformed, paving the way for a deeper understanding of vector representations in language processing.",
       "source": "corpus"
     },
     {
@@ -60,7 +60,7 @@
       "covers": [
         "vector representation"
       ],
-      "why": "The concept of vector representation is introduced to contextualize how data is represented in transformations, enabling you to visualize the nature of the models involved.",
+      "why": "Learning about vector representation exposes you to how words and tokens are encoded, which is critical before diving into matrix multiplication needed for processing those vectors.",
       "source": "corpus"
     },
     {
@@ -74,7 +74,7 @@
       "covers": [
         "matrix multiplication"
       ],
-      "why": "Matrix multiplication is fundamental to implementing attention calculations, as it allows for efficient transformation and combination of vectors within the model.",
+      "why": "Matrix multiplication is a key operation in transformers that combines various input vectors, making it important to learn before discussing high-dimensional vectors and their role.",
       "source": "corpus"
     },
     {
@@ -88,7 +88,7 @@
       "covers": [
         "high-dimensional vectors"
       ],
-      "why": "Learning about high-dimensional vectors provides insight into how data is structured and manipulated in advanced machine learning, particularly in transformers.",
+      "why": "High-dimensional vectors are a crucial concept in understanding how information in language is represented, which is necessary before addressing word embeddings that take advantage of this dimensionality.",
       "source": "corpus"
     },
     {
@@ -103,7 +103,7 @@
         "word embeddings",
         "tokenization"
       ],
-      "why": "Word embeddings and tokenization are necessary to understand how raw text is converted into numerical representations that models can process.",
+      "why": "Word embeddings and tokenization introduce you to how text is transformed into numerical formats, laying the groundwork for contextual word vectors that subsequently build on this concept.",
       "source": "corpus"
     },
     {
@@ -117,8 +117,22 @@
       "covers": [
         "contextual word vectors"
       ],
-      "why": "Afterward, contextual word vectors are important for recognizing how word meaning can shift based on context, a key factor in attention's functionality.",
+      "why": "Contextual word vectors enrich your understanding of how word meaning can change based on context, which is important before learning about language models that leverage these vectors for tasks like translation.",
       "source": "corpus"
+    },
+    {
+      "clip_id": "gap_language_model",
+      "video_id": "wjZofJX0v4M",
+      "video_title": "Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/gap_language_model.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 183.0,
+      "covers": [
+        "language model"
+      ],
+      "why": "Grasping the concept of a language model is necessary to appreciate how transformers can generate and understand language, setting the context for discussing the transformer architecture itself.",
+      "source": "external"
     },
     {
       "clip_id": "v6_c1",
@@ -131,7 +145,7 @@
       "covers": [
         "transformer"
       ],
-      "why": "Familiarity with transformers is crucial as these are the architectures employing attention, setting the stage for deeper exploration of their dynamics.",
+      "why": "Understanding what a transformer is provides the backbone for comprehending how attention mechanisms operate within it, leading directly into the specific mechanism of attention used in processing information.",
       "source": "corpus"
     },
     {
@@ -145,7 +159,7 @@
       "covers": [
         "attention"
       ],
-      "why": "Finally, learning about attention will synthesize all the previous concepts, allowing you to understand how they work together to transform input data into meaningful output.",
+      "why": "Finally, understanding attention is crucial as it encapsulates how transformers weigh different parts of input sequences based on relevance, tying all the previous elements together.",
       "source": "corpus"
     }
   ],
@@ -154,7 +168,6 @@
     "dimensionality",
     "embedding vectors",
     "input sequence",
-    "language model",
     "language modeling",
     "matrices",
     "matrix operations",
@@ -164,6 +177,6 @@
     "vector space"
   ],
   "total_corpus_seconds": 8302.0,
-  "watch_seconds": 979.0,
-  "narration": "This learning path introduces you to the concept of attention within transformer models, building on your existing knowledge. Each clip progressively adds foundational concepts necessary for understanding how attention operates in natural language processing tasks, ultimately leading you to grasp its critical role in transformer architectures."
+  "watch_seconds": 1162.0,
+  "narration": "This learning path is designed to build your understanding of attention mechanisms in transformers step-by-step, starting from foundational concepts and progressively moving toward the complexity of language models. Each clip prepares you for the next, ensuring you grasp the necessary components that make up modern natural language processing technologies."
 }

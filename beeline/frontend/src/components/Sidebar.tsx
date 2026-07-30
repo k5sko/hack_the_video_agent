@@ -147,6 +147,11 @@ export default function Sidebar({
                         {c}
                       </span>
                     ))}
+                    {/* This corpus never teaches it, so we went and found one
+                        that does. Worth saying out loud rather than blending in. */}
+                    {clip.source === "external" && (
+                      <span className="chip chip-external">found online</span>
+                    )}
                   </span>
                 </span>
               </button>

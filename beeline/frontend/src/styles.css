@@ -952,3 +952,13 @@ input {
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* Marks a clip fetched from outside the indexed corpus, because a prerequisite
+   was missing. Deliberately not blue/green/gray/red — those belong to node
+   states — so this reads as provenance rather than as a fifth node state. */
+.chip-external {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}

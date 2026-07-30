@@ -1,11 +1,24 @@
 {
   "concept": "linear algebra",
   "kind": "background",
-  "segment": null,
+  "segment": {
+    "clip_id": "gap_linear_algebra",
+    "video_id": "k7RM-ot2NWY",
+    "video_title": "Linear combinations, span, and basis vectors | Chapter 2, Essence of linear algebra",
+    "youtube_url": "https://www.youtube.com/watch?v=k7RM-ot2NWY",
+    "media_url": "/media/gap_linear_algebra.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 213.0,
+    "covers": [
+      "linear algebra"
+    ],
+    "why": "This series assumes linear algebra, and never teaches it. This is where it starts \u2014 linear algebra is a subject, so expect more of it beyond this path.",
+    "source": "external"
+  },
   "resource": {
     "title": "Eigenvectors and eigenvalues | Chapter 14, Essence of linear algebra",
     "channel": "3Blue1Brown",
     "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g"
   },
-  "note": "This series assumes you already know linear algebra. It is a subject, not a single idea, so Beeline will not pretend a few minutes of video covers it."
+  "note": "This series assumes you already know linear algebra. It is a subject rather than a single idea, so this is a starting point, not complete coverage."
 }

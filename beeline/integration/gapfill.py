@@ -216,7 +216,9 @@ def _search_one(query: str) -> List[dict]:
     return out
 
 
-def choose_segment(concept: str, candidates: List[dict]) -> Optional[dict]:
+def choose_segment(
+    concept: str, candidates: List[dict], entry_point: bool = False
+) -> Optional[dict]:
     """Pick the single best (video, time range) that teaches ``concept``.
 
     Prefers a declared chapter, because a chapter boundary is the author's own
@@ -285,7 +287,14 @@ def choose_segment(concept: str, candidates: List[dict]) -> Optional[dict]:
                         f"will already match. Otherwise prefer a focused "
                         f"explanation from a credible educational channel over "
                         f"anything with a clickbait title.\n"
-                        f"{json.dumps(listing, indent=2)}\n\n"
+                        + (
+                            f"\n{concept} is a whole subject, so pick the best "
+                            f"STARTING point for someone new to it -- an opening "
+                            f"or introductory section, not an advanced one.\n"
+                            if entry_point
+                            else ""
+                        )
+                        + f"{json.dumps(listing, indent=2)}\n\n"
                         'Return JSON: {"index": int, "why": str} where `why` is one '
                         "sentence, second person, saying what it gives the learner."
                     ),
@@ -375,8 +384,12 @@ def fill_gap(concept: str, refresh: bool = False) -> dict:
     candidates = search_candidates(concept)
 
     if kind == "background":
-        # Point at the whole thing, do not excerpt it. The most-viewed match from
-        # the corpus author (or failing that, anyone) is the resource to name.
+        # A subject still gets video -- a learner who does not know linear
+        # algebra is stuck, and naming the gap does not unstick them. What
+        # changes is the claim: this is the *entry point* to a subject that
+        # continues past the end of this path, not a three-minute substitute for
+        # it. The clip plays like any other; the label and the `why` say plainly
+        # that there is more where it came from.
         # Prefer the corpus author's own treatment of the subject -- for this
         # corpus that is 3Blue1Brown's Essence of Linear Algebra, which is both
         # better and a far more natural continuation than whatever a generic
@@ -387,10 +400,32 @@ def fill_gap(concept: str, refresh: bool = False) -> dict:
             return (same_author, video["duration"])
 
         best = max(candidates, key=resource_rank, default=None) if candidates else None
+        choice = choose_segment(concept, candidates, entry_point=True)
+        clip_id = fetch_and_cut(concept, choice) if choice else None
+
+        segment = None
+        if choice and clip_id:
+            segment = ClipSegment(
+                clip_id=clip_id,
+                video_id=choice["video_id"],
+                video_title=choice["video_title"],
+                youtube_url=f"https://www.youtube.com/watch?v={choice['video_id']}",
+                media_url=f"/media/{clip_id}.mp4",
+                start_seconds=0.0,
+                end_seconds=float(choice["end"] - choice["start"]),
+                covers=[concept],
+                why=(
+                    f"This series assumes {concept}, and never teaches it. "
+                    f"This is where it starts — {concept} is a subject, so expect "
+                    f"more of it beyond this path."
+                ),
+                source="external",
+            ).model_dump()
+
         record = {
             "concept": concept,
             "kind": "background",
-            "segment": None,
+            "segment": segment,
             "resource": (
                 {
                     "title": best["title"],
@@ -401,9 +436,9 @@ def fill_gap(concept: str, refresh: bool = False) -> dict:
                 else None
             ),
             "note": (
-                f"This series assumes you already know {concept}. It is a subject, "
-                f"not a single idea, so Beeline will not pretend a few minutes of "
-                f"video covers it."
+                f"This series assumes you already know {concept}. It is a subject "
+                f"rather than a single idea, so this is a starting point, not "
+                f"complete coverage."
             ),
         }
         cache_file.write_text(json.dumps(record, indent=2) + "\n")

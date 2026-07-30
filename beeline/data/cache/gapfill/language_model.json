@@ -1,0 +1,24 @@
+{
+  "concept": "language model",
+  "kind": "background",
+  "segment": {
+    "clip_id": "gap_language_model",
+    "video_id": "wjZofJX0v4M",
+    "video_title": "Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+    "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+    "media_url": "/media/gap_language_model.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 183.0,
+    "covers": [
+      "language model"
+    ],
+    "why": "This series assumes language model, and never teaches it. This is where it starts \u2014 language model is a subject, so expect more of it beyond this path.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=wjZofJX0v4M"
+  },
+  "note": "This series assumes you already know language model. It is a subject rather than a single idea, so this is a starting point, not complete coverage."
+}

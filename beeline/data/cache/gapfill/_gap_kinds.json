@@ -1,8 +1,11 @@
 {
  "basic machine learning": "background",
  "calculus": "background",
+ "dimensionality": "background",
  "dot product": "concept",
+ "embedding vectors": "background",
  "factual knowledge representation": "background",
+ "language model": "background",
  "language modeling": "background",
  "linear algebra": "background",
  "matrix operations": "background",

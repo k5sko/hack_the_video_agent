@@ -31,7 +31,7 @@
       "covers": [
         "query vectors"
       ],
-      "why": "You need to understand query vectors first as they are fundamental to how attention mechanisms determine which parts of the input sequence to focus on.",
+      "why": "You need to understand query vectors as they play a crucial role in how attention scores are calculated in transformers.",
       "source": "corpus"
     },
     {
@@ -45,7 +45,7 @@
       "covers": [
         "value vectors"
       ],
-      "why": "After query vectors, learning about value vectors is essential because they represent the information that gets passed through the attention mechanism once the relevant portions are identified.",
+      "why": "Value vectors will help you grasp how information is retrieved based on the attention scores derived from the query vectors.",
       "source": "corpus"
     },
     {
@@ -59,8 +59,36 @@
       "covers": [
         "vector representation"
       ],
-      "why": "Understanding vector representation will help you grasp how information is structured and utilized in transformers, essential for comprehending their functionality.",
+      "why": "Understanding vector representation is important to visualize how data is structured and processed in transformer models.",
       "source": "corpus"
+    },
+    {
+      "clip_id": "gap_linear_algebra",
+      "video_id": "k7RM-ot2NWY",
+      "video_title": "Linear combinations, span, and basis vectors | Chapter 2, Essence of linear algebra",
+      "youtube_url": "https://www.youtube.com/watch?v=k7RM-ot2NWY",
+      "media_url": "/media/gap_linear_algebra.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 213.0,
+      "covers": [
+        "linear algebra"
+      ],
+      "why": "Linear algebra is fundamental for comprehending the mathematical operations that underlie the computations in neural networks.",
+      "source": "external"
+    },
+    {
+      "clip_id": "gap_basic_machine_learning",
+      "video_id": "aircAruvnKk",
+      "video_title": "But what is a neural network? | Deep learning chapter 1",
+      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "media_url": "/media/gap_basic_machine_learning.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 116.0,
+      "covers": [
+        "basic machine learning"
+      ],
+      "why": "Basic machine learning concepts will give you context about how models learn from data and what their architecture looks like.",
+      "source": "external"
     },
     {
       "clip_id": "v7_c7",
@@ -74,7 +102,7 @@
         "linear transformation",
         "neural network"
       ],
-      "why": "Linear transformations and neural networks are key concepts that contribute to how information is processed within the attention mechanism, setting the stage for more complex operations.",
+      "why": "Linear transformations in neural networks are critical in understanding how inputs are processed and transformed at each layer.",
       "source": "corpus"
     },
     {
@@ -88,7 +116,7 @@
       "covers": [
         "matrix multiplication"
       ],
-      "why": "Matrix multiplication is a crucial operation in linear algebra that is used extensively in transformers, facilitating the combination of vectors to produce meaningful outputs.",
+      "why": "Matrix multiplication is a core operation in many machine learning tasks, including those in transformers, so familiarity is essential.",
       "source": "corpus"
     },
     {
@@ -102,7 +130,7 @@
       "covers": [
         "high-dimensional vectors"
       ],
-      "why": "High-dimensional vectors are central to the representation of data in machine learning models like GPT, and understanding them will enhance your grasp of how information is encoded.",
+      "why": "High-dimensional vectors are vital when discussing representations used in transformers, as they help manage complex data relationships.",
       "source": "corpus"
     },
     {
@@ -117,7 +145,7 @@
         "word embeddings",
         "tokenization"
       ],
-      "why": "Word embeddings and tokenization introduce the ways in which textual data is converted into numerical form, critical for any further exploration of attention in language models.",
+      "why": "Word embeddings introduce the idea of how words are represented in a numeric format, important for understanding language models.",
       "source": "corpus"
     },
     {
@@ -131,8 +159,22 @@
       "covers": [
         "contextual word vectors"
       ],
-      "why": "Once you have word embeddings, learning about contextual word vectors extends that understanding to how the meaning of words can change based on their context, which is vital for attention functionality.",
+      "why": "Contextual word vectors expand on embeddings by explaining how meaning can change with context, which is key to attention mechanisms.",
       "source": "corpus"
+    },
+    {
+      "clip_id": "gap_language_model",
+      "video_id": "wjZofJX0v4M",
+      "video_title": "Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/gap_language_model.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 183.0,
+      "covers": [
+        "language model"
+      ],
+      "why": "A language model is the overarching concept you need to understand how transformers function and generate text based on learned patterns.",
+      "source": "external"
     },
     {
       "clip_id": "v6_c1",
@@ -145,7 +187,7 @@
       "covers": [
         "transformer"
       ],
-      "why": "At this point, you'll learn what transformers are, which are foundational architectures for implementing attention mechanisms in large language models.",
+      "why": "The transformer architecture will bring together many of the prior concepts, specifically how they interact in language processing tasks.",
       "source": "corpus"
     },
     {
@@ -159,20 +201,17 @@
       "covers": [
         "attention"
       ],
-      "why": "Finally, with all the previous concepts in place, you can delve into attention itself, gaining a comprehensive understanding of its role in transformers.",
+      "why": "Finally, understanding attention ties together the entire model by explaining how different input parts influence each other, solidifying your grasp of transformer behavior.",
       "source": "corpus"
     }
   ],
   "gaps": [
-    "basic machine learning",
     "dimensionality",
     "embedding vectors",
     "factual knowledge representation",
     "function composition",
     "input sequence",
-    "language model",
     "language modeling",
-    "linear algebra",
     "matrices",
     "matrix operations",
     "neural network layers",
@@ -183,6 +222,6 @@
     "vector space"
   ],
   "total_corpus_seconds": 8302.0,
-  "watch_seconds": 1105.0,
-  "narration": "This learning path takes you step-by-step through the concepts essential to understanding attention in transformers. Each clip builds on the previous one, gradually introducing you to the necessary components and techniques used in large language models like GPT."
+  "watch_seconds": 1617.0,
+  "narration": "This learning path will guide you through the key concepts leading up to understanding attention in transformers, which is essential for grasping modern language models like GPT. You'll build a solid foundation step-by-step, starting from basic vector concepts to more complex operations involved in machine learning and neural networks."
 }

@@ -352,6 +352,9 @@ def api_path(request: PathRequest) -> PathResult:
         result = run_path_agent(request.query, request.known) or build_path(
             request.query, request.known, store()
         )
+        # Go and find the prerequisites this corpus never teaches, before the
+        # narration is written, so the prose describes the path you actually get.
+        result = fill_path_gaps(result)
         result = narrate(result)
 
     store_cache(key, result.model_dump())
@@ -374,6 +377,101 @@ def media(clip_file: str) -> FileResponse:
 
 class FillRequest(BaseModel):
     concept: str
+
+
+# How many gaps to go and fill for one query. Every fill is a search, a download
+# and a cut, so this is a wall-clock bound, not a philosophical one. Filling is
+# ordered by how directly the path depends on the missing concept.
+MAX_FILLS = 4
+
+# A gap is only worth a detour if the path leans on it hard: summed confidence of
+# the REQUIRES edges running from concepts you are about to watch. Without a
+# floor, filling always tops up to MAX_FILLS, so marking a prerequisite known
+# just promotes the next gap into the free slot and the total never moves --
+# which silently destroys the one thing the learner is supposed to feel.
+MIN_FILL_WEIGHT = 4.0
+
+
+def fill_path_gaps(result: PathResult) -> PathResult:
+    """Go find video for the prerequisites this corpus never teaches.
+
+    This is the point of the product, not a bonus: a learner who does not know a
+    prerequisite is stuck whether or not we admit it politely. Reporting the gap
+    is honest; filling it is useful. So the returned playlist interleaves outside
+    clips with corpus clips, in prerequisite order, and the counter reflects the
+    real total.
+
+    Gaps that name whole subjects rather than single ideas (linear algebra,
+    calculus) still do not get spliced in -- three minutes cannot teach a field,
+    and pretending otherwise is the same lie as a clip that merely mentions its
+    concept. Those stay listed, with a pointer to the real thing.
+    """
+    if CANNED_ONLY or not result.gaps:
+        return result
+
+    try:
+        import gapfill
+    except Exception:
+        return result
+
+    # Which gaps does the path lean on most directly? A concept required by
+    # something you are about to watch matters more than one three hops away.
+    on_path = {normalize(c) for seg in result.playlist for c in seg.covers}
+    weight: dict = {}
+    for edge in store().requires_edges():
+        target = normalize(edge.target)
+        if target in {normalize(g) for g in result.gaps} and normalize(edge.source) in on_path:
+            weight[target] = weight.get(target, 0) + float(edge.confidence)
+
+    ranked = sorted(result.gaps, key=lambda g: -weight.get(normalize(g), 0))
+    ranked = [
+        g for g in ranked if weight.get(normalize(g), 0) >= MIN_FILL_WEIGHT
+    ][:MAX_FILLS]
+
+    filled: List[ClipSegment] = []
+    still_missing = list(result.gaps)
+    for concept in ranked:
+        try:
+            record = gapfill.fill_gap(concept)
+        except Exception as exc:
+            print(f"  fill {concept!r} failed: {exc}", file=sys.stderr)
+            continue
+        if record.get("segment"):
+            filled.append(ClipSegment(**record["segment"]))
+            still_missing = [g for g in still_missing if g != concept]
+
+    if not filled:
+        return result
+
+    # Slot each fill in front of the first clip that depends on it, so it plays
+    # before the thing that needs it rather than being tacked on at the end.
+    prereq_of: dict = {}
+    for edge in store().requires_edges():
+        prereq_of.setdefault(normalize(edge.target), set()).add(normalize(edge.source))
+
+    playlist: List[ClipSegment] = list(result.playlist)
+    for segment in filled:
+        concept = normalize(segment.covers[0]) if segment.covers else ""
+        dependents = prereq_of.get(concept, set())
+        position = next(
+            (
+                i
+                for i, seg in enumerate(playlist)
+                if dependents & {normalize(c) for c in seg.covers}
+            ),
+            0,
+        )
+        playlist.insert(position, segment)
+
+    return result.model_copy(
+        update={
+            "playlist": playlist,
+            "gaps": still_missing,
+            "watch_seconds": float(
+                sum(s.end_seconds - s.start_seconds for s in playlist)
+            ),
+        }
+    )
 
 
 @app.post("/api/fill")
