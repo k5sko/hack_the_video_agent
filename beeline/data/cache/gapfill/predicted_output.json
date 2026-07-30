@@ -1,0 +1,24 @@
+{
+  "concept": "predicted output",
+  "kind": "concept",
+  "segment": {
+    "clip_id": "gap_predicted_output",
+    "video_id": "wjZofJX0v4M",
+    "video_title": "Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+    "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+    "media_url": "/media/gap_predicted_output.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 183.0,
+    "covers": [
+      "predicted output"
+    ],
+    "why": "This section explains how predictions are made in transformers, helping you understand 'predicted output' in a practical context.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=wjZofJX0v4M"
+  },
+  "note": "predicted output is never taught in this corpus; this fills it in."
+}

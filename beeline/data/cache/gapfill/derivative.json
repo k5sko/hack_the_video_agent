@@ -1,0 +1,24 @@
+{
+  "concept": "derivative",
+  "kind": "background",
+  "segment": {
+    "clip_id": "gap_derivative",
+    "video_id": "S0_qX4VJhMQ",
+    "video_title": "Derivative formulas through geometry | Chapter 3, Essence of calculus",
+    "youtube_url": "https://www.youtube.com/watch?v=S0_qX4VJhMQ",
+    "media_url": "/media/gap_derivative.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 98.0,
+    "covers": [
+      "derivative"
+    ],
+    "why": "This series assumes derivative, and never teaches it. This is where it starts \u2014 derivative is a subject, so expect more of it beyond this path.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "Derivative formulas through geometry | Chapter 3, Essence of calculus",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=S0_qX4VJhMQ"
+  },
+  "note": "This series assumes you already know derivative. It is a subject rather than a single idea, so this is a starting point, not complete coverage."
+}

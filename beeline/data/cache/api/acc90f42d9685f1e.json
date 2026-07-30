@@ -1,0 +1,28 @@
+{
+  "query": "how does a network learn",
+  "mode": "search_only",
+  "target_concepts": [
+    "neural network",
+    "training process"
+  ],
+  "known": [],
+  "needed_concepts": [],
+  "playlist": [
+    {
+      "clip_id": "search_f2770493b5d5",
+      "video_id": "V2",
+      "video_title": "Gradient descent, how neural networks learn",
+      "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "media_url": "/media/search_f2770493b5d5.mp4",
+      "start_seconds": 75.96666717529297,
+      "end_seconds": 150.96666717529297,
+      "covers": [],
+      "why": "The moment TwelveLabs matched for this wording. What it assumes is unknown.",
+      "source": "corpus"
+    }
+  ],
+  "gaps": [],
+  "total_corpus_seconds": 8302.0,
+  "watch_seconds": 75.0,
+  "narration": "The current moment is visible, but what it assumes, what you can skip, and what order to watch cannot be determined."
+}

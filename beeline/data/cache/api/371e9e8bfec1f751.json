@@ -1,0 +1,68 @@
+{
+  "query": "neural network",
+  "mode": "graph",
+  "target_concepts": [
+    "neural network"
+  ],
+  "known": [],
+  "needed_concepts": [
+    "linear transformation",
+    "vector representation",
+    "neural network"
+  ],
+  "playlist": [
+    {
+      "clip_id": "v7_c7",
+      "video_id": "V7",
+      "video_title": "How might LLMs store facts",
+      "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+      "media_url": "/media/v7_c7.mp4",
+      "start_seconds": 606.0,
+      "end_seconds": 732.0,
+      "covers": [
+        "linear transformation"
+      ],
+      "why": "Understanding linear transformation is essential because it lays the groundwork for comprehending how information is processed and changed in neural networks.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v5_c2",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c2.mp4",
+      "start_seconds": 154.0,
+      "end_seconds": 338.0,
+      "covers": [
+        "vector representation"
+      ],
+      "why": "Learning about vector representation is crucial as it allows you to visualize and understand how data is encoded and utilized within transformers, which are key components in neural networks.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v1_c1",
+      "video_id": "V1",
+      "video_title": "But what is a neural network?",
+      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "media_url": "/media/v1_c1.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 102.0,
+      "covers": [
+        "neural network"
+      ],
+      "why": "Grasping the concept of a neural network is vital at this stage since it synthesizes both linear transformations and vector representations, enabling you to see how they work together in machine learning applications.",
+      "source": "corpus"
+    }
+  ],
+  "gaps": [
+    "basic machine learning",
+    "factual knowledge representation",
+    "function composition",
+    "linear algebra",
+    "neural network layers",
+    "token vectors"
+  ],
+  "total_corpus_seconds": 8302.0,
+  "watch_seconds": 412.0,
+  "narration": "This learning path introduces you to foundational concepts that will help you understand neural networks. Each segment builds on the previous one, creating a solid framework for grasping how neural networks function within the broader context of machine learning."
+}

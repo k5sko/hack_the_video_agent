@@ -432,7 +432,9 @@ def fill_path_gaps(result: PathResult) -> PathResult:
     still_missing = list(result.gaps)
     for concept in ranked:
         try:
-            record = gapfill.fill_gap(concept)
+            # Agent first; it can reject a weak field of candidates. Falls back
+            # to the deterministic pipeline, which is what actually fetches.
+            record = gapfill.run_gapfill_agent(concept) or gapfill.fill_gap(concept)
         except Exception as exc:
             print(f"  fill {concept!r} failed: {exc}", file=sys.stderr)
             continue

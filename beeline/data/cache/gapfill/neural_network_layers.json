@@ -1,0 +1,24 @@
+{
+  "concept": "neural network layers",
+  "kind": "background",
+  "segment": {
+    "clip_id": "gap_neural_network_layers",
+    "video_id": "aircAruvnKk",
+    "video_title": "But what is a neural network? | Deep learning chapter 1",
+    "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+    "media_url": "/media/gap_neural_network_layers.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 116.0,
+    "covers": [
+      "neural network layers"
+    ],
+    "why": "This series assumes neural network layers, and never teaches it. This is where it starts \u2014 neural network layers is a subject, so expect more of it beyond this path.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "Attention in transformers, step-by-step | Deep Learning Chapter 6",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc"
+  },
+  "note": "This series assumes you already know neural network layers. It is a subject rather than a single idea, so this is a starting point, not complete coverage."
+}

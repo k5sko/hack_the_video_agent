@@ -1,0 +1,34 @@
+{
+  "query": "training process",
+  "mode": "graph",
+  "target_concepts": [
+    "training process"
+  ],
+  "known": [
+    "linear algebra",
+    "neural network"
+  ],
+  "needed_concepts": [
+    "training process"
+  ],
+  "playlist": [
+    {
+      "clip_id": "v2_c4",
+      "video_id": "V2",
+      "video_title": "Gradient descent, how neural networks learn",
+      "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "media_url": "/media/v2_c4.mp4",
+      "start_seconds": 135.0,
+      "end_seconds": 185.0,
+      "covers": [
+        "training process"
+      ],
+      "why": "This clip introduces the training process, which is essential for understanding how neural networks adjust their weights and biases to minimize errors, thereby enhancing your grasp of their functionality in practical applications.",
+      "source": "corpus"
+    }
+  ],
+  "gaps": [],
+  "total_corpus_seconds": 8302.0,
+  "watch_seconds": 50.0,
+  "narration": "In this learning path, you will explore the training process of neural networks, focusing on how they learn through optimization techniques. Understanding this process is crucial for applying your knowledge of linear algebra and neural networks effectively. You will gain insights into gradient descent and its significance in training neural networks."
+}

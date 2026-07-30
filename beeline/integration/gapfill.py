@@ -495,6 +495,93 @@ def fill_gap(concept: str, refresh: bool = False) -> dict:
     return record
 
 
+def run_gapfill_agent(concept: str) -> Optional[dict]:
+    """Drive the search-and-fetch loop through a Strands agent.
+
+    This step is the most genuinely agentic thing in Beeline: decide what kind of
+    gap this is, search, look at what came back, judge whether anything actually
+    teaches the concept, and only then commit to downloading and cutting it. The
+    deterministic pipeline below does the same work in a fixed order; the agent
+    can react to what the search returns -- widening, rejecting a bad field of
+    candidates, or declining to fill at all.
+
+    Same contract as the Path Agent: the tools do the real work and the agent
+    only sequences them, so a misbehaving model costs prose and a retry, never a
+    wrong clip. Returns None if the agent is unavailable, and the caller falls
+    back to :func:`fill_gap`.
+    """
+    if not os.getenv("OPENAI_API_KEY"):
+        return None
+
+    try:
+        from strands import Agent, tool
+        from strands.models.openai import OpenAIModel
+
+        captured: Dict[str, dict] = {}
+
+        @tool
+        def classify(term: str) -> str:
+            """Is this a single teachable concept, or a whole background subject?"""
+            return classify_gap(term)
+
+        @tool
+        def find_candidates(term: str) -> str:
+            """Search for videos teaching the term. Returns titles, channels and chapters."""
+            found = search_candidates(term)
+            return json.dumps(
+                [
+                    {
+                        "title": v["title"],
+                        "channel": v["channel"],
+                        "seconds": round(v["duration"]),
+                        "chapters": [c["title"] for c in v["chapters"][:12]],
+                    }
+                    for v in found[:8]
+                ]
+            )
+
+        @tool
+        def fetch_best(term: str, entry_point: bool = False) -> str:
+            """Pick the best section for the term, download it, and cut it.
+
+            Set entry_point when the term is a whole subject rather than one idea.
+            """
+            record = fill_gap(term)
+            captured["record"] = record
+            segment = record.get("segment")
+            return json.dumps(
+                {
+                    "kind": record["kind"],
+                    "filled": bool(segment),
+                    "seconds": round(segment["end_seconds"]) if segment else 0,
+                    "title": (segment or {}).get("video_title", ""),
+                }
+            )
+
+        agent = Agent(
+            model=OpenAIModel(
+                client_args={"api_key": os.environ["OPENAI_API_KEY"]},
+                model_id="gpt-4o-mini",
+                params={"temperature": 0},
+            ),
+            tools=[classify, find_candidates, fetch_best],
+            system_prompt=(
+                "You find outside video for a prerequisite a lecture corpus never "
+                "teaches. Work in this order: classify the term, look at the "
+                "candidates, then call fetch_best (passing entry_point=true when "
+                "classify said 'background'). Report in one sentence what you "
+                "fetched and whether it teaches the concept or merely starts a "
+                "larger subject. Never claim to have fetched something you did not."
+            ),
+            callback_handler=None,
+        )
+        agent(f"Find video that teaches {concept!r}.")
+        return captured.get("record")
+    except Exception as exc:
+        print(f"  gapfill agent unavailable: {type(exc).__name__}: {exc}", file=sys.stderr)
+        return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("concepts", nargs="*", help="concept names to fill")

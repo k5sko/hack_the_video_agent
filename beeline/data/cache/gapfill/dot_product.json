@@ -1,0 +1,24 @@
+{
+  "concept": "dot product",
+  "kind": "concept",
+  "segment": {
+    "clip_id": "gap_dot_product",
+    "video_id": "LyGKycYT2v0",
+    "video_title": "Dot products and duality | Chapter 9, Essence of linear algebra",
+    "youtube_url": "https://www.youtube.com/watch?v=LyGKycYT2v0",
+    "media_url": "/media/gap_dot_product.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 199.0,
+    "covers": [
+      "dot product"
+    ],
+    "why": "This section provides a focused example of the dot product, clearly illustrating its calculation and interpretation, which will enhance your understanding of the concept.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "Dot products and duality | Chapter 9, Essence of linear algebra",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=LyGKycYT2v0"
+  },
+  "note": "dot product is never taught in this corpus; this fills it in."
+}

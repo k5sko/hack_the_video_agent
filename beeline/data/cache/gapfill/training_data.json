@@ -1,0 +1,24 @@
+{
+  "concept": "training data",
+  "kind": "background",
+  "segment": {
+    "clip_id": "gap_training_data",
+    "video_id": "9-Jl0dxWQs8",
+    "video_title": "How might LLMs store facts | Deep Learning Chapter 7",
+    "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+    "media_url": "/media/gap_training_data.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 135.0,
+    "covers": [
+      "training data"
+    ],
+    "why": "This series assumes training data, and never teaches it. This is where it starts \u2014 training data is a subject, so expect more of it beyond this path.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "How I animate 3Blue1Brown | A Manim demo with Ben Sparks",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=rbu7Zu5X1zI"
+  },
+  "note": "This series assumes you already know training data. It is a subject rather than a single idea, so this is a starting point, not complete coverage."
+}

@@ -1,6 +1,7 @@
 {
  "basic machine learning": "background",
  "calculus": "background",
+ "derivative": "background",
  "dimensionality": "background",
  "dot product": "concept",
  "embedding vectors": "background",
@@ -9,9 +10,12 @@
  "language modeling": "background",
  "linear algebra": "background",
  "matrix operations": "background",
+ "neural network layers": "background",
  "positional encoding": "concept",
+ "predicted output": "concept",
  "sequential dependency": "background",
  "tokenization": "concept",
+ "training data": "background",
  "translation tasks": "background",
  "vector space": "background"
 }
