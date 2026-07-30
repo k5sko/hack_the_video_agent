@@ -1,0 +1,152 @@
+{
+  "query": "attention",
+  "mode": "graph",
+  "target_concepts": [
+    "attention"
+  ],
+  "known": [
+    "linear algebra",
+    "neural network"
+  ],
+  "needed_concepts": [
+    "value vectors",
+    "vector representation",
+    "contextual word vectors",
+    "matrix multiplication",
+    "word embeddings",
+    "high-dimensional vectors",
+    "tokenization",
+    "transformer",
+    "attention"
+  ],
+  "playlist": [
+    {
+      "clip_id": "v6_c9",
+      "video_id": "V6",
+      "video_title": "Attention in transformers, step-by-step",
+      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "media_url": "/media/v6_c9.mp4",
+      "start_seconds": 751.0,
+      "end_seconds": 935.0,
+      "covers": [
+        "value vectors"
+      ],
+      "why": "You need to learn about value vectors first to grasp the concept of attention mechanisms in transformers, as they are foundational in how information is represented.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v5_c2",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c2.mp4",
+      "start_seconds": 154.0,
+      "end_seconds": 338.0,
+      "covers": [
+        "vector representation"
+      ],
+      "why": "Understanding vector representation is crucial, as it forms the basis for visualizing the architectures like GPT and helps you see how models encode information.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v6_c4",
+      "video_id": "V6",
+      "video_title": "Attention in transformers, step-by-step",
+      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "media_url": "/media/v6_c4.mp4",
+      "start_seconds": 102.0,
+      "end_seconds": 153.0,
+      "covers": [
+        "contextual word vectors"
+      ],
+      "why": "Learning about contextual word vectors will prepare you for understanding how attention allows models to represent words in context, enhancing their meaning.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v5_c5",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c5.mp4",
+      "start_seconds": 606.0,
+      "end_seconds": 667.0,
+      "covers": [
+        "matrix multiplication"
+      ],
+      "why": "Matrix multiplication is a key operation used in NLP models and transformers; knowing how it's done will help you understand how attention combines different vectors.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v5_c7",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c7.mp4",
+      "start_seconds": 719.0,
+      "end_seconds": 815.0,
+      "covers": [
+        "high-dimensional vectors"
+      ],
+      "why": "High-dimensional vectors are important since they allow for more complex representations of information, which is key in understanding the functionality of the transformer architecture.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v6_c2",
+      "video_id": "V6",
+      "video_title": "Attention in transformers, step-by-step",
+      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "media_url": "/media/v6_c2.mp4",
+      "start_seconds": 31.0,
+      "end_seconds": 61.0,
+      "covers": [
+        "word embeddings",
+        "tokenization"
+      ],
+      "why": "Familiarizing yourself with word embeddings and tokenization is essential because they provide the building blocks for how words are encoded and processed in the attention mechanism.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v6_c1",
+      "video_id": "V6",
+      "video_title": "Attention in transformers, step-by-step",
+      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "media_url": "/media/v6_c1.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 31.0,
+      "covers": [
+        "transformer"
+      ],
+      "why": "Introducing the concept of transformers here is vital since it ties together all previous concepts, giving you a clear picture of how these models operate in practice.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v5_c3",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c3.mp4",
+      "start_seconds": 338.0,
+      "end_seconds": 500.0,
+      "covers": [
+        "attention"
+      ],
+      "why": "Finally, learning about attention is crucial because it is the core mechanism behind transformers, enabling them to focus on relevant parts of the input effectively.",
+      "source": "corpus"
+    }
+  ],
+  "gaps": [
+    "basic machine learning",
+    "contextual information",
+    "dimensionality",
+    "embedding vectors",
+    "matrices",
+    "matrix operations",
+    "sequence models",
+    "tokens",
+    "vector",
+    "vector space"
+  ],
+  "total_corpus_seconds": 8302.0,
+  "watch_seconds": 799.0,
+  "narration": "This learning path is structured to guide you through the concept of attention in transformers methodically. Each step builds on fundamental ideas that are essential for understanding how attention mechanisms enhance model performance in natural language processing and beyond."
+}

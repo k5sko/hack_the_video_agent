@@ -1,9 +1,19 @@
 {
   "query": "attention",
   "mode": "graph",
-  "target_concepts": ["attention"],
-  "known": ["linear algebra", "neural network"],
-  "needed_concepts": ["dot product", "softmax", "embedding", "attention"],
+  "target_concepts": [
+    "attention"
+  ],
+  "known": [
+    "linear algebra",
+    "neural network"
+  ],
+  "needed_concepts": [
+    "dot product",
+    "softmax",
+    "embedding",
+    "attention"
+  ],
   "playlist": [
     {
       "clip_id": "v6_c1",
@@ -12,8 +22,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
       "start_seconds": 45,
       "end_seconds": 175,
-      "covers": ["dot product"],
-      "why": "Attention scores are dot products. This plays first because every later clip uses them."
+      "covers": [
+        "dot product"
+      ],
+      "why": "Attention scores are dot products. This plays first because every later clip uses them.",
+      "media_url": "/media/v6_c1.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v5_c7",
@@ -22,8 +36,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
       "start_seconds": 1100,
       "end_seconds": 1200,
-      "covers": ["softmax"],
-      "why": "Attention weights are a softmax over those dot products, so softmax comes before attention."
+      "covers": [
+        "softmax"
+      ],
+      "why": "Attention weights are a softmax over those dot products, so softmax comes before attention.",
+      "media_url": "/media/v5_c7.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v5_c4",
@@ -32,8 +50,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
       "start_seconds": 730,
       "end_seconds": 905,
-      "covers": ["embedding"],
-      "why": "Attention operates on embedding vectors. You need what an embedding is before you can see what attention does to it."
+      "covers": [
+        "embedding"
+      ],
+      "why": "Attention operates on embedding vectors. You need what an embedding is before you can see what attention does to it.",
+      "media_url": "/media/v5_c4.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v6_c2",
@@ -42,11 +64,17 @@
       "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
       "start_seconds": 220,
       "end_seconds": 535,
-      "covers": ["attention"],
-      "why": "The core explanation of attention. Plays last because it assumes softmax and embeddings, which your path covers first."
+      "covers": [
+        "attention"
+      ],
+      "why": "The core explanation of attention. Plays last because it assumes softmax and embeddings, which your path covers first.",
+      "media_url": "/media/v6_c2.mp4",
+      "source": "corpus"
     }
   ],
-  "gaps": ["positional encoding"],
+  "gaps": [
+    "positional encoding"
+  ],
   "total_corpus_seconds": 8400,
   "watch_seconds": 720,
   "narration": "You'll start with dot products (2 min) because attention scores are dot products, then softmax because the attention weights are a softmax over those scores, then embeddings because that's what attention actually operates on. The attention explanation plays last, once nothing in it is unfamiliar. Linear algebra and neural networks were pruned because you marked them known. One prerequisite, positional encoding, is referenced by the attention explanation but never taught anywhere in this corpus."

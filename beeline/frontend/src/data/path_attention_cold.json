@@ -1,7 +1,9 @@
 {
   "query": "attention",
   "mode": "graph",
-  "target_concepts": ["attention"],
+  "target_concepts": [
+    "attention"
+  ],
   "known": [],
   "needed_concepts": [
     "matrix multiplication",
@@ -21,8 +23,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
       "start_seconds": 180,
       "end_seconds": 440,
-      "covers": ["matrix multiplication"],
-      "why": "Every layer in this corpus is a matrix multiply. Nothing downstream parses until you can read one."
+      "covers": [
+        "matrix multiplication"
+      ],
+      "why": "Every layer in this corpus is a matrix multiply. Nothing downstream parses until you can read one.",
+      "media_url": "/media/v5_c1.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v1_c1",
@@ -31,8 +37,13 @@
       "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
       "start_seconds": 27,
       "end_seconds": 262,
-      "covers": ["neuron", "layer"],
-      "why": "A neuron is a number and a layer is a column of them. This is the vocabulary the next six minutes assume."
+      "covers": [
+        "neuron",
+        "layer"
+      ],
+      "why": "A neuron is a number and a layer is a column of them. This is the vocabulary the next six minutes assume.",
+      "media_url": "/media/v1_c1.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v1_c2",
@@ -41,8 +52,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
       "start_seconds": 262,
       "end_seconds": 487,
-      "covers": ["neural network"],
-      "why": "Layers wired together with weights and biases. A transformer is this object with a different connection pattern."
+      "covers": [
+        "neural network"
+      ],
+      "why": "Layers wired together with weights and biases. A transformer is this object with a different connection pattern.",
+      "media_url": "/media/v1_c2.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v6_c1",
@@ -51,8 +66,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
       "start_seconds": 45,
       "end_seconds": 175,
-      "covers": ["dot product"],
-      "why": "Attention scores are dot products. This plays first because every later clip uses them."
+      "covers": [
+        "dot product"
+      ],
+      "why": "Attention scores are dot products. This plays first because every later clip uses them.",
+      "media_url": "/media/v6_c1.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v5_c7",
@@ -61,8 +80,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
       "start_seconds": 1100,
       "end_seconds": 1200,
-      "covers": ["softmax"],
-      "why": "Attention weights are a softmax over those dot products, so softmax comes before attention."
+      "covers": [
+        "softmax"
+      ],
+      "why": "Attention weights are a softmax over those dot products, so softmax comes before attention.",
+      "media_url": "/media/v5_c7.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v5_c4",
@@ -71,8 +94,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
       "start_seconds": 730,
       "end_seconds": 905,
-      "covers": ["embedding"],
-      "why": "Attention operates on embedding vectors. You need what an embedding is before you can see what attention does to it."
+      "covers": [
+        "embedding"
+      ],
+      "why": "Attention operates on embedding vectors. You need what an embedding is before you can see what attention does to it.",
+      "media_url": "/media/v5_c4.mp4",
+      "source": "corpus"
     },
     {
       "clip_id": "v6_c2",
@@ -81,11 +108,17 @@
       "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
       "start_seconds": 220,
       "end_seconds": 535,
-      "covers": ["attention"],
-      "why": "The core explanation of attention. Plays last because it assumes softmax and embeddings, which your path covers first."
+      "covers": [
+        "attention"
+      ],
+      "why": "The core explanation of attention. Plays last because it assumes softmax and embeddings, which your path covers first.",
+      "media_url": "/media/v6_c2.mp4",
+      "source": "corpus"
     }
   ],
-  "gaps": ["positional encoding"],
+  "gaps": [
+    "positional encoding"
+  ],
   "total_corpus_seconds": 8400,
   "watch_seconds": 1440,
   "narration": "Starting cold, attention is eight concepts deep. You'll take matrix multiplication first because every layer in this corpus is one, then neurons and layers for the vocabulary, then neural networks as the object a transformer actually is. From there it's dot products, softmax over those dot products, embeddings as the thing attention operates on, and finally attention itself, once nothing inside it is unfamiliar. Twenty-four minutes instead of two hours and twenty. One prerequisite, positional encoding, is referenced by the attention explanation but never taught anywhere in this corpus."

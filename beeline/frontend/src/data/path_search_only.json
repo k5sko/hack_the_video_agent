@@ -1,7 +1,9 @@
 {
   "query": "attention",
   "mode": "search_only",
-  "target_concepts": ["attention"],
+  "target_concepts": [
+    "attention"
+  ],
   "known": [],
   "needed_concepts": [],
   "playlist": [
@@ -12,8 +14,12 @@
       "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
       "start_seconds": 220,
       "end_seconds": 535,
-      "covers": ["attention"],
-      "why": "Keyword match: the transcript says \"attention\" here. Why it is being said, and what it assumes, is not represented."
+      "covers": [
+        "attention"
+      ],
+      "why": "Keyword match: the transcript says \"attention\" here. Why it is being said, and what it assumes, is not represented.",
+      "media_url": "/media/v6_c2.mp4",
+      "source": "corpus"
     }
   ],
   "gaps": [],

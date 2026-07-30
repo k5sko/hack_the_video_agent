@@ -711,6 +711,9 @@ def build_path(
                 video_id=clip.video_id,
                 video_title=video.title if video else clip.video_id,
                 youtube_url=video.youtube_url if video else "",
+                # served by the API from data/clips/; the player never touches
+                # YouTube, so the demo works with no network
+                media_url=f"/media/{clip.id}.mp4",
                 start_seconds=float(clip.start),
                 end_seconds=float(clip.end),
                 covers=clip_covers,

@@ -15,6 +15,9 @@ dist/
 # with fetch_media). data/cache/ is deliberately NOT ignored — the committed
 # cache is what lets the demo run with the network cable pulled.
 beeline/data/media/
+# Cut clips: ~350MB, regenerate with `python -m beeline.ingestion.cut` from the
+# sources. data/cache/ stays committed — that is what makes the demo offline.
+beeline/data/clips/
 
 *.tsbuildinfo
 .pytest_cache/

@@ -6,7 +6,9 @@ import Counter from "./components/Counter";
 import ConceptGraph, { NODE_COLORS } from "./components/ConceptGraph";
 import EvidenceCard from "./components/EvidenceCard";
 import { getPath, type Mode } from "./lib/resolvePath";
+import type { PathResult } from "@shared/types";
 import { clipIndexForConcept, deriveNodeStates } from "./lib/graph";
+import coldFixture from "./data/path_attention_cold.json";
 
 const LEGEND: { state: NodeState; label: string }[] = [
   { state: "on_path", label: "on path" },
@@ -21,10 +23,41 @@ export default function App() {
   const [known, setKnown] = useState<string[]>([]);
   const [mode, setMode] = useState<Mode>("graph");
 
-  const path = useMemo(() => getPath(query, known, mode), [query, known, mode]);
+  const [path, setPath] = useState<PathResult>(coldFixture as PathResult);
   // What the graph would have produced for the same inputs — the yardstick the
   // search-only coverage number is measured against.
-  const graphPath = useMemo(() => getPath(query, known, "graph"), [query, known]);
+  const [graphPath, setGraphPath] = useState<PathResult>(coldFixture as PathResult);
+  const [loading, setLoading] = useState(false);
+  const [offline, setOffline] = useState(false);
+
+  const knownKey = known.slice().sort().join(",");
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    // Both modes are fetched together so flipping the kill-shot toggle is
+    // instant and the coverage fraction always has a real denominator.
+    Promise.all([
+      getPath(query, known, mode),
+      mode === "graph"
+        ? null
+        : getPath(query, known, "graph").then((outcome) => outcome.path),
+    ])
+      .then(([outcome, comparison]) => {
+        if (cancelled) return;
+        setPath(outcome.path);
+        setGraphPath(comparison ?? outcome.path);
+        setOffline(outcome.offline);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+    // knownKey rather than `known`: a new array with the same contents is not a
+    // reason to refetch.
+  }, [query, knownKey, mode]);
 
   const pathKey = `${path.mode}::${path.playlist.map((c) => c.clip_id).join(",")}`;
 
@@ -145,13 +178,19 @@ export default function App() {
           playing={playing}
           seekNonce={seekNonce}
           finished={finished}
+          nextClip={path.playlist[index + 1] ?? null}
           onTogglePlay={togglePlay}
           onAdvance={advance}
           onRestartClip={() => setSeekNonce((n) => n + 1)}
           onTime={() => undefined}
         />
 
-        <p className="narration">{path.narration}</p>
+        <p className="narration">
+          {loading ? "Building your path…" : path.narration}
+          {offline && !loading && (
+            <span className="narration-flag"> · offline sample data</span>
+          )}
+        </p>
       </main>
 
       <section className="panel">

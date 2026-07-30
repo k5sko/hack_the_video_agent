@@ -527,12 +527,24 @@ input {
   border: 1px solid var(--line);
 }
 
-.player-host,
-.player-host iframe {
+/* Clips are served as their own files, so the video element is ours to style —
+   no YouTube chrome, and no native controls competing with the transport bar. */
+.player-video {
   width: 100%;
   height: 100%;
   display: block;
   border: 0;
+  background: #0d0d0f;
+  object-fit: contain;
+}
+
+/* Warms the next clip so the cut between segments has nothing to wait for. */
+.player-preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .player-veil {
@@ -546,6 +558,13 @@ input {
 
 .player-veil-done {
   background: rgba(13, 13, 15, 0.9);
+}
+
+.player-veil-error .player-veil-label {
+  color: #f0b8a8;
+  max-width: 32ch;
+  text-align: center;
+  line-height: 1.5;
 }
 
 @keyframes veil-in {
@@ -907,4 +926,11 @@ input {
   .checklist {
     grid-template-columns: 1fr;
   }
+}
+
+/* Signals that the API was unreachable and bundled sample data is on screen —
+   quiet enough not to distract, explicit enough that nobody is misled. */
+.narration-flag {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }

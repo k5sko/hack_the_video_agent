@@ -13,15 +13,22 @@ from pydantic import BaseModel, Field
 NodeState = Literal["on_path", "known", "not_needed", "gap"]
 
 
+ClipSource = Literal["corpus", "external"]
+
+
 class ClipSegment(BaseModel):
     clip_id: str
     video_id: str
     video_title: str
+    # source video, kept for attribution
     youtube_url: str
+    # the clip as its own locally served file -- what the player plays
+    media_url: str = ""
     start_seconds: float
     end_seconds: float
     covers: List[str]
     why: str
+    source: ClipSource = "corpus"
 
 
 class PathResult(BaseModel):
