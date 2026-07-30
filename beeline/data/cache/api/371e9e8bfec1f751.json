@@ -1,0 +1,16 @@
+{
+  "query": "training neural networks",
+  "mode": "graph",
+  "target_concepts": [
+    "training neural networks"
+  ],
+  "known": [],
+  "needed_concepts": [],
+  "playlist": [],
+  "gaps": [
+    "training neural networks"
+  ],
+  "total_corpus_seconds": 8302.0,
+  "watch_seconds": 0.0,
+  "narration": "This learning path is designed to guide you through the essential concepts needed to effectively train neural networks. By following this sequence, you will build a solid foundation that will help you understand more complex ideas and techniques in neural network training."
+}

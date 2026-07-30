@@ -497,7 +497,24 @@ def order_clips(
             # so when our extracted edges contradict themselves, the author's own
             # sequencing is the better authority. Deterministic, so the demo is
             # reproducible.
-            victim = min(pending, key=tiebreak)
+            # Release a clip that is genuinely *inside* a cycle. Picking the
+            # lowest-depth pending clip instead sacrifices a bystander: a clip
+            # merely waiting on the cycle gets emitted early, and its own
+            # prerequisites then play after it. Only clips in a non-trivial
+            # strongly connected component are actually unorderable.
+            stuck = nx.DiGraph()
+            stuck.add_nodes_from(pending)
+            for src in pending:
+                for dst in out.get(src, ()):
+                    if dst in pending:
+                        stuck.add_edge(src, dst)
+            cyclic = [
+                node
+                for component in nx.strongly_connected_components(stuck)
+                if len(component) > 1
+                for node in component
+            ]
+            victim = min(cyclic or pending, key=tiebreak)
             conflicts.extend(
                 (src, victim) for src in pending if victim in out.get(src, ())
             )

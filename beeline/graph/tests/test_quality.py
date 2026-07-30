@@ -21,6 +21,7 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Set
 
+import networkx as nx
 import pytest
 
 HERE = Path(__file__).resolve().parent
@@ -157,27 +158,32 @@ def test_prerequisites_play_before_dependents(query, known, store, prereqs):
         for name in names:
             clip_of.setdefault(name, seg.clip_id)
 
-    def mutually_constrained(a: str, b: str) -> bool:
-        """True when the clips teaching a and b each depend on the other.
+    # Clip-level dependency graph: an edge means "this clip must play first".
+    # A clip is an indivisible bundle of concepts, so bundling can create cycles
+    # that no ordering satisfies -- and they are not always two clips long. Here
+    # a three-clip loop produced the violation, which a pairwise check misses.
+    clip_graph = nx.DiGraph()
+    clip_graph.add_nodes_from(taught_by_clip)
+    for clip_id, concepts in taught_by_clip.items():
+        for concept in concepts:
+            for prereq in prereqs.get(concept, ()):
+                source = clip_of.get(prereq)
+                if source is not None and source != clip_id:
+                    clip_graph.add_edge(source, clip_id)
 
-        A clip is an indivisible bundle. If clip X teaches something that
-        requires a concept from clip Y, *and* Y teaches something requiring a
-        concept from X, no ordering of the two can satisfy both. That conflict is
-        a property of how the corpus bundles concepts into chapters, not a bug in
-        the sort, so it is the one violation we tolerate.
-        """
+    # Two clips inside the same strongly connected component each transitively
+    # require the other, so whichever plays first violates something. That is a
+    # property of the corpus, not of the sort, and is the one case we tolerate.
+    component_of: Dict[str, int] = {}
+    for i, component in enumerate(nx.strongly_connected_components(clip_graph)):
+        for clip_id in component:
+            component_of[clip_id] = i
+
+    def mutually_constrained(a: str, b: str) -> bool:
         ca, cb = clip_of.get(a), clip_of.get(b)
         if ca is None or cb is None or ca == cb:
             return True
-
-        def depends(x: str, y: str) -> bool:
-            return any(
-                prereq in taught_by_clip[y]
-                for concept in taught_by_clip[x]
-                for prereq in prereqs.get(concept, ())
-            )
-
-        return depends(ca, cb) and depends(cb, ca)
+        return component_of.get(ca, -1) == component_of.get(cb, -2)
 
     violations: List[str] = []
     for concept, position in first_seen.items():

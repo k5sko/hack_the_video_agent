@@ -1,0 +1,19 @@
+{
+  "query": "training neural networks",
+  "mode": "graph",
+  "target_concepts": [
+    "training neural networks"
+  ],
+  "known": [
+    "linear algebra",
+    "neural network"
+  ],
+  "needed_concepts": [],
+  "playlist": [],
+  "gaps": [
+    "training neural networks"
+  ],
+  "total_corpus_seconds": 8302.0,
+  "watch_seconds": 0.0,
+  "narration": "In this learning path, you will delve into the intricacies of training neural networks, building upon your existing knowledge of linear algebra and the basic structure of neural networks. Each step in this order is designed to lay the groundwork necessary for effectively understanding how to adjust and optimize neural networks during training."
+}

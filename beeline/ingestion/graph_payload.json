@@ -624,9 +624,15 @@
       "name": "activation function",
       "aliases": [
         "activation",
+        "activation changes",
         "activation functions",
+        "activation values",
         "activations"
       ]
+    },
+    {
+      "name": "and gate",
+      "aliases": []
     },
     {
       "name": "attention",
@@ -642,6 +648,12 @@
       ]
     },
     {
+      "name": "attention scores",
+      "aliases": [
+        "attention heads"
+      ]
+    },
+    {
       "name": "attention weights",
       "aliases": []
     },
@@ -654,18 +666,26 @@
     {
       "name": "basic machine learning",
       "aliases": [
-        "machine learning basics"
+        "basic neural networks",
+        "machine learning basics",
+        "machine learning model"
+      ]
+    },
+    {
+      "name": "basic probability",
+      "aliases": [
+        "basic algebra",
+        "probability concepts"
       ]
     },
     {
       "name": "bias adjustment",
       "aliases": [
-        "bias adjustments"
+        "bias addition",
+        "bias adjustments",
+        "bias impact on cost",
+        "bias terms"
       ]
-    },
-    {
-      "name": "bias terms",
-      "aliases": []
     },
     {
       "name": "calculus",
@@ -683,22 +703,63 @@
       ]
     },
     {
-      "name": "contextual information",
+      "name": "complex pattern recognition",
       "aliases": []
+    },
+    {
+      "name": "contextual relationships",
+      "aliases": [
+        "complex relationships"
+      ]
     },
     {
       "name": "contextual word vectors",
       "aliases": [
+        "context-dependent meaning",
         "contextual embeddings",
-        "contextual word embeddings"
+        "contextual influence",
+        "contextual information",
+        "contextual meaning",
+        "contextual understanding",
+        "contextual word embeddings",
+        "contextual word representations",
+        "word vectorization"
       ]
     },
     {
       "name": "cost function",
       "aliases": [
+        "cost function generalization",
         "cost functions",
         "loss function",
         "loss functions"
+      ]
+    },
+    {
+      "name": "cost function sensitivity",
+      "aliases": [
+        "sensitivity analysis"
+      ]
+    },
+    {
+      "name": "data flow visualization",
+      "aliases": [
+        "information flow"
+      ]
+    },
+    {
+      "name": "data representation",
+      "aliases": [
+        "feature representation",
+        "image representation",
+        "input data representation"
+      ]
+    },
+    {
+      "name": "deep learning",
+      "aliases": [
+        "deep learning fundamentals",
+        "deep networks"
       ]
     },
     {
@@ -717,20 +778,13 @@
     },
     {
       "name": "dot product",
+      "aliases": [
+        "dot product scoring"
+      ]
+    },
+    {
+      "name": "early layer features",
       "aliases": []
-    },
-    {
-      "name": "embedding",
-      "aliases": [
-        "embedding matrix",
-        "embeddings"
-      ]
-    },
-    {
-      "name": "embedding layer",
-      "aliases": [
-        "embedding layers"
-      ]
     },
     {
       "name": "embedding refinement",
@@ -738,25 +792,52 @@
     },
     {
       "name": "embedding space",
-      "aliases": []
+      "aliases": [
+        "embedding",
+        "embedding layer",
+        "embedding layers",
+        "embedding matrix",
+        "embedding transformation",
+        "embeddings"
+      ]
     },
     {
       "name": "embedding vectors",
       "aliases": []
     },
     {
-      "name": "feature detection",
+      "name": "exponentiation of inputs",
       "aliases": []
     },
     {
-      "name": "feedforward networks",
+      "name": "factual knowledge representation",
       "aliases": [
-        "feed-forward networks"
+        "factual knowledge"
+      ]
+    },
+    {
+      "name": "feature detection",
+      "aliases": [
+        "pattern detection",
+        "pattern recognition",
+        "visual recognition"
       ]
     },
     {
       "name": "forward propagation",
+      "aliases": [
+        "recursive backpropagation"
+      ]
+    },
+    {
+      "name": "function composition",
       "aliases": []
+    },
+    {
+      "name": "gradient computation",
+      "aliases": [
+        "gradient aggregation"
+      ]
     },
     {
       "name": "gradient descent",
@@ -770,7 +851,16 @@
     },
     {
       "name": "hidden layers",
-      "aliases": []
+      "aliases": [
+        "hidden layer behavior",
+        "hidden states"
+      ]
+    },
+    {
+      "name": "hierarchical representations",
+      "aliases": [
+        "hierarchical feature learning"
+      ]
     },
     {
       "name": "high-dimensional vectors",
@@ -781,8 +871,48 @@
       ]
     },
     {
+      "name": "input sequence",
+      "aliases": [
+        "sequence alignment",
+        "sequence data"
+      ]
+    },
+    {
+      "name": "input vectors",
+      "aliases": [
+        "key vectors",
+        "maximum of vectors"
+      ]
+    },
+    {
+      "name": "key computation",
+      "aliases": [
+        "query computation"
+      ]
+    },
+    {
+      "name": "language model",
+      "aliases": [
+        "language models",
+        "sequence modeling",
+        "sequence models"
+      ]
+    },
+    {
+      "name": "language modeling",
+      "aliases": [
+        "language understanding"
+      ]
+    },
+    {
       "name": "large language models",
       "aliases": []
+    },
+    {
+      "name": "large-scale pre-training",
+      "aliases": [
+        "generative pre-trained transformer"
+      ]
     },
     {
       "name": "layer",
@@ -791,11 +921,25 @@
       ]
     },
     {
+      "name": "layered neural networks",
+      "aliases": []
+    },
+    {
       "name": "linear algebra",
       "aliases": [
         "basic linear algebra",
         "linear algebra basics",
         "linear algebra representation"
+      ]
+    },
+    {
+      "name": "linear inputs",
+      "aliases": []
+    },
+    {
+      "name": "linear transformation",
+      "aliases": [
+        "linear transformations"
       ]
     },
     {
@@ -815,6 +959,13 @@
       ]
     },
     {
+      "name": "mlp layers",
+      "aliases": [
+        "mlp architecture",
+        "mlp structure"
+      ]
+    },
+    {
       "name": "mnist dataset",
       "aliases": []
     },
@@ -826,12 +977,27 @@
       ]
     },
     {
+      "name": "negative gradient",
+      "aliases": [
+        "negative gradient vector"
+      ]
+    },
+    {
       "name": "neural network",
       "aliases": [
+        "feed-forward networks",
+        "feedforward networks",
         "multilayer perceptron",
         "multilayer perceptrons",
+        "neural network activations",
         "neural network basics",
-        "neural networks"
+        "neural network non-linearity",
+        "neural network output",
+        "neural network outputs",
+        "neural networks",
+        "neuron",
+        "neuron concept",
+        "single-neuron network"
       ]
     },
     {
@@ -846,29 +1012,29 @@
     },
     {
       "name": "neural network parameters",
+      "aliases": [
+        "network parameters"
+      ]
+    },
+    {
+      "name": "neuron output behavior",
       "aliases": []
-    },
-    {
-      "name": "neuron",
-      "aliases": [
-        "neuron concept"
-      ]
-    },
-    {
-      "name": "next-token prediction",
-      "aliases": [
-        "next token prediction"
-      ]
     },
     {
       "name": "next-word prediction",
       "aliases": [
-        "next word prediction"
+        "next token prediction",
+        "next word prediction",
+        "next-token prediction"
       ]
     },
     {
-      "name": "optimization algorithms",
-      "aliases": []
+      "name": "non-linear function",
+      "aliases": [
+        "non-linear phenomena",
+        "non-linear transformations",
+        "nonlinear operations"
+      ]
     },
     {
       "name": "output layer",
@@ -877,12 +1043,36 @@
       ]
     },
     {
-      "name": "parameter distribution",
-      "aliases": []
+      "name": "output neuron target",
+      "aliases": [
+        "output neuron error aggregation"
+      ]
     },
     {
-      "name": "pattern recognition",
-      "aliases": []
+      "name": "output projection",
+      "aliases": [
+        "value projections"
+      ]
+    },
+    {
+      "name": "parallelization",
+      "aliases": [
+        "parallel processing"
+      ]
+    },
+    {
+      "name": "parameter distribution",
+      "aliases": [
+        "probability distribution sharpness"
+      ]
+    },
+    {
+      "name": "parameter optimization",
+      "aliases": [
+        "optimization algorithms",
+        "parameter design",
+        "parameter space"
+      ]
     },
     {
       "name": "positional encoding",
@@ -897,22 +1087,43 @@
       ]
     },
     {
+      "name": "probability distributions",
+      "aliases": [
+        "probabilistic modeling"
+      ]
+    },
+    {
+      "name": "query vectors",
+      "aliases": [
+        "vector",
+        "vectors"
+      ]
+    },
+    {
       "name": "relu activation function",
-      "aliases": []
+      "aliases": [
+        "gelu activation function",
+        "sigmoid activation function"
+      ]
     },
     {
       "name": "semantic representation",
-      "aliases": []
+      "aliases": [
+        "semantic clustering",
+        "semantic relationships"
+      ]
     },
     {
       "name": "semantic similarity",
       "aliases": []
     },
     {
-      "name": "sequence models",
-      "aliases": [
-        "sequence modeling"
-      ]
+      "name": "sequence prediction",
+      "aliases": []
+    },
+    {
+      "name": "sequential dependency",
+      "aliases": []
     },
     {
       "name": "softmax",
@@ -921,12 +1132,28 @@
       ]
     },
     {
-      "name": "tokenization",
+      "name": "softmax normalization",
+      "aliases": [
+        "layer normalization",
+        "normalization",
+        "normalization to sum one"
+      ]
+    },
+    {
+      "name": "source and target sequences",
       "aliases": []
     },
     {
-      "name": "tokens",
-      "aliases": []
+      "name": "token vectors",
+      "aliases": [
+        "token embeddings"
+      ]
+    },
+    {
+      "name": "tokenization",
+      "aliases": [
+        "tokens"
+      ]
     },
     {
       "name": "training data",
@@ -934,6 +1161,14 @@
         "training example",
         "training examples"
       ]
+    },
+    {
+      "name": "training efficiency",
+      "aliases": []
+    },
+    {
+      "name": "training neural networks",
+      "aliases": []
     },
     {
       "name": "training process",
@@ -951,14 +1186,12 @@
       ]
     },
     {
-      "name": "value vectors",
+      "name": "translation tasks",
       "aliases": []
     },
     {
-      "name": "vector",
-      "aliases": [
-        "vectors"
-      ]
+      "name": "value vectors",
+      "aliases": []
     },
     {
       "name": "vector calculus",
@@ -978,7 +1211,21 @@
     },
     {
       "name": "weight adjustment",
-      "aliases": []
+      "aliases": [
+        "weight proportionality"
+      ]
+    },
+    {
+      "name": "weight optimization",
+      "aliases": [
+        "weight impact on cost"
+      ]
+    },
+    {
+      "name": "weight updates",
+      "aliases": [
+        "weighted updates"
+      ]
     },
     {
       "name": "weighted sums",
@@ -1013,6 +1260,16 @@
     },
     {
       "clip_id": "v1_c2",
+      "concept": "activation function",
+      "score": 0.75
+    },
+    {
+      "clip_id": "v1_c2",
+      "concept": "feature detection",
+      "score": 0.6
+    },
+    {
+      "clip_id": "v1_c2",
       "concept": "hidden layers",
       "score": 0.85
     },
@@ -1023,8 +1280,28 @@
     },
     {
       "clip_id": "v1_c3",
+      "concept": "complex pattern recognition",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v1_c3",
+      "concept": "early layer features",
+      "score": 0.85
+    },
+    {
+      "clip_id": "v1_c3",
       "concept": "feature detection",
       "score": 0.95
+    },
+    {
+      "clip_id": "v1_c3",
+      "concept": "hierarchical representations",
+      "score": 0.9
+    },
+    {
+      "clip_id": "v1_c3",
+      "concept": "layered neural networks",
+      "score": 0.9
     },
     {
       "clip_id": "v1_c4",
@@ -1033,7 +1310,7 @@
     },
     {
       "clip_id": "v1_c4",
-      "concept": "bias terms",
+      "concept": "bias adjustment",
       "score": 0.7
     },
     {
@@ -1063,8 +1340,18 @@
     },
     {
       "clip_id": "v1_c6",
+      "concept": "neuron output behavior",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v1_c6",
       "concept": "relu activation function",
       "score": 0.95
+    },
+    {
+      "clip_id": "v1_c6",
+      "concept": "training efficiency",
+      "score": 0.6
     },
     {
       "clip_id": "v1_c7",
@@ -1112,6 +1399,11 @@
       "score": 0.9
     },
     {
+      "clip_id": "v2_c10",
+      "concept": "hidden layers",
+      "score": 0.9
+    },
+    {
       "clip_id": "v2_c2",
       "concept": "hidden layers",
       "score": 0.8
@@ -1140,6 +1432,11 @@
       "clip_id": "v2_c3",
       "concept": "hidden layers",
       "score": 0.85
+    },
+    {
+      "clip_id": "v2_c3",
+      "concept": "hierarchical representations",
+      "score": 0.8
     },
     {
       "clip_id": "v2_c4",
@@ -1173,6 +1470,11 @@
     },
     {
       "clip_id": "v2_c5",
+      "concept": "parameter optimization",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v2_c5",
       "concept": "weights",
       "score": 0.8
     },
@@ -1187,9 +1489,24 @@
       "score": 0.6
     },
     {
+      "clip_id": "v2_c6",
+      "concept": "negative gradient",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v2_c6",
+      "concept": "parameter optimization",
+      "score": 0.6
+    },
+    {
       "clip_id": "v2_c7",
       "concept": "backpropagation",
       "score": 0.95
+    },
+    {
+      "clip_id": "v2_c7",
+      "concept": "gradient computation",
+      "score": 0.85
     },
     {
       "clip_id": "v2_c8",
@@ -1200,6 +1517,11 @@
       "clip_id": "v2_c8",
       "concept": "gradient descent",
       "score": 0.95
+    },
+    {
+      "clip_id": "v2_c8",
+      "concept": "negative gradient",
+      "score": 0.85
     },
     {
       "clip_id": "v2_c8",
@@ -1268,8 +1590,28 @@
     },
     {
       "clip_id": "v3_c3",
+      "concept": "bias adjustment",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v3_c3",
+      "concept": "cost function sensitivity",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v3_c3",
       "concept": "gradient vector",
       "score": 0.9
+    },
+    {
+      "clip_id": "v3_c3",
+      "concept": "weight optimization",
+      "score": 0.85
+    },
+    {
+      "clip_id": "v3_c4",
+      "concept": "activation function",
+      "score": 0.75
     },
     {
       "clip_id": "v3_c4",
@@ -1287,6 +1629,11 @@
       "score": 0.6
     },
     {
+      "clip_id": "v3_c4",
+      "concept": "weight updates",
+      "score": 0.85
+    },
+    {
       "clip_id": "v3_c5",
       "concept": "backpropagation",
       "score": 0.7
@@ -1298,8 +1645,33 @@
     },
     {
       "clip_id": "v3_c5",
+      "concept": "output neuron target",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v3_c5",
       "concept": "weight adjustment",
       "score": 0.9
+    },
+    {
+      "clip_id": "v3_c6",
+      "concept": "forward propagation",
+      "score": 0.9
+    },
+    {
+      "clip_id": "v3_c6",
+      "concept": "output neuron target",
+      "score": 0.6
+    },
+    {
+      "clip_id": "v3_c6",
+      "concept": "weight adjustment",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v3_c7",
+      "concept": "gradient computation",
+      "score": 0.85
     },
     {
       "clip_id": "v3_c7",
@@ -1317,6 +1689,11 @@
       "score": 0.7
     },
     {
+      "clip_id": "v3_c8",
+      "concept": "weight optimization",
+      "score": 0.8
+    },
+    {
       "clip_id": "v4_c1",
       "concept": "backpropagation",
       "score": 0.95
@@ -1332,6 +1709,16 @@
       "score": 0.7
     },
     {
+      "clip_id": "v4_c1",
+      "concept": "cost function sensitivity",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v4_c1",
+      "concept": "neural network parameters",
+      "score": 0.6
+    },
+    {
       "clip_id": "v4_c2",
       "concept": "activation function",
       "score": 0.8
@@ -1345,6 +1732,11 @@
       "clip_id": "v4_c2",
       "concept": "cost function",
       "score": 0.85
+    },
+    {
+      "clip_id": "v4_c2",
+      "concept": "neural network",
+      "score": 0.9
     },
     {
       "clip_id": "v4_c3",
@@ -1365,6 +1757,11 @@
       "clip_id": "v4_c4",
       "concept": "chain rule",
       "score": 0.7
+    },
+    {
+      "clip_id": "v4_c4",
+      "concept": "cost function",
+      "score": 0.75
     },
     {
       "clip_id": "v4_c5",
@@ -1403,6 +1800,11 @@
     },
     {
       "clip_id": "v5_c1",
+      "concept": "large-scale pre-training",
+      "score": 0.9
+    },
+    {
+      "clip_id": "v5_c1",
       "concept": "next-word prediction",
       "score": 0.85
     },
@@ -1433,13 +1835,23 @@
     },
     {
       "clip_id": "v5_c11",
-      "concept": "next-token prediction",
+      "concept": "next-word prediction",
       "score": 0.7
     },
     {
+      "clip_id": "v5_c11",
+      "concept": "token vectors",
+      "score": 0.8
+    },
+    {
       "clip_id": "v5_c12",
-      "concept": "embedding layer",
+      "concept": "embedding space",
       "score": 0.9
+    },
+    {
+      "clip_id": "v5_c13",
+      "concept": "exponentiation of inputs",
+      "score": 0.7
     },
     {
       "clip_id": "v5_c13",
@@ -1448,8 +1860,23 @@
     },
     {
       "clip_id": "v5_c13",
+      "concept": "probability distributions",
+      "score": 0.9
+    },
+    {
+      "clip_id": "v5_c13",
       "concept": "softmax",
       "score": 0.95
+    },
+    {
+      "clip_id": "v5_c13",
+      "concept": "softmax normalization",
+      "score": 0.85
+    },
+    {
+      "clip_id": "v5_c14",
+      "concept": "parameter distribution",
+      "score": 0.6
     },
     {
       "clip_id": "v5_c15",
@@ -1478,8 +1905,18 @@
     },
     {
       "clip_id": "v5_c2",
+      "concept": "contextual word vectors",
+      "score": 0.6
+    },
+    {
+      "clip_id": "v5_c2",
       "concept": "embedding space",
       "score": 0.85
+    },
+    {
+      "clip_id": "v5_c2",
+      "concept": "semantic representation",
+      "score": 0.7
     },
     {
       "clip_id": "v5_c2",
@@ -1513,18 +1950,23 @@
     },
     {
       "clip_id": "v5_c4",
-      "concept": "feedforward networks",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v5_c4",
       "concept": "matrix multiplication",
       "score": 0.8
     },
     {
       "clip_id": "v5_c4",
       "concept": "neural network",
-      "score": 0.85
+      "score": 0.9
+    },
+    {
+      "clip_id": "v5_c4",
+      "concept": "non-linear function",
+      "score": 0.75
+    },
+    {
+      "clip_id": "v5_c4",
+      "concept": "parallelization",
+      "score": 0.6
     },
     {
       "clip_id": "v5_c5",
@@ -1548,8 +1990,13 @@
     },
     {
       "clip_id": "v5_c6",
-      "concept": "embedding layer",
+      "concept": "embedding space",
       "score": 0.7
+    },
+    {
+      "clip_id": "v5_c6",
+      "concept": "output projection",
+      "score": 0.6
     },
     {
       "clip_id": "v5_c6",
@@ -1558,7 +2005,12 @@
     },
     {
       "clip_id": "v5_c7",
-      "concept": "embedding",
+      "concept": "contextual word vectors",
+      "score": 0.9
+    },
+    {
+      "clip_id": "v5_c7",
+      "concept": "embedding space",
       "score": 0.95
     },
     {
@@ -1612,6 +2064,11 @@
       "score": 0.9
     },
     {
+      "clip_id": "v6_c11",
+      "concept": "input sequence",
+      "score": 0.6
+    },
+    {
       "clip_id": "v6_c12",
       "concept": "attention",
       "score": 0.9
@@ -1627,9 +2084,24 @@
       "score": 0.9
     },
     {
+      "clip_id": "v6_c13",
+      "concept": "contextual relationships",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v6_c13",
+      "concept": "data flow visualization",
+      "score": 0.6
+    },
+    {
       "clip_id": "v6_c14",
       "concept": "attention",
       "score": 0.95
+    },
+    {
+      "clip_id": "v6_c14",
+      "concept": "attention scores",
+      "score": 0.9
     },
     {
       "clip_id": "v6_c14",
@@ -1648,6 +2120,16 @@
     },
     {
       "clip_id": "v6_c15",
+      "concept": "output projection",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v6_c15",
+      "concept": "parameter optimization",
+      "score": 0.5
+    },
+    {
+      "clip_id": "v6_c15",
       "concept": "transformer",
       "score": 0.6
     },
@@ -1658,13 +2140,18 @@
     },
     {
       "clip_id": "v6_c16",
-      "concept": "feedforward networks",
+      "concept": "neural network",
       "score": 0.85
     },
     {
       "clip_id": "v6_c16",
       "concept": "positional encoding",
       "score": 0.9
+    },
+    {
+      "clip_id": "v6_c16",
+      "concept": "softmax normalization",
+      "score": 0.8
     },
     {
       "clip_id": "v6_c16",
@@ -1680,6 +2167,11 @@
       "clip_id": "v6_c17",
       "concept": "large language models",
       "score": 0.6
+    },
+    {
+      "clip_id": "v6_c17",
+      "concept": "parallelization",
+      "score": 0.8
     },
     {
       "clip_id": "v6_c18",
@@ -1700,6 +2192,11 @@
       "clip_id": "v6_c2",
       "concept": "word embeddings",
       "score": 0.9
+    },
+    {
+      "clip_id": "v6_c3",
+      "concept": "contextual word vectors",
+      "score": 0.8
     },
     {
       "clip_id": "v6_c3",
@@ -1758,7 +2255,17 @@
     },
     {
       "clip_id": "v6_c6",
-      "concept": "next-token prediction",
+      "concept": "contextual word vectors",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v6_c6",
+      "concept": "data flow visualization",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v6_c6",
+      "concept": "next-word prediction",
       "score": 0.6
     },
     {
@@ -1767,9 +2274,34 @@
       "score": 0.85
     },
     {
+      "clip_id": "v6_c7",
+      "concept": "dot product",
+      "score": 0.95
+    },
+    {
+      "clip_id": "v6_c7",
+      "concept": "key computation",
+      "score": 0.9
+    },
+    {
+      "clip_id": "v6_c7",
+      "concept": "softmax normalization",
+      "score": 0.9
+    },
+    {
       "clip_id": "v6_c8",
       "concept": "attention",
       "score": 0.9
+    },
+    {
+      "clip_id": "v6_c8",
+      "concept": "input vectors",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v6_c8",
+      "concept": "query vectors",
+      "score": 0.8
     },
     {
       "clip_id": "v6_c8",
@@ -1778,8 +2310,28 @@
     },
     {
       "clip_id": "v6_c9",
+      "concept": "attention scores",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v6_c9",
+      "concept": "embedding space",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v6_c9",
       "concept": "value vectors",
       "score": 0.9
+    },
+    {
+      "clip_id": "v6_c9",
+      "concept": "weight updates",
+      "score": 0.75
+    },
+    {
+      "clip_id": "v7_c1",
+      "concept": "language model",
+      "score": 0.6
     },
     {
       "clip_id": "v7_c1",
@@ -1795,6 +2347,11 @@
       "clip_id": "v7_c10",
       "concept": "high-dimensional vectors",
       "score": 0.95
+    },
+    {
+      "clip_id": "v7_c11",
+      "concept": "input vectors",
+      "score": 0.6
     },
     {
       "clip_id": "v7_c11",
@@ -1843,8 +2400,13 @@
     },
     {
       "clip_id": "v7_c2",
-      "concept": "embedding",
+      "concept": "embedding space",
       "score": 0.85
+    },
+    {
+      "clip_id": "v7_c2",
+      "concept": "mlp layers",
+      "score": 0.7
     },
     {
       "clip_id": "v7_c2",
@@ -1878,6 +2440,11 @@
     },
     {
       "clip_id": "v7_c4",
+      "concept": "bias adjustment",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v7_c4",
       "concept": "dot product",
       "score": 0.7
     },
@@ -1898,7 +2465,7 @@
     },
     {
       "clip_id": "v7_c5",
-      "concept": "bias terms",
+      "concept": "bias adjustment",
       "score": 0.7
     },
     {
@@ -1908,13 +2475,43 @@
     },
     {
       "clip_id": "v7_c6",
+      "concept": "hidden layers",
+      "score": 0.95
+    },
+    {
+      "clip_id": "v7_c6",
       "concept": "matrix multiplication",
       "score": 0.7
     },
     {
       "clip_id": "v7_c7",
+      "concept": "input vectors",
+      "score": 0.7
+    },
+    {
+      "clip_id": "v7_c7",
+      "concept": "linear transformation",
+      "score": 0.8
+    },
+    {
+      "clip_id": "v7_c7",
       "concept": "neural network",
       "score": 0.9
+    },
+    {
+      "clip_id": "v7_c7",
+      "concept": "non-linear function",
+      "score": 0.85
+    },
+    {
+      "clip_id": "v7_c8",
+      "concept": "neural network",
+      "score": 0.75
+    },
+    {
+      "clip_id": "v7_c8",
+      "concept": "non-linear function",
+      "score": 0.85
     },
     {
       "clip_id": "v7_c8",
@@ -1923,7 +2520,7 @@
     },
     {
       "clip_id": "v7_c9",
-      "concept": "bias terms",
+      "concept": "bias adjustment",
       "score": 0.7
     },
     {
@@ -1940,32 +2537,42 @@
   "requires": [
     {
       "from": "activation function",
+      "to": "feature detection",
+      "confidence": 3
+    },
+    {
+      "from": "activation function",
+      "to": "matrix operations",
+      "confidence": 2
+    },
+    {
+      "from": "activation function",
       "to": "neural network",
-      "confidence": 2
-    },
-    {
-      "from": "activation function",
-      "to": "neuron",
-      "confidence": 2
-    },
-    {
-      "from": "activation function",
-      "to": "pattern recognition",
-      "confidence": 2
-    },
-    {
-      "from": "attention",
-      "to": "contextual information",
-      "confidence": 2
+      "confidence": 7
     },
     {
       "from": "attention",
       "to": "contextual word vectors",
-      "confidence": 3
+      "confidence": 5
     },
     {
       "from": "attention",
       "to": "embedding vectors",
+      "confidence": 2
+    },
+    {
+      "from": "attention",
+      "to": "input sequence",
+      "confidence": 2
+    },
+    {
+      "from": "attention",
+      "to": "language model",
+      "confidence": 4
+    },
+    {
+      "from": "attention",
+      "to": "linear algebra",
       "confidence": 2
     },
     {
@@ -1976,22 +2583,17 @@
     {
       "from": "attention",
       "to": "neural network",
-      "confidence": 5
+      "confidence": 10
     },
     {
       "from": "attention",
-      "to": "sequence models",
-      "confidence": 4
-    },
-    {
-      "from": "attention",
-      "to": "tokens",
-      "confidence": 2
+      "to": "tokenization",
+      "confidence": 3
     },
     {
       "from": "attention",
       "to": "transformer",
-      "confidence": 3
+      "confidence": 4
     },
     {
       "from": "attention",
@@ -2002,6 +2604,11 @@
       "from": "attention",
       "to": "vector representation",
       "confidence": 7
+    },
+    {
+      "from": "attention weights",
+      "to": "contextual word vectors",
+      "confidence": 2
     },
     {
       "from": "attention weights",
@@ -2021,7 +2628,7 @@
     {
       "from": "backpropagation",
       "to": "calculus",
-      "confidence": 2
+      "confidence": 5
     },
     {
       "from": "backpropagation",
@@ -2055,7 +2662,7 @@
     },
     {
       "from": "backpropagation",
-      "to": "optimization algorithms",
+      "to": "parameter optimization",
       "confidence": 2
     },
     {
@@ -2066,7 +2673,12 @@
     {
       "from": "bias adjustment",
       "to": "cost function",
-      "confidence": 2
+      "confidence": 3
+    },
+    {
+      "from": "bias adjustment",
+      "to": "feature detection",
+      "confidence": 3
     },
     {
       "from": "bias adjustment",
@@ -2075,8 +2687,18 @@
     },
     {
       "from": "bias adjustment",
+      "to": "matrix multiplication",
+      "confidence": 2
+    },
+    {
+      "from": "bias adjustment",
+      "to": "mlp layers",
+      "confidence": 2
+    },
+    {
+      "from": "bias adjustment",
       "to": "neural network",
-      "confidence": 3
+      "confidence": 6
     },
     {
       "from": "bias adjustment",
@@ -2084,14 +2706,9 @@
       "confidence": 3
     },
     {
-      "from": "bias terms",
-      "to": "matrix multiplication",
-      "confidence": 2
-    },
-    {
       "from": "chain rule",
       "to": "calculus",
-      "confidence": 2
+      "confidence": 4
     },
     {
       "from": "chain rule",
@@ -2105,28 +2722,43 @@
     },
     {
       "from": "chain rule",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "chain rule",
       "to": "neural network layers",
       "confidence": 3
     },
     {
-      "from": "contextual word vectors",
-      "to": "contextual information",
+      "from": "complex pattern recognition",
+      "to": "feature detection",
       "confidence": 2
     },
     {
       "from": "contextual word vectors",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 6
     },
     {
       "from": "contextual word vectors",
       "to": "vector representation",
-      "confidence": 3
+      "confidence": 5
+    },
+    {
+      "from": "contextual word vectors",
+      "to": "word embeddings",
+      "confidence": 4
+    },
+    {
+      "from": "cost function",
+      "to": "basic machine learning",
+      "confidence": 2
     },
     {
       "from": "cost function",
       "to": "calculus",
-      "confidence": 3
+      "confidence": 4
     },
     {
       "from": "cost function",
@@ -2141,7 +2773,7 @@
     {
       "from": "cost function",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 4
     },
     {
       "from": "cost function",
@@ -2154,39 +2786,99 @@
       "confidence": 3
     },
     {
+      "from": "cost function sensitivity",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "data flow visualization",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "data flow visualization",
+      "to": "vector representation",
+      "confidence": 2
+    },
+    {
+      "from": "derivative",
+      "to": "calculus",
+      "confidence": 2
+    },
+    {
       "from": "derivative",
       "to": "neural network layers",
       "confidence": 2
     },
     {
       "from": "dot product",
+      "to": "contextual word vectors",
+      "confidence": 2
+    },
+    {
+      "from": "dot product",
       "to": "linear algebra",
+      "confidence": 4
+    },
+    {
+      "from": "dot product",
+      "to": "matrix multiplication",
       "confidence": 2
     },
     {
       "from": "dot product",
       "to": "vector representation",
+      "confidence": 3
+    },
+    {
+      "from": "early layer features",
+      "to": "feature detection",
       "confidence": 2
     },
     {
-      "from": "embedding",
+      "from": "embedding space",
+      "to": "attention",
+      "confidence": 3
+    },
+    {
+      "from": "embedding space",
+      "to": "high-dimensional vectors",
+      "confidence": 2
+    },
+    {
+      "from": "embedding space",
+      "to": "linear algebra",
+      "confidence": 2
+    },
+    {
+      "from": "embedding space",
       "to": "matrix multiplication",
-      "confidence": 2
+      "confidence": 3
     },
     {
-      "from": "embedding",
+      "from": "embedding space",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 4
     },
     {
-      "from": "embedding layer",
+      "from": "embedding space",
       "to": "transformer",
+      "confidence": 3
+    },
+    {
+      "from": "embedding space",
+      "to": "vector representation",
       "confidence": 2
     },
     {
       "from": "embedding space",
       "to": "word embeddings",
-      "confidence": 3
+      "confidence": 5
+    },
+    {
+      "from": "exponentiation of inputs",
+      "to": "basic probability",
+      "confidence": 2
     },
     {
       "from": "feature detection",
@@ -2196,11 +2888,11 @@
     {
       "from": "feature detection",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 3
     },
     {
-      "from": "feature detection",
-      "to": "pattern recognition",
+      "from": "gradient computation",
+      "to": "cost function",
       "confidence": 2
     },
     {
@@ -2221,7 +2913,7 @@
     {
       "from": "gradient descent",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 4
     },
     {
       "from": "gradient descent",
@@ -2245,12 +2937,47 @@
     },
     {
       "from": "hidden layers",
+      "to": "feature detection",
+      "confidence": 2
+    },
+    {
+      "from": "hidden layers",
       "to": "layer",
       "confidence": 2
     },
     {
       "from": "hidden layers",
+      "to": "matrix operations",
+      "confidence": 2
+    },
+    {
+      "from": "hidden layers",
+      "to": "neural network",
+      "confidence": 4
+    },
+    {
+      "from": "hidden layers",
       "to": "training data",
+      "confidence": 2
+    },
+    {
+      "from": "hidden layers",
+      "to": "training process",
+      "confidence": 2
+    },
+    {
+      "from": "hierarchical representations",
+      "to": "digit recognition",
+      "confidence": 2
+    },
+    {
+      "from": "hierarchical representations",
+      "to": "feature detection",
+      "confidence": 3
+    },
+    {
+      "from": "hierarchical representations",
+      "to": "neural network",
       "confidence": 2
     },
     {
@@ -2266,7 +2993,7 @@
     {
       "from": "high-dimensional vectors",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 3
     },
     {
       "from": "high-dimensional vectors",
@@ -2284,8 +3011,68 @@
       "confidence": 2
     },
     {
+      "from": "input sequence",
+      "to": "language model",
+      "confidence": 2
+    },
+    {
+      "from": "input sequence",
+      "to": "sequential dependency",
+      "confidence": 2
+    },
+    {
+      "from": "input sequence",
+      "to": "source and target sequences",
+      "confidence": 2
+    },
+    {
+      "from": "input sequence",
+      "to": "translation tasks",
+      "confidence": 2
+    },
+    {
+      "from": "input vectors",
+      "to": "basic machine learning",
+      "confidence": 2
+    },
+    {
+      "from": "input vectors",
+      "to": "vector representation",
+      "confidence": 2
+    },
+    {
+      "from": "key computation",
+      "to": "contextual word vectors",
+      "confidence": 2
+    },
+    {
+      "from": "key computation",
+      "to": "linear algebra",
+      "confidence": 2
+    },
+    {
+      "from": "key computation",
+      "to": "matrix multiplication",
+      "confidence": 2
+    },
+    {
+      "from": "key computation",
+      "to": "probability distributions",
+      "confidence": 2
+    },
+    {
+      "from": "key computation",
+      "to": "vector representation",
+      "confidence": 2
+    },
+    {
       "from": "large language models",
       "to": "basic machine learning",
+      "confidence": 2
+    },
+    {
+      "from": "large language models",
+      "to": "deep learning",
       "confidence": 2
     },
     {
@@ -2299,9 +3086,39 @@
       "confidence": 2
     },
     {
+      "from": "large-scale pre-training",
+      "to": "language modeling",
+      "confidence": 2
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "probability distributions",
+      "confidence": 2
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "sequence prediction",
+      "confidence": 2
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "tokenization",
+      "confidence": 2
+    },
+    {
+      "from": "layered neural networks",
+      "to": "feature detection",
+      "confidence": 2
+    },
+    {
       "from": "matrix multiplication",
       "to": "linear algebra",
-      "confidence": 2
+      "confidence": 3
     },
     {
       "from": "matrix multiplication",
@@ -2316,16 +3133,51 @@
     {
       "from": "matrix multiplication",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 4
     },
     {
       "from": "matrix multiplication",
-      "to": "vector",
+      "to": "query vectors",
       "confidence": 3
     },
     {
       "from": "matrix multiplication",
       "to": "vector representation",
+      "confidence": 2
+    },
+    {
+      "from": "mlp layers",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "negative gradient",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "negative gradient",
+      "to": "vector calculus",
+      "confidence": 2
+    },
+    {
+      "from": "neural network",
+      "to": "activation function",
+      "confidence": 3
+    },
+    {
+      "from": "neural network",
+      "to": "basic machine learning",
+      "confidence": 2
+    },
+    {
+      "from": "neural network",
+      "to": "factual knowledge representation",
+      "confidence": 2
+    },
+    {
+      "from": "neural network",
+      "to": "function composition",
       "confidence": 2
     },
     {
@@ -2335,7 +3187,87 @@
     },
     {
       "from": "neural network",
+      "to": "linear transformation",
+      "confidence": 2
+    },
+    {
+      "from": "neural network",
+      "to": "neural network layers",
+      "confidence": 2
+    },
+    {
+      "from": "neural network",
+      "to": "token vectors",
+      "confidence": 2
+    },
+    {
+      "from": "neural network",
       "to": "vector representation",
+      "confidence": 3
+    },
+    {
+      "from": "neural network architecture",
+      "to": "data representation",
+      "confidence": 2
+    },
+    {
+      "from": "neural network architecture",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "neural network parameters",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "neuron output behavior",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "next-word prediction",
+      "to": "basic probability",
+      "confidence": 2
+    },
+    {
+      "from": "next-word prediction",
+      "to": "language model",
+      "confidence": 3
+    },
+    {
+      "from": "next-word prediction",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "next-word prediction",
+      "to": "tokenization",
+      "confidence": 3
+    },
+    {
+      "from": "non-linear function",
+      "to": "activation function",
+      "confidence": 2
+    },
+    {
+      "from": "non-linear function",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "non-linear function",
+      "to": "vector representation",
+      "confidence": 2
+    },
+    {
+      "from": "output layer",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "output projection",
+      "to": "transformer",
       "confidence": 2
     },
     {
@@ -2345,12 +3277,52 @@
     },
     {
       "from": "positional encoding",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "positional encoding",
       "to": "vector representation",
+      "confidence": 2
+    },
+    {
+      "from": "probability distributions",
+      "to": "basic probability",
+      "confidence": 2
+    },
+    {
+      "from": "relu activation function",
+      "to": "activation function",
+      "confidence": 2
+    },
+    {
+      "from": "relu activation function",
+      "to": "and gate",
+      "confidence": 2
+    },
+    {
+      "from": "relu activation function",
+      "to": "contextual relationships",
+      "confidence": 2
+    },
+    {
+      "from": "relu activation function",
+      "to": "deep learning",
+      "confidence": 2
+    },
+    {
+      "from": "relu activation function",
+      "to": "linear inputs",
       "confidence": 2
     },
     {
       "from": "relu activation function",
       "to": "neural network",
+      "confidence": 6
+    },
+    {
+      "from": "relu activation function",
+      "to": "training neural networks",
       "confidence": 2
     },
     {
@@ -2362,6 +3334,16 @@
       "from": "semantic representation",
       "to": "vector representation",
       "confidence": 2
+    },
+    {
+      "from": "semantic similarity",
+      "to": "linear algebra",
+      "confidence": 2
+    },
+    {
+      "from": "softmax",
+      "to": "basic probability",
+      "confidence": 3
     },
     {
       "from": "softmax",
@@ -2374,8 +3356,28 @@
       "confidence": 2
     },
     {
+      "from": "softmax normalization",
+      "to": "basic probability",
+      "confidence": 2
+    },
+    {
+      "from": "softmax normalization",
+      "to": "contextual word vectors",
+      "confidence": 2
+    },
+    {
       "from": "tokenization",
       "to": "high-dimensional vectors",
+      "confidence": 2
+    },
+    {
+      "from": "tokenization",
+      "to": "neural network",
+      "confidence": 2
+    },
+    {
+      "from": "training efficiency",
+      "to": "neural network",
       "confidence": 2
     },
     {
@@ -2386,11 +3388,21 @@
     {
       "from": "transformer",
       "to": "basic machine learning",
-      "confidence": 2
+      "confidence": 3
     },
     {
       "from": "transformer",
       "to": "contextual word vectors",
+      "confidence": 2
+    },
+    {
+      "from": "transformer",
+      "to": "language model",
+      "confidence": 2
+    },
+    {
+      "from": "transformer",
+      "to": "language modeling",
       "confidence": 2
     },
     {
@@ -2401,12 +3413,7 @@
     {
       "from": "transformer",
       "to": "neural network",
-      "confidence": 5
-    },
-    {
-      "from": "transformer",
-      "to": "sequence models",
-      "confidence": 2
+      "confidence": 8
     },
     {
       "from": "transformer",
@@ -2416,7 +3423,7 @@
     {
       "from": "weight adjustment",
       "to": "neural network",
-      "confidence": 2
+      "confidence": 3
     },
     {
       "from": "weight adjustment",
@@ -2424,9 +3431,24 @@
       "confidence": 2
     },
     {
-      "from": "word embeddings",
+      "from": "weight optimization",
+      "to": "cost function",
+      "confidence": 2
+    },
+    {
+      "from": "weights",
+      "to": "calculus",
+      "confidence": 2
+    },
+    {
+      "from": "weights",
       "to": "neural network",
       "confidence": 2
+    },
+    {
+      "from": "word embeddings",
+      "to": "neural network",
+      "confidence": 3
     },
     {
       "from": "word embeddings",

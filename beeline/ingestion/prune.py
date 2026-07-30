@@ -32,6 +32,7 @@ import argparse
 import json
 import re
 import shutil
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, List
@@ -41,6 +42,11 @@ PAYLOAD = HERE / "graph_payload.json"
 RAW = HERE / "graph_payload.raw.json"
 
 MIN_CONFIDENCE = 2
+
+# Cosine above which two concept names are treated as the same concept. Tuned by
+# inspecting the merge list: lower starts fusing genuinely distinct ideas
+# ("vectors" with "matrices"), higher leaves obvious synonyms apart.
+SIMILARITY_THRESHOLD = 0.86
 
 # Words that qualify a concept without changing which concept it is.
 MODIFIERS = {
@@ -70,6 +76,197 @@ def core(name: str) -> str:
     return " ".join(tokens) or name.lower()
 
 
+def _embedding_cache() -> Path:
+    path = HERE.parent / "data" / "cache" / "prune_embeddings.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def embed_names(names: List[str]) -> Dict[str, List[float]]:
+    """Embed concept names, caching so re-running costs nothing."""
+    cache_file = _embedding_cache()
+    cache: Dict[str, List[float]] = {}
+    if cache_file.exists():
+        try:
+            cache = json.loads(cache_file.read_text())
+        except json.JSONDecodeError:
+            cache = {}
+
+    missing = [n for n in names if n not in cache]
+    if missing:
+        sys.path.insert(0, str(HERE.parent / "graph"))
+        from store import embed, load_env  # noqa: E402
+
+        load_env()  # credentials live in the repo-root .env
+
+        for i in range(0, len(missing), 256):
+            chunk = missing[i : i + 256]
+            for name, vector in zip(chunk, embed(chunk)):
+                cache[name] = vector
+        cache_file.write_text(json.dumps(cache))
+    return {n: cache[n] for n in names if n in cache}
+
+
+def _decision_cache() -> Path:
+    path = HERE.parent / "data" / "cache" / "prune_merge_decisions.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def adjudicate(pairs: List[tuple]) -> List[tuple]:
+    """Decide which candidate pairs actually name the same concept.
+
+    Cosine alone cannot make this call. Measured on this corpus, genuine
+    synonyms score *below* genuine non-synonyms:
+
+        0.552  'tokens' ~ 'tokenization'          <- same concept
+        0.598  'embedding vectors' ~ 'word embeddings'  <- same concept
+        0.613  'vectors' ~ 'matrices'             <- different concepts
+
+    There is no cutoff that keeps the first two and rejects the third, so the
+    plan's "merge above ~0.85 cosine" is not merely mistuned, it is unachievable.
+    Lexical rules fail the same way: requiring a shared stem would fuse 'cost
+    function' with 'activation function'.
+
+    So embeddings do what they are good at -- proposing a short candidate list
+    out of thousands of pairs -- and a language model does what it is good at:
+    judging whether two names denote the same idea. Decisions are cached by pair,
+    so this is a one-off cost.
+    """
+    if not pairs:
+        return []
+
+    cache_file = _decision_cache()
+    decisions: Dict[str, bool] = {}
+    if cache_file.exists():
+        try:
+            decisions = json.loads(cache_file.read_text())
+        except json.JSONDecodeError:
+            decisions = {}
+
+    def key(a: str, b: str) -> str:
+        return " || ".join(sorted((a, b)))
+
+    unknown = [p for p in pairs if key(*p) not in decisions]
+    if unknown:
+        sys.path.insert(0, str(HERE.parent / "graph"))
+        from store import load_env  # noqa: E402
+
+        load_env()
+        from openai import OpenAI
+
+        client = OpenAI()
+        for i in range(0, len(unknown), 60):
+            batch = unknown[i : i + 60]
+            listing = [{"i": j, "a": a, "b": b} for j, (a, b) in enumerate(batch)]
+            try:
+                response = client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": (
+                                "These pairs of terms come from transcripts of a "
+                                "neural-network lecture series. For each pair, "
+                                "decide whether the two terms refer to the SAME "
+                                "underlying concept, such that a learner who "
+                                "understood one would have nothing left to learn "
+                                "from the other.\n\n"
+                                "Same: 'tokens'/'tokenization', "
+                                "'embedding vectors'/'word embeddings'.\n"
+                                "Different: 'vectors'/'matrices', "
+                                "'cost function'/'activation function' -- related, "
+                                "but each teaches something the other does not.\n\n"
+                                f"{json.dumps(listing, indent=1)}\n\n"
+                                'Return JSON {"same": [i, ...]} listing only the '
+                                "indices that are the same concept."
+                            ),
+                        }
+                    ],
+                    response_format={"type": "json_object"},
+                    timeout=60,
+                )
+                same = set(json.loads(response.choices[0].message.content).get("same", []))
+            except Exception as exc:
+                print(f"  merge adjudication failed ({exc}); keeping apart", file=sys.stderr)
+                same = set()
+            for j, (a, b) in enumerate(batch):
+                decisions[key(a, b)] = j in same
+        cache_file.write_text(json.dumps(decisions, indent=1, sort_keys=True))
+
+    return [p for p in pairs if decisions.get(key(*p))]
+
+
+def merge_by_similarity(
+    concepts: List[dict],
+    explained: Counter,
+    degree: Counter,
+    threshold: float,
+) -> Dict[str, str]:
+    """Fold near-synonymous concept names onto one survivor.
+
+    The extractor names the same idea several ways across chapters -- 'tokens'
+    and 'tokenization', 'matrices' and 'matrix operations', 'embedding vectors'
+    and 'word embeddings'. Stopword stripping cannot catch these, and left alone
+    they are worse than clutter: the corpus teaches one spelling and not the
+    other, so the untaught spelling surfaces as a *gap*. Beeline then reports
+    that it never teaches "tokens" three clips after teaching tokenization.
+
+    The survivor of each group is the name the corpus actually teaches most --
+    most explaining clips, then most edges, then shortest. Merging toward what is
+    taught is what turns these phantom gaps back into covered concepts.
+    """
+    names = [c["name"] for c in concepts]
+    vectors = embed_names(names)
+    usable = [n for n in names if n in vectors]
+
+    import math
+
+    norms = {}
+    for name in usable:
+        v = vectors[name]
+        norms[name] = math.sqrt(sum(x * x for x in v)) or 1.0
+
+    def strength(name: str) -> tuple:
+        return (explained[name], degree[name], -len(name), name)
+
+    candidates: List[tuple] = []
+    for i, a in enumerate(usable):
+        va, na = vectors[a], norms[a]
+        for b in usable[i + 1 :]:
+            vb = vectors[b]
+            dot = sum(x * y for x, y in zip(va, vb))
+            if dot / (na * norms[b]) >= threshold:
+                candidates.append((a, b))
+
+    same = adjudicate(candidates)
+
+    # Deliberately NOT a union-find. Transitive merging is catastrophic here:
+    # 'A is B' and 'B is C' and 'C is D' chained together once collapsed
+    # 'neural network', 'linear algebra', 'matrix multiplication', 'vectors' and
+    # 'embedding' into a single node called 'gradient descent'. Similarity is not
+    # transitive, and every pair in that chain was individually plausible.
+    #
+    # Instead each name may only fold into a survivor it was *directly* judged
+    # identical to. Ambiguous middles stay put, which is the safe failure: an
+    # unmerged duplicate is untidy, a wrongly merged concept is a wrong path.
+    partners: Dict[str, set] = defaultdict(set)
+    for a, b in same:
+        partners[a].add(b)
+        partners[b].add(a)
+
+    canonical: Dict[str, str] = {name: name for name in names}
+    for name in sorted(partners, key=strength, reverse=True):
+        if canonical[name] != name:  # already absorbed; cannot also be a survivor
+            continue
+        for other in sorted(partners[name], key=strength, reverse=True):
+            if other == name or canonical[other] != other:
+                continue
+            if strength(other) < strength(name) and not partners[other] - {name} - partners[name]:
+                canonical[other] = name
+    return canonical
+
+
 def build_canonical_map(concepts: List[dict]) -> Dict[str, str]:
     """Map every concept name onto the survivor for its core form.
 
@@ -88,7 +285,12 @@ def build_canonical_map(concepts: List[dict]) -> Dict[str, str]:
     return canonical
 
 
-def prune(payload: dict, min_confidence: int = MIN_CONFIDENCE) -> tuple[dict, dict]:
+def prune(
+    payload: dict,
+    min_confidence: int = MIN_CONFIDENCE,
+    use_embeddings: bool = True,
+    threshold: float = SIMILARITY_THRESHOLD,
+) -> tuple[dict, dict]:
     """Return (pruned payload, stats). Does not mutate the input."""
     p = json.loads(json.dumps(payload))
     before = {k: len(p.get(k, [])) for k in ("concepts", "requires", "explains")}
@@ -103,26 +305,59 @@ def prune(payload: dict, min_confidence: int = MIN_CONFIDENCE) -> tuple[dict, di
         if c["name"] != target:
             aliases[target].add(c["name"])
 
-    for e in p["requires"]:
-        e["from"] = canonical.get(e["from"], e["from"])
-        e["to"] = canonical.get(e["to"], e["to"])
-    for e in p["explains"]:
-        e["concept"] = canonical.get(e["concept"], e["concept"])
+    def remap() -> None:
+        for edge in p["requires"]:
+            edge["from"] = canonical.get(edge["from"], edge["from"])
+            edge["to"] = canonical.get(edge["to"], edge["to"])
+        for edge in p["explains"]:
+            edge["concept"] = canonical.get(edge["concept"], edge["concept"])
 
-    # 2. confidence floor. Self-edges can appear once names merge.
+    remap()
+
+    # 1b. merge near-synonyms by embedding similarity. This is the step that
+    #     stops the corpus reporting "tokens" as a concept it never teaches
+    #     three clips after it teaches tokenization.
+    merged_by_similarity = 0
+    if use_embeddings:
+        explained_now = Counter(e["concept"] for e in p["explains"])
+        degree_now: Counter = Counter()
+        for e in p["requires"]:
+            degree_now[e["from"]] += 1
+            degree_now[e["to"]] += 1
+
+        survivors_now = sorted({canonical[c["name"]] for c in p["concepts"]})
+        similar = merge_by_similarity(
+            [{"name": n} for n in survivors_now],
+            explained_now,
+            degree_now,
+            threshold,
+        )
+        merged_by_similarity = sum(1 for k, v in similar.items() if k != v)
+        for name, target in similar.items():
+            if name != target:
+                aliases[target].update(aliases.pop(name, set()) | {name})
+        for key in list(canonical):
+            canonical[key] = similar.get(canonical[key], canonical[key])
+        remap()
+
+    # 2. Collapse duplicate edges. Confidence counts how many chapters asserted
+    #    a prerequisite, so once two names become one concept their assertions
+    #    are assertions about the same edge and add up. Summing before the floor
+    #    is what lets genuine edges, split across synonyms, survive it.
+    summed: Dict[tuple, dict] = {}
+    for e in p["requires"]:
+        if e["from"] == e["to"]:  # self-edges appear once names merge
+            continue
+        key = (e["from"], e["to"])
+        if key in summed:
+            summed[key]["confidence"] += e["confidence"]
+        else:
+            summed[key] = dict(e)
     p["requires"] = [
         e
-        for e in p["requires"]
-        if e["confidence"] >= min_confidence and e["from"] != e["to"]
+        for e in sorted(summed.values(), key=lambda e: (e["from"], e["to"]))
+        if e["confidence"] >= min_confidence
     ]
-
-    # Merging can produce duplicate edges; keep the strongest of each pair.
-    strongest: Dict[tuple, dict] = {}
-    for e in p["requires"]:
-        key = (e["from"], e["to"])
-        if key not in strongest or e["confidence"] > strongest[key]["confidence"]:
-            strongest[key] = e
-    p["requires"] = sorted(strongest.values(), key=lambda e: (e["from"], e["to"]))
 
     # Same for EXPLAINS: one clip may now explain a merged concept twice.
     best: Dict[tuple, dict] = {}
@@ -164,6 +399,7 @@ def prune(payload: dict, min_confidence: int = MIN_CONFIDENCE) -> tuple[dict, di
         "before": before,
         "after": {k: len(p[k]) for k in ("concepts", "requires", "explains")},
         "merged": sum(1 for k, v in canonical.items() if k != v),
+        "merged_by_similarity": merged_by_similarity,
         "dropped_concepts": sorted(dropped),
         "min_confidence": min_confidence,
     }
@@ -173,6 +409,12 @@ def prune(payload: dict, min_confidence: int = MIN_CONFIDENCE) -> tuple[dict, di
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--min-confidence", type=int, default=MIN_CONFIDENCE)
+    ap.add_argument("--threshold", type=float, default=SIMILARITY_THRESHOLD)
+    ap.add_argument(
+        "--no-embeddings",
+        action="store_true",
+        help="skip similarity merging (no OpenAI calls)",
+    )
     ap.add_argument("--payload", default=str(PAYLOAD))
     ap.add_argument(
         "--dry-run",
@@ -189,13 +431,19 @@ def main() -> int:
     source = raw if raw.exists() else path
     payload = json.loads(source.read_text())
 
-    pruned, stats = prune(payload, args.min_confidence)
+    pruned, stats = prune(
+        payload,
+        args.min_confidence,
+        use_embeddings=not args.no_embeddings,
+        threshold=args.threshold,
+    )
 
     b, a = stats["before"], stats["after"]
     print(f"min_confidence = {stats['min_confidence']}")
     for k in ("concepts", "requires", "explains"):
         print(f"  {k:9} {b[k]:>5} -> {a[k]:>5}")
-    print(f"  merged variants: {stats['merged']}")
+    print(f"  merged variants: {stats['merged']} "
+          f"({stats['merged_by_similarity']} by similarity)")
     print(f"  dropped concepts: {len(stats['dropped_concepts'])}")
 
     if args.dry_run:

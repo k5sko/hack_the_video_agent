@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 from engine import (
+    MIN_COVERAGE_SCORE,
     Clip,
     Concept,
     Explains,
@@ -424,12 +425,20 @@ class Neo4jStore:
             return [exact[0]["name"]]
 
         vector = embed([query])[0]
+        # Only consider concepts the corpus can actually teach. The index will
+        # happily return the nearest *name*, and some concepts exist only as
+        # prerequisites nothing explains -- resolving "how does a network learn"
+        # to 'training neural networks' produced a perfectly reasonable target
+        # and an empty playlist. A target we cannot teach is not an answer.
         rows = self._read(
             "CALL db.index.vector.queryNodes($index, $k, $vec) "
-            "YIELD node, score RETURN node.name AS name, score ORDER BY score DESC",
+            "YIELD node, score "
+            "WHERE EXISTS { (:Clip)-[e:EXPLAINS]->(node) WHERE e.score >= $floor } "
+            "RETURN node.name AS name, score ORDER BY score DESC",
             index=VECTOR_INDEX,
             k=self.top_k,
             vec=vector,
+            floor=MIN_COVERAGE_SCORE,
         )
         if not rows:
             return []

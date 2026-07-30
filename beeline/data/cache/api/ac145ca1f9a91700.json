@@ -1,0 +1,27 @@
+{
+  "query": "attention",
+  "mode": "search_only",
+  "target_concepts": [
+    "attention"
+  ],
+  "known": [],
+  "needed_concepts": [],
+  "playlist": [
+    {
+      "clip_id": "v5_c3",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c3.mp4",
+      "start_seconds": 338.0,
+      "end_seconds": 500.0,
+      "covers": [],
+      "why": "The moment where this is discussed. What it assumes is unknown.",
+      "source": "corpus"
+    }
+  ],
+  "gaps": [],
+  "total_corpus_seconds": 8302.0,
+  "watch_seconds": 162.0,
+  "narration": "The current moment is visible, but what it assumes, what you can skip, and what order to watch cannot be determined."
+}
