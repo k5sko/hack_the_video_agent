@@ -1,16 +1,114 @@
 {
-  "query": "training neural networks",
+  "query": "layered neural networks",
   "mode": "graph",
   "target_concepts": [
-    "training neural networks"
+    "layered neural networks"
   ],
   "known": [],
-  "needed_concepts": [],
-  "playlist": [],
+  "needed_concepts": [
+    "linear algebra",
+    "linear transformation",
+    "token vectors",
+    "vector representation",
+    "neural network",
+    "feature detection",
+    "layered neural networks"
+  ],
+  "playlist": [
+    {
+      "clip_id": "v1_c5",
+      "video_id": "V1",
+      "video_title": "But what is a neural network?",
+      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "media_url": "/media/v1_c5.mp4",
+      "start_seconds": 747.0,
+      "end_seconds": 960.0,
+      "covers": [
+        "linear algebra"
+      ],
+      "why": "You need to learn linear algebra because it is essential for understanding the mathematical principles that underpin neural networks.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v7_c7",
+      "video_id": "V7",
+      "video_title": "How might LLMs store facts",
+      "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+      "media_url": "/media/v7_c7.mp4",
+      "start_seconds": 606.0,
+      "end_seconds": 732.0,
+      "covers": [
+        "linear transformation"
+      ],
+      "why": "By understanding linear transformations, you will gain insight into how data can be manipulated and represented in different forms, a key concept in machine learning.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v5_c11",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c11.mp4",
+      "start_seconds": 1108.0,
+      "end_seconds": 1205.0,
+      "covers": [
+        "token vectors"
+      ],
+      "why": "Token vectors are crucial as they relate to how data is encoded for processing in models like GPT, helping you understand the input structure for neural networks.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v5_c2",
+      "video_id": "V5",
+      "video_title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "media_url": "/media/v5_c2.mp4",
+      "start_seconds": 154.0,
+      "end_seconds": 338.0,
+      "covers": [
+        "vector representation"
+      ],
+      "why": "Learning about vector representation will help you visualize how information is organized within a neural network, which is critical for grasping more complex structures later on.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v2_c1",
+      "video_id": "V2",
+      "video_title": "Gradient descent, how neural networks learn",
+      "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "media_url": "/media/v2_c1.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 45.0,
+      "covers": [
+        "neural network"
+      ],
+      "why": "An introduction to neural networks will provide you a basic overview of how these models function, which is foundational for deeper learning about their complexities.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v1_c3",
+      "video_id": "V1",
+      "video_title": "But what is a neural network?",
+      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "media_url": "/media/v1_c3.mp4",
+      "start_seconds": 338.0,
+      "end_seconds": 593.0,
+      "covers": [
+        "feature detection",
+        "layered neural networks"
+      ],
+      "why": "Studying feature detection and layered neural networks will enable you to understand how neural networks learn and recognize patterns, culminating in a full picture of their capabilities.",
+      "source": "corpus"
+    }
+  ],
   "gaps": [
-    "training neural networks"
+    "basic machine learning",
+    "digit recognition",
+    "factual knowledge representation",
+    "function composition",
+    "neural network layers"
   ],
   "total_corpus_seconds": 8302.0,
-  "watch_seconds": 0.0,
-  "narration": "This learning path is designed to guide you through the essential concepts needed to effectively train neural networks. By following this sequence, you will build a solid foundation that will help you understand more complex ideas and techniques in neural network training."
+  "watch_seconds": 920.0,
+  "narration": "This learning path will guide you through the foundational concepts necessary to understand layered neural networks. Each step builds on the previous one, leading to a comprehensive understanding of how neural networks operate. By following this structured sequence, you will develop the skills needed to grasp more complex ideas in machine learning and artificial intelligence."
 }

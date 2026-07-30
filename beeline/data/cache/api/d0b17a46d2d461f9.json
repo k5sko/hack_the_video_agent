@@ -1,19 +1,34 @@
 {
-  "query": "training neural networks",
+  "query": "training process",
   "mode": "graph",
   "target_concepts": [
-    "training neural networks"
+    "training process"
   ],
   "known": [
     "linear algebra",
     "neural network"
   ],
-  "needed_concepts": [],
-  "playlist": [],
-  "gaps": [
-    "training neural networks"
+  "needed_concepts": [
+    "training process"
   ],
+  "playlist": [
+    {
+      "clip_id": "v2_c4",
+      "video_id": "V2",
+      "video_title": "Gradient descent, how neural networks learn",
+      "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "media_url": "/media/v2_c4.mp4",
+      "start_seconds": 135.0,
+      "end_seconds": 185.0,
+      "covers": [
+        "training process"
+      ],
+      "why": "Understanding the training process at this point is essential because it explains how neural networks learn and adapt, which will be foundational as you apply your knowledge to build and refine these models in the future.",
+      "source": "corpus"
+    }
+  ],
+  "gaps": [],
   "total_corpus_seconds": 8302.0,
-  "watch_seconds": 0.0,
-  "narration": "In this learning path, you will delve into the intricacies of training neural networks, building upon your existing knowledge of linear algebra and the basic structure of neural networks. Each step in this order is designed to lay the groundwork necessary for effectively understanding how to adjust and optimize neural networks during training."
+  "watch_seconds": 50.0,
+  "narration": "In this learning path, you will delve into the training process of neural networks, which will give you a deeper understanding of how these models improve through experience. This knowledge is fundamental for effectively utilizing neural networks in practical applications. You'll start with the key concept of gradient descent, which is crucial for model optimization."
 }

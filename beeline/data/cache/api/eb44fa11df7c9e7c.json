@@ -32,7 +32,7 @@
       "covers": [
         "query vectors"
       ],
-      "why": "Understanding query vectors is crucial because they are the basis for how attention scores are computed, which is fundamental for the attention mechanism.",
+      "why": "Understanding query vectors is crucial because it lays the foundation for how attention determines which parts of the input to focus on later.",
       "source": "corpus"
     },
     {
@@ -46,7 +46,7 @@
       "covers": [
         "value vectors"
       ],
-      "why": "Value vectors are needed next as they carry the information from the input that will be combined with the attention scores, allowing the model to focus on relevant data.",
+      "why": "Grasping value vectors is necessary, as they represent the information that will be blended together to produce outputs based on the attention scores derived from query vectors.",
       "source": "corpus"
     },
     {
@@ -60,7 +60,7 @@
       "covers": [
         "vector representation"
       ],
-      "why": "Vector representation is essential for grasping how the model encodes information, setting the stage to visualize how transformers operate.",
+      "why": "Learning about vector representation will help you visualize how information is encoded and processed in transformer models, making subsequent concepts easier to grasp.",
       "source": "corpus"
     },
     {
@@ -74,21 +74,7 @@
       "covers": [
         "matrix multiplication"
       ],
-      "why": "Matrix multiplication is a necessary operation in the transformer architecture, facilitating the combination of different vectors in a high-dimensional space.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v6_c3",
-      "video_id": "V6",
-      "video_title": "Attention in transformers, step-by-step",
-      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
-      "media_url": "/media/v6_c3.mp4",
-      "start_seconds": 61.0,
-      "end_seconds": 102.0,
-      "covers": [
-        "contextual word vectors"
-      ],
-      "why": "Contextual word vectors are introduced to illustrate how words gain meaning based on their context in the input, which is vital for dynamic understanding in language models.",
+      "why": "Matrix multiplication is a key operation for applying attention mechanisms, enabling you to combine vectors in a way that scales to the high dimensionality of the data.",
       "source": "corpus"
     },
     {
@@ -102,7 +88,7 @@
       "covers": [
         "high-dimensional vectors"
       ],
-      "why": "High-dimensional vectors provide insight into the complexity of representation in transformers, reinforcing the necessity of understanding how these vectors interact to form meaning.",
+      "why": "Familiarizing yourself with high-dimensional vectors is essential, as the representation of information in transformers relies heavily on manipulating these complex structures.",
       "source": "corpus"
     },
     {
@@ -117,7 +103,21 @@
         "word embeddings",
         "tokenization"
       ],
-      "why": "Word embeddings and tokenization are foundational concepts that allow you to see how text is converted into a numerical format usable by the model, key for understanding input preparation.",
+      "why": "Understanding word embeddings and tokenization is fundamental, as they form the basis for converting textual data into a numerical format suitable for attention mechanisms.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v6_c3",
+      "video_id": "V6",
+      "video_title": "Attention in transformers, step-by-step",
+      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "media_url": "/media/v6_c3.mp4",
+      "start_seconds": 61.0,
+      "end_seconds": 102.0,
+      "covers": [
+        "contextual word vectors"
+      ],
+      "why": "Developing a comprehension of contextual word vectors will enhance your understanding of how words can change meaning based on their context, which is pivotal for attention operations.",
       "source": "corpus"
     },
     {
@@ -131,7 +131,7 @@
       "covers": [
         "transformer"
       ],
-      "why": "The transformer framework itself is detailed here, paving the way for your understanding of how the attention mechanism operates within a larger architecture.",
+      "why": "Learning about transformers will provide an overview of the architecture that employs attention, connecting earlier concepts to the overall system.",
       "source": "corpus"
     },
     {
@@ -145,7 +145,7 @@
       "covers": [
         "attention"
       ],
-      "why": "Finally, by learning about attention, you can see how all previously discussed components work together to enable the model to prioritize and extract significant information from the input data.",
+      "why": "Finally, exploring attention itself will synthesize all your previous knowledge and explain how it optimally selects elements from sequences to enhance model performance.",
       "source": "corpus"
     }
   ],
@@ -165,5 +165,5 @@
   ],
   "total_corpus_seconds": 8302.0,
   "watch_seconds": 934.0,
-  "narration": "This learning path is designed to help you understand attention mechanisms within transformers step-by-step. Each concept builds on the previous one, progressively revealing how these elements work together in advanced language models like GPT."
+  "narration": "This learning path is designed to guide you through the essential concepts of attention mechanisms used in transformers. Each item builds on the previous one, ensuring a coherent understanding of how attention functions within the architecture of language models."
 }

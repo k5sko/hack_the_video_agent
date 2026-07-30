@@ -246,9 +246,16 @@ export default function App() {
           />
 
           {path.gaps.length > 0 && !selected && (
+            /* Naming all fifteen reads as a broken corpus rather than an honest
+               admission. Lead with a count and a few examples; every gap is
+               still on the graph in red for anyone who wants the full list. */
             <div className="gap-banner">
-              <strong>{path.gaps.join(", ")}</strong> — required, but never
-              explained in this corpus.
+              <strong>
+                {path.gaps.length} {path.gaps.length === 1 ? "concept" : "concepts"}
+              </strong>{" "}
+              your target needs are never explained in this corpus — {" "}
+              {path.gaps.slice(0, 3).join(", ")}
+              {path.gaps.length > 3 && ` and ${path.gaps.length - 3} more`}.
             </div>
           )}
 

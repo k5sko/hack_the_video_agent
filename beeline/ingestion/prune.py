@@ -255,6 +255,15 @@ def merge_by_similarity(
         partners[a].add(b)
         partners[b].add(a)
 
+    # A name folds into a survivor only when it was directly judged identical to
+    # it AND shares that survivor's whole neighbourhood -- effectively requiring
+    # the little cluster to agree, not just one pair.
+    #
+    # A looser rule ("merge into your strongest partner") was tried and reverted.
+    # It merged a few more synonyms but took REQUIRES from 181 edges to 230,
+    # because summing confidence across newly merged names lifted junk like
+    # 'derivative requires neural network' over the floor -- and that promptly
+    # produced ordering violations. Fewer, safer merges make a better graph.
     canonical: Dict[str, str] = {name: name for name in names}
     for name in sorted(partners, key=strength, reverse=True):
         if canonical[name] != name:  # already absorbed; cannot also be a survivor
