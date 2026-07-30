@@ -1,5 +1,14 @@
 # Deploying Beeline to AWS
 
+## Live deployment
+
+    App      https://beeline-633626894967-us-west-2.s3.us-west-2.amazonaws.com/app/index.html
+    API      https://siy3v64bjw.us-west-2.awsapprunner.com
+    Region   us-west-2 (Oregon)
+
+us-west-2 rather than us-west-1 despite being closer to SF: App Runner has no
+endpoint in N. California at all. Latency difference is a few milliseconds.
+
 The shape, and why:
 
 | Piece | Where | Why |
