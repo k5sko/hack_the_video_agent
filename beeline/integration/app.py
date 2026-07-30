@@ -235,14 +235,61 @@ def run_path_agent(query: str, known: List[str]) -> Optional[PathResult]:
 def search_only(query: str) -> PathResult:
     """What a plain moment-search gives you: one clip, and no idea what it assumes.
 
-    Uses TwelveLabs when configured, otherwise falls back to the strongest single
-    clip for the query in the local graph. Both produce the same shape, because
-    the point is the *shape*: one moment, coverage unknown, order unknown.
+    Runs a real TwelveLabs Marengo search over the raw query. The comparison is
+    only worth putting on screen if the losing side is genuine -- a "search" that
+    quietly consulted the prerequisite graph to pick its clip would be a
+    strawman, and the point survives only because this one really is search.
+
+    Falls back to the strongest single clip in the local graph if TwelveLabs is
+    unreachable, so the toggle still demonstrates the shape offline: one moment,
+    coverage unknown, order unknown.
     """
     total = float(sum(v.duration for v in store().videos()))
     segment: Optional[ClipSegment] = None
 
     full = build_path(query, [], store())
+
+    try:
+        import tlsearch
+
+        hit = tlsearch.search(query)
+        if hit:
+            clip_id = tlsearch.cut_moment(hit["video_id"], hit["start"], hit["end"])
+            if clip_id:
+                video = {v.id: v for v in store().videos()}.get(hit["video_id"])
+                return PathResult(
+                    query=query,
+                    mode="search_only",
+                    target_concepts=full.target_concepts,
+                    known=[],
+                    needed_concepts=[],
+                    playlist=[
+                        ClipSegment(
+                            clip_id=clip_id,
+                            video_id=hit["video_id"],
+                            video_title=video.title if video else hit["video_id"],
+                            youtube_url=video.youtube_url if video else "",
+                            media_url=f"/media/{clip_id}.mp4",
+                            start_seconds=hit["start"],
+                            end_seconds=hit["end"],
+                            covers=[],
+                            why=(
+                                "The moment TwelveLabs matched for this wording. "
+                                "What it assumes is unknown."
+                            ),
+                        )
+                    ],
+                    gaps=[],
+                    total_corpus_seconds=total,
+                    watch_seconds=hit["end"] - hit["start"],
+                    narration=(
+                        "The current moment is visible, but what it assumes, what "
+                        "you can skip, and what order to watch cannot be determined."
+                    ),
+                )
+    except Exception as exc:
+        print(f"  twelvelabs search unavailable: {exc}", file=sys.stderr)
+
     if full.playlist:
         best = max(
             full.playlist,

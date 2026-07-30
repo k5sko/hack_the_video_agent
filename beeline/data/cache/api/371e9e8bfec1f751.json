@@ -26,7 +26,7 @@
       "covers": [
         "linear algebra"
       ],
-      "why": "You need to learn linear algebra because it is essential for understanding the mathematical principles that underpin neural networks.",
+      "why": "Understanding linear algebra is crucial because it provides the mathematical foundation necessary for grasping how neural networks operate.",
       "source": "corpus"
     },
     {
@@ -40,7 +40,7 @@
       "covers": [
         "linear transformation"
       ],
-      "why": "By understanding linear transformations, you will gain insight into how data can be manipulated and represented in different forms, a key concept in machine learning.",
+      "why": "Linear transformations are a key concept that will help you understand how data is manipulated within neural networks, which is essential for learning about their structure.",
       "source": "corpus"
     },
     {
@@ -54,7 +54,7 @@
       "covers": [
         "token vectors"
       ],
-      "why": "Token vectors are crucial as they relate to how data is encoded for processing in models like GPT, helping you understand the input structure for neural networks.",
+      "why": "Token vectors introduce you to how data is represented in a way that machines can understand, setting the stage for exploring more advanced models like GPT.",
       "source": "corpus"
     },
     {
@@ -68,7 +68,7 @@
       "covers": [
         "vector representation"
       ],
-      "why": "Learning about vector representation will help you visualize how information is organized within a neural network, which is critical for grasping more complex structures later on.",
+      "why": "Learning about vector representation solidifies your understanding of how information is processed in neural networks, a necessary precursor to comprehending their architecture.",
       "source": "corpus"
     },
     {
@@ -82,7 +82,7 @@
       "covers": [
         "neural network"
       ],
-      "why": "An introduction to neural networks will provide you a basic overview of how these models function, which is foundational for deeper learning about their complexities.",
+      "why": "Familiarity with neural networks introduces you directly to the subject, allowing you to learn about the mechanics of how they learn through techniques like gradient descent.",
       "source": "corpus"
     },
     {
@@ -97,7 +97,7 @@
         "feature detection",
         "layered neural networks"
       ],
-      "why": "Studying feature detection and layered neural networks will enable you to understand how neural networks learn and recognize patterns, culminating in a full picture of their capabilities.",
+      "why": "Finally, diving into feature detection and layered neural networks ties together all your previous knowledge, as it explains how different layers in a network perform specific tasks in the learning process.",
       "source": "corpus"
     }
   ],
@@ -110,5 +110,5 @@
   ],
   "total_corpus_seconds": 8302.0,
   "watch_seconds": 920.0,
-  "narration": "This learning path will guide you through the foundational concepts necessary to understand layered neural networks. Each step builds on the previous one, leading to a comprehensive understanding of how neural networks operate. By following this structured sequence, you will develop the skills needed to grasp more complex ideas in machine learning and artificial intelligence."
+  "narration": "This learning path is designed to provide you with a foundational understanding of the concepts leading up to layered neural networks. Each step builds on the previous one, ensuring you grasp essential principles before delving into more complex topics."
 }

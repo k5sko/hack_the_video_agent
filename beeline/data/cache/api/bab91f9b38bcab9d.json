@@ -31,7 +31,7 @@
       "covers": [
         "derivative"
       ],
-      "why": "Understanding the derivative is crucial as it enables you to grasp how functions change, which is a fundamental concept in calculus used in backpropagation.",
+      "why": "You need to understand the concept of a derivative to grasp how changes in inputs affect outputs in backpropagation.",
       "source": "corpus"
     },
     {
@@ -45,7 +45,7 @@
       "covers": [
         "forward propagation"
       ],
-      "why": "Learning about forward propagation is necessary because it lays the groundwork for understanding what happens during backpropagation and what it aims to achieve in neural networks.",
+      "why": "Forward propagation is the first step in understanding how neural networks process information, and it sets the stage for understanding backpropagation.",
       "source": "corpus"
     },
     {
@@ -59,7 +59,7 @@
       "covers": [
         "linear algebra"
       ],
-      "why": "Studying linear algebra will provide you with the mathematical framework needed to understand how neural networks operate, including their structure and function.",
+      "why": "Linear algebra is central to understanding how neural networks operate, including how data is represented and manipulated within these systems.",
       "source": "corpus"
     },
     {
@@ -73,7 +73,7 @@
       "covers": [
         "linear transformation"
       ],
-      "why": "Grasping linear transformation concepts is important, as they help you understand how neural networks manipulate data and represent relationships between features.",
+      "why": "Linear transformation is important for understanding how input data is transformed as it moves through the layers of a neural network.",
       "source": "corpus"
     },
     {
@@ -87,7 +87,7 @@
       "covers": [
         "mnist dataset"
       ],
-      "why": "Familiarizing yourself with the MNIST dataset will introduce you to a common benchmark for evaluating neural networks and give context to how they learn from data.",
+      "why": "The MNIST dataset provides a concrete example of how neural networks learn through gradient descent, making it easier to visualize the learning process.",
       "source": "corpus"
     },
     {
@@ -101,7 +101,7 @@
       "covers": [
         "token vectors"
       ],
-      "why": "Exploring token vectors is essential for understanding how data can be represented in neural networks, especially in the context of transformer models.",
+      "why": "Token vectors are crucial for understanding how information is represented in models like GPT, which will help you later understand how these models function during training.",
       "source": "corpus"
     },
     {
@@ -115,7 +115,7 @@
       "covers": [
         "vector representation"
       ],
-      "why": "Learning about vector representation is important as it deepens your understanding of how information is encoded and processed in neural networks, setting the stage for later discussions on backpropagation.",
+      "why": "Vector representation is important for visualizing how data is handled within neural networks, which will clarify the concept of backpropagation later on.",
       "source": "corpus"
     },
     {
@@ -130,7 +130,7 @@
         "neural network",
         "activation function"
       ],
-      "why": "Understanding neural networks and activation functions is necessary to appreciate the mechanics of how a network processes inputs and generates outputs, which is central to backpropagation.",
+      "why": "Understanding neural networks and activation functions is essential for tying together how data flows and how decisions are made within the network during backpropagation.",
       "source": "corpus"
     },
     {
@@ -145,7 +145,7 @@
         "cost function",
         "gradient descent"
       ],
-      "why": "Studying cost functions and gradient descent is vital since these concepts directly relate to how backpropagation minimizes error in neural networks by adjusting parameters based on feedback from the output.",
+      "why": "Cost functions and gradient descent are fundamental concepts that explain how a neural network improves its predictions, leading directly into the mechanics of backpropagation.",
       "source": "corpus"
     },
     {
@@ -159,7 +159,7 @@
       "covers": [
         "backpropagation"
       ],
-      "why": "Finally, learning about backpropagation will pull together all the previous concepts, allowing you to understand how neural networks learn and improve their performance through this critical algorithm.",
+      "why": "With the earlier concepts in place, you can now understand backpropagation, which is the method of updating the weights in a neural network based on the derivatives computed earlier.",
       "source": "corpus"
     }
   ],
@@ -177,5 +177,5 @@
   ],
   "total_corpus_seconds": 8302.0,
   "watch_seconds": 1172.0,
-  "narration": "This learning path will guide you through the essential concepts leading up to understanding backpropagation in neural networks. Each step builds on the previous one, ensuring you have a solid foundation in calculus, linear algebra, and machine learning principles necessary for comprehending how backpropagation works in practice."
+  "narration": "This learning path leads you through the fundamental concepts required to understand backpropagation. Each step builds on the previous one, introducing key ideas and terminology that are essential for grasping how neural networks learn and optimize parameters."
 }

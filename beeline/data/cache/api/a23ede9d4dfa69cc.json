@@ -29,7 +29,7 @@
       "covers": [
         "activation function"
       ],
-      "why": "Understanding activation functions is crucial because they dictate how neurons respond to inputs, setting the stage for the calculations that follow in backpropagation.",
+      "why": "Understanding the activation function is crucial because it directly influences how the output of a neural network is calculated, laying the groundwork for grasping backpropagation.",
       "source": "corpus"
     },
     {
@@ -43,7 +43,7 @@
       "covers": [
         "derivative"
       ],
-      "why": "Learning about derivatives is important as they are used to compute the gradients necessary for updating the weights during backpropagation.",
+      "why": "Learning about derivatives is fundamental since you'll need to apply derivative concepts to understand how changes in weights affect the network's output during backpropagation.",
       "source": "corpus"
     },
     {
@@ -57,7 +57,7 @@
       "covers": [
         "forward propagation"
       ],
-      "why": "Forward propagation introduces you to how data moves through the neural network, allowing you to grasp what backpropagation is correcting based on those outputs.",
+      "why": "Forward propagation explains how inputs are processed to generate an output, providing context for what backpropagation aims to improve in terms of reducing errors.",
       "source": "corpus"
     },
     {
@@ -72,7 +72,7 @@
         "cost function",
         "gradient descent"
       ],
-      "why": "Exploring cost functions and gradient descent connects the forward propagation with backpropagation; it helps you understand what the goal of backpropagation is: minimizing the error.",
+      "why": "The cost function and gradient descent are vital because they define how performance is evaluated and how adjustments are made, which is essential for understanding the purpose of backpropagation.",
       "source": "corpus"
     },
     {
@@ -86,7 +86,7 @@
       "covers": [
         "mnist dataset"
       ],
-      "why": "Familiarity with the MNIST dataset provides a practical context for applying backpropagation, demonstrating how neural networks learn from real data.",
+      "why": "Familiarity with the MNIST dataset is important as it provides a concrete example for applying backpropagation in a real-world scenario, making the concepts more relatable.",
       "source": "corpus"
     },
     {
@@ -100,7 +100,7 @@
       "covers": [
         "backpropagation"
       ],
-      "why": "Finally, by learning about backpropagation itself, you'll see how all the concepts you've built upon come together to update the network's weights and improve performance.",
+      "why": "Finally, exploring backpropagation itself brings together all the prior knowledge to show you how to optimize the neural network's weights based on the gradient descent approach.",
       "source": "corpus"
     }
   ],
@@ -116,5 +116,5 @@
   ],
   "total_corpus_seconds": 8302.0,
   "watch_seconds": 552.0,
-  "narration": "This learning path takes you through the essential concepts needed to understand backpropagation in neural networks. It builds a strong foundation step-by-step, starting from activation functions to the specific mechanics of backpropagation itself."
+  "narration": "This learning path will help you understand backpropagation by breaking down the key concepts that underlie it. Each step builds on the previous ones, ensuring you have a solid grasp of the essential ideas and techniques."
 }

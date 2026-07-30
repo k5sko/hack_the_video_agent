@@ -33,7 +33,7 @@
       "covers": [
         "linear algebra"
       ],
-      "why": "You need to grasp linear algebra as it forms the mathematical foundation for various operations in neural networks.",
+      "why": "You need to understand linear algebra because it provides the mathematical framework for manipulating data in machine learning.",
       "source": "corpus"
     },
     {
@@ -47,7 +47,7 @@
       "covers": [
         "linear transformation"
       ],
-      "why": "Understanding linear transformation is essential, as it helps you see how data can be mapped to different spaces, which is crucial for storing knowledge in models.",
+      "why": "Learning about linear transformations is essential as it helps you comprehend how data can be transformed and projected in different vector spaces, which is crucial for understanding further concepts like embeddings.",
       "source": "corpus"
     },
     {
@@ -61,7 +61,7 @@
       "covers": [
         "query vectors"
       ],
-      "why": "Learning about query vectors is necessary to understand how attention mechanisms select relevant information during processing.",
+      "why": "Familiarizing yourself with query vectors is critical because they play a key role in attention mechanisms by helping the model determine how much focus to place on different parts of the input data.",
       "source": "corpus"
     },
     {
@@ -75,7 +75,7 @@
       "covers": [
         "token vectors"
       ],
-      "why": "Token vectors are important for understanding how individual tokens are represented and manipulated within language models.",
+      "why": "Understanding token vectors is important as they represent discrete pieces of data (like words) and set the stage for seeing how these tokens interact within transformer architectures.",
       "source": "corpus"
     },
     {
@@ -89,7 +89,7 @@
       "covers": [
         "value vectors"
       ],
-      "why": "Value vectors play a critical role in how attention mechanisms aggregate and utilize information from different tokens in a sequence.",
+      "why": "Value vectors are pivotal since they hold the information that is passed on to the output of the attention mechanism, directly relating to how models generate responses.",
       "source": "corpus"
     },
     {
@@ -103,7 +103,7 @@
       "covers": [
         "vector representation"
       ],
-      "why": "Vector representation is key to comprehending how data is encoded in neural networks, enabling you to work with complex inputs and outputs.",
+      "why": "Learning vector representation is necessary because it encapsulates how various forms of data (like text) are mathematically represented for processing in neural networks.",
       "source": "corpus"
     },
     {
@@ -117,7 +117,7 @@
       "covers": [
         "neural network"
       ],
-      "why": "A basic grasp of neural networks will introduce you to the main architecture that leverages attention mechanisms for learning and inference.",
+      "why": "Introducing neural networks at this point is vital since you'll learn the framework that underpins how transformers operate and how they learn from data through techniques like gradient descent.",
       "source": "corpus"
     },
     {
@@ -131,7 +131,7 @@
       "covers": [
         "matrix multiplication"
       ],
-      "why": "Matrix multiplication is a foundational operation you will frequently encounter when working with vectors and neural network layers, facilitating transformations of data.",
+      "why": "Understanding matrix multiplication is crucial because it is the backbone of how vectors are combined and processed in neural networks, particularly in transformers.",
       "source": "corpus"
     },
     {
@@ -145,7 +145,7 @@
       "covers": [
         "high-dimensional vectors"
       ],
-      "why": "High-dimensional vectors help you understand how complex relationships and features are represented in models, which is critical for grasping attention.",
+      "why": "High-dimensional vectors are necessary to grasp because they enable complex data representation and allow models to capture intricate relationships within the data.",
       "source": "corpus"
     },
     {
@@ -160,7 +160,7 @@
         "word embeddings",
         "tokenization"
       ],
-      "why": "Word embeddings provide insight into how language is processed, allowing for the representation of words in a way that captures their meanings.",
+      "why": "You need to learn about word embeddings and tokenization next because they provide insight into how words are represented and processed in the model, impacting how inputs are understood.",
       "source": "corpus"
     },
     {
@@ -174,7 +174,7 @@
       "covers": [
         "contextual word vectors"
       ],
-      "why": "Contextual word vectors extend your understanding by showing how word meanings can change based on context, which is crucial for attention mechanisms.",
+      "why": "Learning about contextual word vectors is key as they help in understanding how word meanings can change depending on context, which is fundamental for tasks like translation.",
       "source": "corpus"
     },
     {
@@ -188,7 +188,7 @@
       "covers": [
         "transformer"
       ],
-      "why": "Learning about transformers introduces you to the architecture that employs attention, making it vital for understanding subsequent lessons on attention itself.",
+      "why": "Understanding what a transformer is will tie together previous concepts and clarify how attention mechanisms work within this specific architecture.",
       "source": "corpus"
     },
     {
@@ -202,7 +202,7 @@
       "covers": [
         "attention"
       ],
-      "why": "Finally, the concept of attention is central to how transformers prioritize different parts of the input, unlocking the understanding of how these models function in tasks like translation and context management.",
+      "why": "Finally, diving into attention is critical as it is the core concept that determines how models prioritize information, impacting performance in tasks like language understanding and generation.",
       "source": "corpus"
     }
   ],
@@ -225,5 +225,5 @@
   ],
   "total_corpus_seconds": 8302.0,
   "watch_seconds": 1415.0,
-  "narration": "This learning path takes you through foundational concepts necessary for understanding attention mechanisms in neural networks, particularly in transformers. Each step builds upon the previous one, guiding you from basic mathematical concepts to more complex ideas relevant for large language models."
+  "narration": "In this learning path, you'll progress through essential concepts that build a foundation for understanding attention in neural networks, especially in transformers. Each step introduces key components that will help you grasp how language models function and how they process information."
 }

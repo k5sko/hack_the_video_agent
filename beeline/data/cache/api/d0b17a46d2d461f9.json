@@ -23,12 +23,12 @@
       "covers": [
         "training process"
       ],
-      "why": "Understanding the training process at this point is essential because it explains how neural networks learn and adapt, which will be foundational as you apply your knowledge to build and refine these models in the future.",
+      "why": "Understanding the training process is essential because it provides the foundation for how neural networks adjust their parameters to reduce errors, which is crucial for grasping more advanced concepts of model optimization later.",
       "source": "corpus"
     }
   ],
   "gaps": [],
   "total_corpus_seconds": 8302.0,
   "watch_seconds": 50.0,
-  "narration": "In this learning path, you will delve into the training process of neural networks, which will give you a deeper understanding of how these models improve through experience. This knowledge is fundamental for effectively utilizing neural networks in practical applications. You'll start with the key concept of gradient descent, which is crucial for model optimization."
+  "narration": "In this learning path, you will explore the training process of neural networks. Given your background in linear algebra and understanding of neural networks, this training process will illuminate how these models learn and improve over time through techniques like gradient descent."
 }
