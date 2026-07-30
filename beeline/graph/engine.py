@@ -259,29 +259,104 @@ def closure(
 # --------------------------------------------------------------------------- #
 
 
+# A clip whose EXPLAINS score is below this does not *teach* the concept, it
+# merely mentions it. Letting a mention count as coverage is how a playlist ends
+# up made of title cards.
+MIN_COVERAGE_SCORE = 0.75
+
+# Even above the floor, only clips close to the best available explanation of a
+# concept may cover it. Without this, a 0.80 aside beats the 0.95 chapter that
+# actually explains the thing, purely by being shorter.
+SCORE_TOLERANCE = 0.10
+
+
+def qualified_coverage(
+    needed: Iterable[str],
+    explains: Iterable[Explains],
+    min_score: float = MIN_COVERAGE_SCORE,
+    tolerance: float = SCORE_TOLERANCE,
+) -> Dict[str, Dict[str, float]]:
+    """{clip_id: {concept: score}} restricted to clips that genuinely teach.
+
+    Two filters, and the second matters more than the first: an absolute floor
+    removes passing mentions, then a *relative* floor keeps only clips within
+    ``tolerance`` of the best explanation that exists for each concept. The
+    relative one is what stops a weak-but-short clip from winning a
+    time-normalised contest against the chapter that does the real work.
+    """
+    needed_set = {normalize(c) for c in needed}
+
+    best_for: Dict[str, float] = {}
+    rows: List[Tuple[str, str, float]] = []
+    for e in explains:
+        concept = normalize(e.concept)
+        if concept not in needed_set:
+            continue
+        score = float(e.score)
+        rows.append((e.clip_id, concept, score))
+        if score > best_for.get(concept, 0.0):
+            best_for[concept] = score
+
+    by_clip: Dict[str, Dict[str, float]] = {}
+    for clip_id, concept, score in rows:
+        cutoff = max(min_score, best_for[concept] - tolerance)
+        if score >= cutoff:
+            by_clip.setdefault(clip_id, {})[concept] = score
+    return by_clip
+
+
 def select_clips(
     needed: Iterable[str],
     clips: Sequence[Clip],
     explains: Iterable[Explains],
+    targets: Iterable[str] = (),
+    min_score: float = MIN_COVERAGE_SCORE,
+    tolerance: float = SCORE_TOLERANCE,
 ) -> Tuple[List[str], Dict[str, List[str]], List[str]]:
-    """Repeatedly take the clip maximising (summed EXPLAINS score) / duration.
+    """Cover every needed concept with clips that actually teach it.
+
+    Prerequisites and targets want opposite things. For a prerequisite you want
+    the cheapest clip that unblocks you -- it is scaffolding, not the point. For
+    the concept the learner actually asked about, the shortest qualifying clip is
+    the worst possible answer; they came here to understand that one thing, so it
+    gets the most substantial explanation available.
+
+    So targets are covered first, by depth (highest score, then longest), and the
+    remainder is a time-normalised greedy set cover over qualified clips only.
 
     Returns (selected_clip_ids, {clip_id: concepts it newly covered}, gaps).
-    ``gaps`` are needed concepts that no clip in the entire corpus explains —
-    they are surfaced, never silently dropped.
+    ``gaps`` are needed concepts no clip teaches -- surfaced, never dropped.
     """
     needed_set = {normalize(c) for c in needed}
-    by_clip: Dict[str, Dict[str, float]] = {}
-    for e in explains:
-        concept = normalize(e.concept)
-        if concept in needed_set:
-            by_clip.setdefault(e.clip_id, {})[concept] = float(e.score)
+    target_set = {normalize(t) for t in targets} & needed_set
+    by_clip = qualified_coverage(needed_set, explains, min_score, tolerance)
 
     durations = {c.id: c.duration for c in clips}
     remaining = set(needed_set)
     selected: List[str] = []
     covers: Dict[str, List[str]] = {}
 
+    def take(clip_id: str) -> None:
+        newly = sorted(c for c in by_clip[clip_id] if c in remaining)
+        covers[clip_id] = newly
+        selected.append(clip_id)
+        remaining.difference_update(newly)
+
+    # Phase 1 -- depth for what was asked about.
+    for target in sorted(target_set):
+        if target not in remaining:
+            continue
+        candidates = [
+            cid
+            for cid, hits in by_clip.items()
+            if target in hits and cid in durations and cid not in covers
+        ]
+        if not candidates:
+            continue
+        # best explanation; among equals, the one that spends the most time on it
+        take(max(candidates, key=lambda cid: (by_clip[cid][target], durations[cid], cid)))
+
+    # Phase 2 -- efficiency for the scaffolding.
     while remaining:
         best_id: Optional[str] = None
         best_key: Optional[Tuple[float, float, str]] = None
@@ -299,10 +374,7 @@ def select_clips(
                 best_key, best_id = key, clip_id
         if best_id is None:
             break
-        newly = sorted(c for c in by_clip[best_id] if c in remaining)
-        covers[best_id] = newly
-        selected.append(best_id)
-        remaining -= set(newly)
+        take(best_id)
 
     return selected, covers, sorted(remaining)
 
@@ -351,19 +423,108 @@ def order_clips(
     covers: Dict[str, List[str]],
     order: Sequence[str],
     clips_by_id: Dict[str, Clip],
-) -> List[str]:
-    """Sort clips by the earliest topo position among the concepts they cover."""
+    adjacency: Optional[Dict[str, List[str]]] = None,
+    targets: Iterable[str] = (),
+) -> Tuple[List[str], List[Tuple[str, str]]]:
+    """Topologically sort the clips themselves, prerequisites first.
+
+    The original plan ordered each clip by the earliest topo position among the
+    concepts it covers. That silently breaks whenever a clip teaches more than
+    one thing: a chapter covering both 'word embeddings' (early) and
+    'tokenization' (late) gets placed by the early one and drags the late one in
+    ahead of its own prerequisites. Using the *latest* position instead just
+    moves the violation somewhere else.
+
+    Both fail because ordering concepts is the wrong problem -- we are ordering
+    clips, and a clip is an indivisible bundle of concepts. Once you build the
+    clip-level graph the real structure shows up, including cycles that no
+    concept-position sort can represent:
+
+        clip A teaches {word embeddings, tokenization}
+        clip B teaches {high-dimensional vectors}
+        tokenization requires high-dimensional vectors  -> A after B
+        high-dimensional vectors requires word embeddings -> B after A
+
+    That cycle is genuine, not a data error: the corpus really does teach those
+    concepts in bundles that interlock. So we Kahn over the clip graph and, when
+    it stalls, break the cycle at the most defensible point -- the clip whose own
+    concepts are furthest upstream -- rather than pretending the conflict is not
+    there. Deterministic throughout: ties break by (video, start).
+    """
+    adjacency = adjacency or {}
     pos = {name: i for i, name in enumerate(order)}
+    selected = list(selected)
 
-    def key(clip_id: str) -> Tuple[int, str, float, str]:
-        earliest = min(
-            (pos[c] for c in covers.get(clip_id, []) if c in pos),
-            default=len(pos),
-        )
+    def depth(clip_id: str) -> int:
+        return max((pos[c] for c in covers.get(clip_id, []) if c in pos), default=len(pos))
+
+    def tiebreak(clip_id: str) -> Tuple[int, str, float, str]:
         clip = clips_by_id[clip_id]
-        return (earliest, clip.video_id, float(clip.start), clip_id)
+        return (depth(clip_id), clip.video_id, float(clip.start), clip_id)
 
-    return sorted(selected, key=key)
+    # Which clip teaches each concept (first selected wins; covers are disjoint).
+    teacher: Dict[str, str] = {}
+    for clip_id in selected:
+        for concept in covers.get(clip_id, []):
+            teacher.setdefault(concept, clip_id)
+
+    # Edge prereq_clip -> dependent_clip.
+    out: Dict[str, Set[str]] = {c: set() for c in selected}
+    indeg: Dict[str, int] = {c: 0 for c in selected}
+    for clip_id in selected:
+        for concept in covers.get(clip_id, []):
+            for prereq in adjacency.get(concept, ()):
+                source = teacher.get(prereq)
+                if source is None or source == clip_id:
+                    continue
+                if clip_id not in out[source]:
+                    out[source].add(clip_id)
+                    indeg[clip_id] += 1
+
+    def corpus_position(clip_id: str) -> Tuple[str, float]:
+        clip = clips_by_id[clip_id]
+        return (clip.video_id, float(clip.start))
+
+    ordered: List[str] = []
+    conflicts: List[Tuple[str, str]] = []
+    pending = set(selected)
+    while pending:
+        ready = [c for c in pending if indeg[c] == 0]
+        if not ready:
+            # A genuine cycle: some ordering constraint must be sacrificed. Break
+            # it in corpus order -- release whichever clip the lecturer presented
+            # first. A coherent series is already authored in a teachable order,
+            # so when our extracted edges contradict themselves, the author's own
+            # sequencing is the better authority. Deterministic, so the demo is
+            # reproducible.
+            victim = min(pending, key=tiebreak)
+            conflicts.extend(
+                (src, victim) for src in pending if victim in out.get(src, ())
+            )
+            ready = [victim]
+        chosen = min(ready, key=tiebreak)
+        ordered.append(chosen)
+        pending.discard(chosen)
+        for nxt in out[chosen]:
+            if nxt in pending:
+                indeg[nxt] -= 1
+        indeg[chosen] = 0
+
+    # The concept you asked about plays last. Everything else on the path exists
+    # to make it comprehensible, so ending anywhere else means the payoff lands
+    # before the setup. This also settles most conflicts above: extracted edges
+    # like 'attention REQUIRES value vectors' point at sub-parts of the target
+    # taught inside the very explanation you are building toward, and treating
+    # those as things to watch first inverts the lesson.
+    if targets:
+        target_set = {normalize(t) for t in targets}
+        finale = [
+            c for c in ordered if target_set & {normalize(x) for x in covers.get(c, [])}
+        ]
+        if finale and len(finale) < len(ordered):
+            ordered = [c for c in ordered if c not in set(finale)] + finale
+
+    return ordered, conflicts
 
 
 # --------------------------------------------------------------------------- #
@@ -525,12 +686,14 @@ def build_path(
     needed = prune_known(targets, adjacency, known_norm, max_depth=max_depth)
 
     # 4. greedy weighted set cover; uncoverable concepts become gaps
-    selected, covers, gaps = select_clips(needed, all_clips, explains)
+    selected, covers, gaps = select_clips(needed, all_clips, explains, targets=targets)
 
     # 5. topological order, prerequisites first
     teachable = needed - set(gaps)
     order = topo_order(teachable, adjacency)
-    ordered = order_clips(selected, covers, order, clips_by_id)
+    ordered, ordering_conflicts = order_clips(
+        selected, covers, order, clips_by_id, adjacency, targets
+    )
 
     # 6. emit
     target_set = set(targets)

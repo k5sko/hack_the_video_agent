@@ -225,8 +225,10 @@ def test_set_cover_takes_the_multi_concept_clip_when_it_is_denser():
 
 
 def test_set_cover_ignores_scores_for_concepts_that_are_not_needed():
+    # 0.9 clears the coverage floor; the point of the test is that the 9.0 on an
+    # unneeded concept must not leak into this clip's gain or its covers list.
     clips = [_clip("c1", 0, 100)]
-    explains = [Explains("c1", "needed", 0.5), Explains("c1", "irrelevant", 9.0)]
+    explains = [Explains("c1", "needed", 0.9), Explains("c1", "irrelevant", 9.0)]
     selected, covers, _gaps = select_clips(["needed"], clips, explains)
     assert selected == ["c1"]
     assert covers["c1"] == ["needed"]
@@ -283,7 +285,9 @@ def test_clips_sort_by_earliest_concept_then_video_then_start():
         "tie_b": ["mid"],
     }
     order = ["base", "mid", "top"]
-    assert order_clips(list(clips), covers, order, clips) == [
+    ordered, conflicts = order_clips(list(clips), covers, order, clips)
+    assert not conflicts
+    assert ordered == [
         "early",
         "tie_b",
         "tie_a",
@@ -291,16 +295,20 @@ def test_clips_sort_by_earliest_concept_then_video_then_start():
     ]
 
 
-def test_fixture_playlist_is_ordered_by_earliest_covered_concept(store: MemoryStore):
-    """The spec'd rule: a clip sorts by the *earliest* topo position it covers.
+def test_fixture_playlist_teaches_prerequisites_before_dependents(store: MemoryStore):
+    """Clips are ordered so nothing is taught before something it depends on.
 
-    (A clip that bundles a deep prerequisite with a shallow one therefore lands
-    early — that is the documented behaviour, not a bug.)
+    This replaces the originally specified rule ("a clip sorts by the *earliest*
+    topo position it covers"), which is unsound: a clip bundling a shallow
+    concept with a deep one lands early and drags the deep one in ahead of its
+    own prerequisites. We topologically sort the clips themselves instead.
     """
     result = build_path("attention", [], store)
     pos = {name: i for i, name in enumerate(result.needed_concepts)}
-    keys = [min(pos[c] for c in seg.covers) for seg in result.playlist]
-    assert keys == sorted(keys)
+    keys = [max(pos[c] for c in seg.covers) for seg in result.playlist]
+    # the target is deliberately pinned last, so check the run-up is monotonic
+    assert keys[:-1] == sorted(keys[:-1])
+    assert keys[-1] == max(keys)
 
 
 def test_target_explanation_plays_last(store: MemoryStore):
