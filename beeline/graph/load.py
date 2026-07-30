@@ -25,9 +25,9 @@ import json
 import os
 import sys
 from pathlib import Path
-from typing import List
+from typing import Dict, List
 
-from engine import RequiresEdge, break_cycles
+from engine import RequiresEdge, break_cycles, normalize
 from store import (
     EMBEDDING_DIMENSIONS,
     VECTOR_INDEX,
@@ -182,8 +182,26 @@ def load(
             if skip_embeddings:
                 log("embeddings skipped (--skip-embeddings)")
             else:
+                # Give each concept the words the corpus actually uses to teach
+                # it, taken from the highest-scoring chapters that explain it.
+                # Without this the index only has bare names to match against,
+                # and a question like "how does a network learn" retrieves
+                # whatever shares a token rather than what answers it.
+                summaries_by_id = {c.id: (c.summary or "") for c in clips}
+                context: Dict[str, List[str]] = {}
+                for e in sorted(explains, key=lambda e: -float(e.score)):
+                    summary = summaries_by_id.get(e.clip_id, "")
+                    if not summary:
+                        continue
+                    bucket = context.setdefault(normalize(e.concept), [])
+                    if len(bucket) < 3:
+                        bucket.append(summary)
+
                 names = [c.name for c in concepts]
-                texts = [embed_text_for(c.name, c.aliases) for c in concepts]
+                texts = [
+                    embed_text_for(c.name, c.aliases, context.get(normalize(c.name), []))
+                    for c in concepts
+                ]
                 vectors = embed(texts)
                 s.run(
                     """

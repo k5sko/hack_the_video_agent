@@ -63,15 +63,35 @@ def load_env() -> None:
     load_dotenv(REPO_ROOT / ".env")
 
 
-def embed_text_for(name: str, aliases: Sequence[str] = ()) -> str:
+def embed_text_for(
+    name: str,
+    aliases: Sequence[str] = (),
+    context: Sequence[str] = (),
+) -> str:
     """What we actually send to the embedding model for a concept.
 
-    Name plus aliases: 'gradient descent: how a network learns, learning' is a far
-    better anchor for a fuzzy question than the bare name, and the aliases are
-    already in the payload.
+    A bare concept name is a terrible retrieval anchor, because it gives the
+    index nothing but the words themselves. Asking "how does a network learn"
+    against bare names matches 'feedforward networks' -- it shares the token
+    'network' -- rather than 'gradient descent', which is the actual answer.
+
+    So a concept is embedded alongside how the corpus talks about it: its
+    aliases, plus the summaries of the chapters that teach it. 'gradient descent'
+    then carries text like "the video explains how the network adjusts its
+    weights to reduce cost", which sits close to the question a learner would
+    actually type.
     """
     aliases = [a for a in aliases if normalize(a) != normalize(name)]
-    return f"{name}: {', '.join(aliases)}" if aliases else name
+    parts = [name]
+    if aliases:
+        parts.append(f"also called {', '.join(aliases)}")
+    for summary in context:
+        summary = " ".join(str(summary).split())
+        if summary:
+            parts.append(summary)
+    # Keep it well inside the model's window; the first summaries are the
+    # highest-scoring ones and carry most of the signal.
+    return ". ".join(parts)[:1500]
 
 
 def embed(texts: Sequence[str]) -> List[List[float]]:
