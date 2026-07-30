@@ -1,0 +1,14 @@
+.git
+.venv
+node_modules
+beeline/data/media
+beeline/data/clips
+beeline/frontend
+*.mp4
+*.webm
+*.vtt
+.env
+__pycache__
+*.pyc
+.pytest_cache
+dist

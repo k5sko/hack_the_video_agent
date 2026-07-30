@@ -71,6 +71,27 @@ def store():
     return _store
 
 
+# Where the cut clips are served from. Empty means "this API", which is right
+# locally. Deployed, the 512MB of clips lives in S3 behind CloudFront and this is
+# set to that origin -- a container is the wrong place to serve static video from.
+# Stored responses always keep the relative path, so the same cache works in both
+# environments and flipping the CDN does not invalidate anything.
+MEDIA_BASE_URL = os.getenv("MEDIA_BASE_URL", "").rstrip("/")
+
+
+def with_media_base(result: PathResult) -> PathResult:
+    """Rewrite relative clip paths onto the configured media origin."""
+    if not MEDIA_BASE_URL:
+        return result
+    playlist = [
+        seg.model_copy(update={"media_url": f"{MEDIA_BASE_URL}{seg.media_url}"})
+        if seg.media_url.startswith("/")
+        else seg
+        for seg in result.playlist
+    ]
+    return result.model_copy(update={"playlist": playlist})
+
+
 def cache_key(query: str, known: List[str], mode: str) -> str:
     blob = json.dumps(
         {"q": normalize(query), "k": sorted(normalize(k) for k in known), "m": mode},
@@ -335,7 +356,7 @@ def api_path(request: PathRequest) -> PathResult:
     key = cache_key(request.query, request.known, request.mode)
     hit = cached(key)
     if hit:
-        return PathResult(**hit)
+        return with_media_base(PathResult(**hit))
 
     if CANNED_ONLY:
         raise HTTPException(
@@ -358,7 +379,7 @@ def api_path(request: PathRequest) -> PathResult:
         result = narrate(result)
 
     store_cache(key, result.model_dump())
-    return result
+    return with_media_base(result)
 
 
 @app.get("/media/{clip_file}")
