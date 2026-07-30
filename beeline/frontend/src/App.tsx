@@ -82,6 +82,9 @@ export default function App() {
   const [finished, setFinished] = useState(false);
   const [seekNonce, setSeekNonce] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
+  // Default to just this query's neighbourhood. The whole corpus is the honest
+  // picture, but a hundred nodes reads as homework rather than as evidence.
+  const [focusGraph, setFocusGraph] = useState(true);
 
   // Any change to the resolved path restarts the run from step one.
   useEffect(() => {
@@ -216,6 +219,13 @@ export default function App() {
             {searchOnly
               ? "no prerequisite structure available"
               : `target: ${path.target_concepts.join(", ")}`}
+            <button
+              type="button"
+              className="panel-toggle"
+              onClick={() => setFocusGraph((f) => !f)}
+            >
+              {focusGraph ? "Show whole corpus" : "Show just my path"}
+            </button>
           </span>
         </header>
 
@@ -237,8 +247,9 @@ export default function App() {
             /* Remount when the live topology replaces the fixture:
                buildGraphData() is called once per mount by design, because
                react-force-graph mutates nodes in place. */
-            key={graphReady ? "live" : "fixture"}
+            key={`${graphReady ? "live" : "fixture"}:${focusGraph}`}
             states={states}
+            focus={focusGraph}
             currentConcepts={currentConcepts}
             completedConcepts={completedConcepts}
             selected={selected}

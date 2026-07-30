@@ -2,7 +2,7 @@
   "query": "how does a network learn",
   "mode": "search_only",
   "target_concepts": [
-    "layered neural networks",
+    "neural network",
     "training process"
   ],
   "known": [],

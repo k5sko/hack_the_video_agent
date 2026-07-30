@@ -10,7 +10,6 @@
   ],
   "needed_concepts": [
     "activation function",
-    "derivative",
     "cost function",
     "forward propagation",
     "gradient descent",
@@ -29,35 +28,21 @@
       "covers": [
         "activation function"
       ],
-      "why": "Understanding the activation function is crucial because it directly influences how the output of a neural network is calculated, laying the groundwork for grasping backpropagation.",
+      "why": "Understanding the activation function is essential because it sets the stage for learning how neural networks make predictions and influences the calculations in backpropagation.",
       "source": "corpus"
     },
     {
-      "clip_id": "v4_c3",
-      "video_id": "V4",
-      "video_title": "Backpropagation calculus",
-      "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
-      "media_url": "/media/v4_c3.mp4",
-      "start_seconds": 100.0,
-      "end_seconds": 200.0,
-      "covers": [
-        "derivative"
-      ],
-      "why": "Learning about derivatives is fundamental since you'll need to apply derivative concepts to understand how changes in weights affect the network's output during backpropagation.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v3_c6",
+      "clip_id": "v3_c1",
       "video_id": "V3",
       "video_title": "What is backpropagation really doing?",
       "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-      "media_url": "/media/v3_c6.mp4",
-      "start_seconds": 280.0,
-      "end_seconds": 487.0,
+      "media_url": "/media/v3_c1.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 35.0,
       "covers": [
         "forward propagation"
       ],
-      "why": "Forward propagation explains how inputs are processed to generate an output, providing context for what backpropagation aims to improve in terms of reducing errors.",
+      "why": "Learning forward propagation is crucial as it explains how inputs move through the network, which is foundational to grasping the role of backpropagation in adjusting weights.",
       "source": "corpus"
     },
     {
@@ -72,7 +57,7 @@
         "cost function",
         "gradient descent"
       ],
-      "why": "The cost function and gradient descent are vital because they define how performance is evaluated and how adjustments are made, which is essential for understanding the purpose of backpropagation.",
+      "why": "Familiarizing yourself with the cost function and gradient descent is important because these concepts directly relate to how backpropagation minimizes errors and optimizes the model's performance.",
       "source": "corpus"
     },
     {
@@ -86,7 +71,7 @@
       "covers": [
         "mnist dataset"
       ],
-      "why": "Familiarity with the MNIST dataset is important as it provides a concrete example for applying backpropagation in a real-world scenario, making the concepts more relatable.",
+      "why": "Acquainting yourself with the MNIST dataset helps you to see the practical application of gradient descent and how neural networks learn from data, providing context for backpropagation.",
       "source": "corpus"
     },
     {
@@ -100,13 +85,14 @@
       "covers": [
         "backpropagation"
       ],
-      "why": "Finally, exploring backpropagation itself brings together all the prior knowledge to show you how to optimize the neural network's weights based on the gradient descent approach.",
+      "why": "Grasping the details of backpropagation is the final step that integrates all the previous concepts, allowing you to understand how the network learns and improves through the optimization process.",
       "source": "corpus"
     }
   ],
   "gaps": [
     "basic machine learning",
     "calculus",
+    "derivative",
     "matrix operations",
     "neural network layers",
     "parameter optimization",
@@ -115,6 +101,6 @@
     "vector calculus"
   ],
   "total_corpus_seconds": 8302.0,
-  "watch_seconds": 552.0,
-  "narration": "This learning path will help you understand backpropagation by breaking down the key concepts that underlie it. Each step builds on the previous ones, ensuring you have a solid grasp of the essential ideas and techniques."
+  "watch_seconds": 280.0,
+  "narration": "In this learning path, you will explore the fundamental concepts that lead to understanding backpropagation in neural networks. Each step builds on the previous one, ensuring you have the necessary knowledge before diving into the more complex topic of backpropagation."
 }

@@ -934,3 +934,21 @@ input {
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+
+/* Switches the graph between this query's neighbourhood and the whole corpus. */
+.panel-toggle {
+  margin-left: 10px;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.panel-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

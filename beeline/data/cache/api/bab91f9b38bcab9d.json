@@ -6,12 +6,9 @@
   ],
   "known": [],
   "needed_concepts": [
-    "derivative",
     "forward propagation",
-    "linear algebra",
     "linear transformation",
     "mnist dataset",
-    "token vectors",
     "vector representation",
     "neural network",
     "activation function",
@@ -21,59 +18,17 @@
   ],
   "playlist": [
     {
-      "clip_id": "v4_c3",
-      "video_id": "V4",
-      "video_title": "Backpropagation calculus",
-      "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
-      "media_url": "/media/v4_c3.mp4",
-      "start_seconds": 100.0,
-      "end_seconds": 200.0,
-      "covers": [
-        "derivative"
-      ],
-      "why": "You need to understand the concept of a derivative to grasp how changes in inputs affect outputs in backpropagation.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v3_c6",
+      "clip_id": "v3_c1",
       "video_id": "V3",
       "video_title": "What is backpropagation really doing?",
       "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-      "media_url": "/media/v3_c6.mp4",
-      "start_seconds": 280.0,
-      "end_seconds": 487.0,
+      "media_url": "/media/v3_c1.mp4",
+      "start_seconds": 0.0,
+      "end_seconds": 35.0,
       "covers": [
         "forward propagation"
       ],
-      "why": "Forward propagation is the first step in understanding how neural networks process information, and it sets the stage for understanding backpropagation.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v1_c5",
-      "video_id": "V1",
-      "video_title": "But what is a neural network?",
-      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-      "media_url": "/media/v1_c5.mp4",
-      "start_seconds": 747.0,
-      "end_seconds": 960.0,
-      "covers": [
-        "linear algebra"
-      ],
-      "why": "Linear algebra is central to understanding how neural networks operate, including how data is represented and manipulated within these systems.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v7_c7",
-      "video_id": "V7",
-      "video_title": "How might LLMs store facts",
-      "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
-      "media_url": "/media/v7_c7.mp4",
-      "start_seconds": 606.0,
-      "end_seconds": 732.0,
-      "covers": [
-        "linear transformation"
-      ],
-      "why": "Linear transformation is important for understanding how input data is transformed as it moves through the layers of a neural network.",
+      "why": "Understanding forward propagation is essential as it forms the basis of how neural networks operate and prepares you for the learning adjustments made during training.",
       "source": "corpus"
     },
     {
@@ -87,21 +42,7 @@
       "covers": [
         "mnist dataset"
       ],
-      "why": "The MNIST dataset provides a concrete example of how neural networks learn through gradient descent, making it easier to visualize the learning process.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v5_c11",
-      "video_id": "V5",
-      "video_title": "But what is a GPT? Visual intro to transformers",
-      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
-      "media_url": "/media/v5_c11.mp4",
-      "start_seconds": 1108.0,
-      "end_seconds": 1205.0,
-      "covers": [
-        "token vectors"
-      ],
-      "why": "Token vectors are crucial for understanding how information is represented in models like GPT, which will help you later understand how these models function during training.",
+      "why": "Knowing the MNIST dataset and its role in demonstrating gradient descent will illustrate how neural networks learn from data, linking to the broader understanding of backpropagation.",
       "source": "corpus"
     },
     {
@@ -115,7 +56,22 @@
       "covers": [
         "vector representation"
       ],
-      "why": "Vector representation is important for visualizing how data is handled within neural networks, which will clarify the concept of backpropagation later on.",
+      "why": "Learning about vector representation is important because it provides the visual context for how inputs are transformed and processed in transformer models, which are crucial for understanding advanced neural networks.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v7_c7",
+      "video_id": "V7",
+      "video_title": "How might LLMs store facts",
+      "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+      "media_url": "/media/v7_c7.mp4",
+      "start_seconds": 606.0,
+      "end_seconds": 732.0,
+      "covers": [
+        "linear transformation",
+        "neural network"
+      ],
+      "why": "Familiarizing yourself with linear transformations and neural networks will help you grasp how information is processed and represented, leading you closer to understanding backpropagation's role in optimizing these processes.",
       "source": "corpus"
     },
     {
@@ -127,10 +83,9 @@
       "start_seconds": 35.0,
       "end_seconds": 100.0,
       "covers": [
-        "neural network",
         "activation function"
       ],
-      "why": "Understanding neural networks and activation functions is essential for tying together how data flows and how decisions are made within the network during backpropagation.",
+      "why": "Acquiring knowledge about activation functions is necessary as it dives into the calculus behind how neurons make decisions, which is vital for understanding the mechanics of backpropagation.",
       "source": "corpus"
     },
     {
@@ -145,7 +100,7 @@
         "cost function",
         "gradient descent"
       ],
-      "why": "Cost functions and gradient descent are fundamental concepts that explain how a neural network improves its predictions, leading directly into the mechanics of backpropagation.",
+      "why": "Understanding cost functions and gradient descent is a crucial step, as it connects to how neural networks evaluate their performance and adjust parameters, directly relating to the concept of backpropagation.",
       "source": "corpus"
     },
     {
@@ -159,23 +114,26 @@
       "covers": [
         "backpropagation"
       ],
-      "why": "With the earlier concepts in place, you can now understand backpropagation, which is the method of updating the weights in a neural network based on the derivatives computed earlier.",
+      "why": "Finally, learning about backpropagation itself will solidify your understanding of how neural networks effectively learn from errors, tying together all the previous concepts you've explored.",
       "source": "corpus"
     }
   ],
   "gaps": [
     "basic machine learning",
     "calculus",
+    "derivative",
     "factual knowledge representation",
     "function composition",
+    "linear algebra",
     "matrix operations",
     "neural network layers",
     "parameter optimization",
     "predicted output",
+    "token vectors",
     "training data",
     "vector calculus"
   ],
   "total_corpus_seconds": 8302.0,
-  "watch_seconds": 1172.0,
-  "narration": "This learning path leads you through the fundamental concepts required to understand backpropagation. Each step builds on the previous one, introducing key ideas and terminology that are essential for grasping how neural networks learn and optimize parameters."
+  "watch_seconds": 590.0,
+  "narration": "The learning path begins by introducing forward propagation, the fundamental process that allows neural networks to make predictions. This sets the stage for understanding how adjustments are made in the network during training, leading to the concept of backpropagation. Each subsequent topic builds on your knowledge, guiding you to comprehend how neural networks learn and optimize their performance."
 }

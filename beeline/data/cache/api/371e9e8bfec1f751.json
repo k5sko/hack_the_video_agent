@@ -1,62 +1,17 @@
 {
-  "query": "layered neural networks",
+  "query": "training process",
   "mode": "graph",
   "target_concepts": [
-    "layered neural networks"
+    "training process"
   ],
   "known": [],
   "needed_concepts": [
-    "linear algebra",
     "linear transformation",
-    "token vectors",
     "vector representation",
     "neural network",
-    "feature detection",
-    "layered neural networks"
+    "training process"
   ],
   "playlist": [
-    {
-      "clip_id": "v1_c5",
-      "video_id": "V1",
-      "video_title": "But what is a neural network?",
-      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-      "media_url": "/media/v1_c5.mp4",
-      "start_seconds": 747.0,
-      "end_seconds": 960.0,
-      "covers": [
-        "linear algebra"
-      ],
-      "why": "Understanding linear algebra is crucial because it provides the mathematical foundation necessary for grasping how neural networks operate.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v7_c7",
-      "video_id": "V7",
-      "video_title": "How might LLMs store facts",
-      "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
-      "media_url": "/media/v7_c7.mp4",
-      "start_seconds": 606.0,
-      "end_seconds": 732.0,
-      "covers": [
-        "linear transformation"
-      ],
-      "why": "Linear transformations are a key concept that will help you understand how data is manipulated within neural networks, which is essential for learning about their structure.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v5_c11",
-      "video_id": "V5",
-      "video_title": "But what is a GPT? Visual intro to transformers",
-      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
-      "media_url": "/media/v5_c11.mp4",
-      "start_seconds": 1108.0,
-      "end_seconds": 1205.0,
-      "covers": [
-        "token vectors"
-      ],
-      "why": "Token vectors introduce you to how data is represented in a way that machines can understand, setting the stage for exploring more advanced models like GPT.",
-      "source": "corpus"
-    },
     {
       "clip_id": "v5_c2",
       "video_id": "V5",
@@ -68,47 +23,48 @@
       "covers": [
         "vector representation"
       ],
-      "why": "Learning about vector representation solidifies your understanding of how information is processed in neural networks, a necessary precursor to comprehending their architecture.",
+      "why": "Understanding vector representation is crucial because it forms the basis for how information, like words, can be encoded in machine learning systems, and it directly relates to comprehending how transformers process language.",
       "source": "corpus"
     },
     {
-      "clip_id": "v2_c1",
+      "clip_id": "v7_c7",
+      "video_id": "V7",
+      "video_title": "How might LLMs store facts",
+      "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+      "media_url": "/media/v7_c7.mp4",
+      "start_seconds": 606.0,
+      "end_seconds": 732.0,
+      "covers": [
+        "linear transformation",
+        "neural network"
+      ],
+      "why": "Learning about linear transformations and neural networks is important as it explains the mechanics of how models interpret and manipulate data, setting the stage for understanding the larger concepts involved in storing and utilizing knowledge within these systems.",
+      "source": "corpus"
+    },
+    {
+      "clip_id": "v2_c4",
       "video_id": "V2",
       "video_title": "Gradient descent, how neural networks learn",
       "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
-      "media_url": "/media/v2_c1.mp4",
-      "start_seconds": 0.0,
-      "end_seconds": 45.0,
+      "media_url": "/media/v2_c4.mp4",
+      "start_seconds": 135.0,
+      "end_seconds": 185.0,
       "covers": [
-        "neural network"
+        "training process"
       ],
-      "why": "Familiarity with neural networks introduces you directly to the subject, allowing you to learn about the mechanics of how they learn through techniques like gradient descent.",
-      "source": "corpus"
-    },
-    {
-      "clip_id": "v1_c3",
-      "video_id": "V1",
-      "video_title": "But what is a neural network?",
-      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-      "media_url": "/media/v1_c3.mp4",
-      "start_seconds": 338.0,
-      "end_seconds": 593.0,
-      "covers": [
-        "feature detection",
-        "layered neural networks"
-      ],
-      "why": "Finally, diving into feature detection and layered neural networks ties together all your previous knowledge, as it explains how different layers in a network perform specific tasks in the learning process.",
+      "why": "Grasping the training process is essential, as it reveals how techniques like gradient descent enable neural networks to learn from data, ultimately leading to the performance of language models in real-world applications.",
       "source": "corpus"
     }
   ],
   "gaps": [
     "basic machine learning",
-    "digit recognition",
     "factual knowledge representation",
     "function composition",
-    "neural network layers"
+    "linear algebra",
+    "neural network layers",
+    "token vectors"
   ],
   "total_corpus_seconds": 8302.0,
-  "watch_seconds": 920.0,
-  "narration": "This learning path is designed to provide you with a foundational understanding of the concepts leading up to layered neural networks. Each step builds on the previous one, ensuring you grasp essential principles before delving into more complex topics."
+  "watch_seconds": 360.0,
+  "narration": "This learning path is designed to build your understanding of how machine learning, particularly language models, functions. Each step introduces you to key concepts that are essential for grasping the training process of these models. By following this ordered approach, you'll develop a foundational knowledge that supports your exploration of more complex topics."
 }

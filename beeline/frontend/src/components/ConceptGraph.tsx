@@ -63,14 +63,11 @@ export default function ConceptGraph({
     const core = new Set(relevantKey ? relevantKey.split("|") : []);
     if (core.size === 0) return full;
 
-    const keep = new Set(core);
-    for (const node of full.nodes) {
-      if (!core.has(node.id)) continue;
-      for (const neighbour of [...node.assumes, ...node.requiredBy]) {
-        keep.add(neighbour);
-      }
-    }
-    const nodes = full.nodes.filter((n) => keep.has(n.id));
+    // Strictly what bears on this query: the path, what was pruned as known,
+    // and the gaps. An earlier version also kept one hop of neighbours for
+    // context, which quietly dragged in sixty grey nodes and left the panel
+    // looking exactly as dense as before.
+    const nodes = full.nodes.filter((n) => core.has(n.id));
     const ids = new Set(nodes.map((n) => n.id));
     const links = full.links.filter((l) => {
       const source = typeof l.source === "string" ? l.source : l.source.id;

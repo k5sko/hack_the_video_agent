@@ -74,9 +74,9 @@
         "video_id": "V3",
         "video_title": "What is backpropagation really doing?",
         "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-        "start_seconds": 188.0,
-        "end_seconds": 280.0,
-        "explains_score": 0.9
+        "start_seconds": 35.0,
+        "end_seconds": 65.0,
+        "explains_score": 0.85
       }
     },
     {
@@ -85,14 +85,7 @@
     },
     {
       "id": "chain rule",
-      "evidence": {
-        "video_id": "V4",
-        "video_title": "Backpropagation calculus",
-        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
-        "start_seconds": 35.0,
-        "end_seconds": 100.0,
-        "explains_score": 0.95
-      }
+      "evidence": null
     },
     {
       "id": "complex pattern recognition",
@@ -155,9 +148,9 @@
         "video_id": "V6",
         "video_title": "Attention in transformers, step-by-step",
         "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
-        "start_seconds": 215.0,
-        "end_seconds": 308.0,
-        "explains_score": 0.8
+        "start_seconds": 1200.0,
+        "end_seconds": 1252.0,
+        "explains_score": 0.6
       }
     },
     {
@@ -170,25 +163,11 @@
     },
     {
       "id": "derivative",
-      "evidence": {
-        "video_id": "V4",
-        "video_title": "Backpropagation calculus",
-        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
-        "start_seconds": 100.0,
-        "end_seconds": 200.0,
-        "explains_score": 0.9
-      }
+      "evidence": null
     },
     {
       "id": "digit recognition",
-      "evidence": {
-        "video_id": "V2",
-        "video_title": "Gradient descent, how neural networks learn",
-        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
-        "start_seconds": 749.0,
-        "end_seconds": 970.0,
-        "explains_score": 0.7
-      }
+      "evidence": null
     },
     {
       "id": "dimensionality",
@@ -274,9 +253,9 @@
         "video_id": "V3",
         "video_title": "What is backpropagation really doing?",
         "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-        "start_seconds": 280.0,
-        "end_seconds": 487.0,
-        "explains_score": 0.9
+        "start_seconds": 0.0,
+        "end_seconds": 35.0,
+        "explains_score": 0.75
       }
     },
     {
@@ -306,25 +285,14 @@
       }
     },
     {
-      "id": "gradient vector",
-      "evidence": {
-        "video_id": "V3",
-        "video_title": "What is backpropagation really doing?",
-        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-        "start_seconds": 65.0,
-        "end_seconds": 126.0,
-        "explains_score": 0.9
-      }
-    },
-    {
       "id": "hidden layers",
       "evidence": {
-        "video_id": "V7",
-        "video_title": "How might LLMs store facts",
-        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
-        "start_seconds": 545.0,
-        "end_seconds": 605.0,
-        "explains_score": 0.95
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 970.0,
+        "end_seconds": 1103.0,
+        "explains_score": 0.9
       }
     },
     {
@@ -351,14 +319,7 @@
     },
     {
       "id": "input sequence",
-      "evidence": {
-        "video_id": "V6",
-        "video_title": "Attention in transformers, step-by-step",
-        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
-        "start_seconds": 1099.0,
-        "end_seconds": 1160.0,
-        "explains_score": 0.6
-      }
+      "evidence": null
     },
     {
       "id": "input vectors",
@@ -373,14 +334,7 @@
     },
     {
       "id": "key computation",
-      "evidence": {
-        "video_id": "V6",
-        "video_title": "Attention in transformers, step-by-step",
-        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
-        "start_seconds": 308.0,
-        "end_seconds": 606.0,
-        "explains_score": 0.9
-      }
+      "evidence": null
     },
     {
       "id": "language model",
@@ -403,21 +357,14 @@
         "video_id": "V6",
         "video_title": "Attention in transformers, step-by-step",
         "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
-        "start_seconds": 1500.0,
-        "end_seconds": 1538.0,
-        "explains_score": 0.7
+        "start_seconds": 0.0,
+        "end_seconds": 31.0,
+        "explains_score": 0.6
       }
     },
     {
       "id": "large-scale pre-training",
-      "evidence": {
-        "video_id": "V5",
-        "video_title": "But what is a GPT? Visual intro to transformers",
-        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
-        "start_seconds": 0.0,
-        "end_seconds": 154.0,
-        "explains_score": 0.9
-      }
+      "evidence": null
     },
     {
       "id": "layer",
@@ -443,14 +390,7 @@
     },
     {
       "id": "linear algebra",
-      "evidence": {
-        "video_id": "V1",
-        "video_title": "But what is a neural network?",
-        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-        "start_seconds": 747.0,
-        "end_seconds": 960.0,
-        "explains_score": 0.75
-      }
+      "evidence": null
     },
     {
       "id": "linear inputs",
@@ -474,11 +414,11 @@
     {
       "id": "matrix multiplication",
       "evidence": {
-        "video_id": "V1",
-        "video_title": "But what is a neural network?",
-        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-        "start_seconds": 747.0,
-        "end_seconds": 960.0,
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 264.0,
+        "end_seconds": 408.0,
         "explains_score": 0.9
       }
     },
@@ -506,17 +446,6 @@
         "start_seconds": 135.0,
         "end_seconds": 185.0,
         "explains_score": 0.8
-      }
-    },
-    {
-      "id": "multilayer perceptron block",
-      "evidence": {
-        "video_id": "V7",
-        "video_title": "How might LLMs store facts",
-        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
-        "start_seconds": 942.0,
-        "end_seconds": 1056.0,
-        "explains_score": 0.85
       }
     },
     {
@@ -558,25 +487,11 @@
     },
     {
       "id": "neural network parameters",
-      "evidence": {
-        "video_id": "V1",
-        "video_title": "But what is a neural network?",
-        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-        "start_seconds": 747.0,
-        "end_seconds": 960.0,
-        "explains_score": 0.85
-      }
+      "evidence": null
     },
     {
       "id": "neuron output behavior",
-      "evidence": {
-        "video_id": "V1",
-        "video_title": "But what is a neural network?",
-        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-        "start_seconds": 960.0,
-        "end_seconds": 1054.0,
-        "explains_score": 0.7
-      }
+      "evidence": null
     },
     {
       "id": "next-word prediction",
@@ -612,25 +527,14 @@
       }
     },
     {
-      "id": "output neuron target",
-      "evidence": {
-        "video_id": "V3",
-        "video_title": "What is backpropagation really doing?",
-        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-        "start_seconds": 188.0,
-        "end_seconds": 280.0,
-        "explains_score": 0.8
-      }
-    },
-    {
       "id": "output projection",
       "evidence": {
-        "video_id": "V6",
-        "video_title": "Attention in transformers, step-by-step",
-        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
-        "start_seconds": 1334.0,
-        "end_seconds": 1400.0,
-        "explains_score": 0.8
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 667.0,
+        "end_seconds": 719.0,
+        "explains_score": 0.6
       }
     },
     {
@@ -647,12 +551,12 @@
     {
       "id": "parameter distribution",
       "evidence": {
-        "video_id": "V7",
-        "video_title": "How might LLMs store facts",
-        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
-        "start_seconds": 942.0,
-        "end_seconds": 1056.0,
-        "explains_score": 0.9
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 667.0,
+        "end_seconds": 719.0,
+        "explains_score": 0.8
       }
     },
     {
@@ -706,12 +610,12 @@
     {
       "id": "relu activation function",
       "evidence": {
-        "video_id": "V1",
-        "video_title": "But what is a neural network?",
-        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-        "start_seconds": 960.0,
-        "end_seconds": 1054.0,
-        "explains_score": 0.95
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 732.0,
+        "end_seconds": 942.0,
+        "explains_score": 0.9
       }
     },
     {
@@ -720,8 +624,8 @@
         "video_id": "V5",
         "video_title": "But what is a GPT? Visual intro to transformers",
         "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
-        "start_seconds": 1014.0,
-        "end_seconds": 1108.0,
+        "start_seconds": 154.0,
+        "end_seconds": 338.0,
         "explains_score": 0.7
       }
     },
@@ -772,14 +676,7 @@
     },
     {
       "id": "token vectors",
-      "evidence": {
-        "video_id": "V5",
-        "video_title": "But what is a GPT? Visual intro to transformers",
-        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
-        "start_seconds": 1108.0,
-        "end_seconds": 1205.0,
-        "explains_score": 0.8
-      }
+      "evidence": null
     },
     {
       "id": "tokenization",
@@ -798,14 +695,7 @@
     },
     {
       "id": "training efficiency",
-      "evidence": {
-        "video_id": "V1",
-        "video_title": "But what is a neural network?",
-        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
-        "start_seconds": 960.0,
-        "end_seconds": 1054.0,
-        "explains_score": 0.6
-      }
+      "evidence": null
     },
     {
       "id": "training neural networks",
@@ -870,24 +760,17 @@
     {
       "id": "weight adjustment",
       "evidence": {
-        "video_id": "V3",
-        "video_title": "What is backpropagation really doing?",
-        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-        "start_seconds": 188.0,
-        "end_seconds": 280.0,
-        "explains_score": 0.9
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 603.0,
+        "end_seconds": 749.0,
+        "explains_score": 0.8
       }
     },
     {
       "id": "weight optimization",
-      "evidence": {
-        "video_id": "V3",
-        "video_title": "What is backpropagation really doing?",
-        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
-        "start_seconds": 65.0,
-        "end_seconds": 126.0,
-        "explains_score": 0.85
-      }
+      "evidence": null
     },
     {
       "id": "weight updates",
