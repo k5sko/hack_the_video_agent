@@ -47,8 +47,20 @@ CLIPS_DIR = BEELINE / "data" / "clips"
 CACHE_DIR = BEELINE / "data" / "cache" / "api"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-# Serving cached responses only. Set by --canned; makes the demo provably offline.
+# Serve cached responses only, refusing anything unrehearsed. This is for proving
+# the demo runs with the network cable pulled -- it is deliberately strict.
 CANNED_ONLY = os.getenv("BEELINE_CANNED") == "1"
+
+# Whether gap filling may run live. This is the only genuinely slow, genuinely
+# external thing the API does: yt-dlp plus ffmpeg, 30-90s per gap, and throttled
+# from datacentre IPs. Deployed we turn it off -- but that must NOT also disable
+# path building, which is a fast Neo4j traversal.
+#
+# Conflating the two was a real bug: the deployed service refused every query
+# outside the three rehearsed ones, the frontend fell back to bundled fixtures,
+# and those fixtures reference clip ids that do not exist in S3. A learner typing
+# their own concept got a blank player instead of a path.
+ALLOW_GAP_FILL = os.getenv("BEELINE_ALLOW_GAP_FILL", "1") == "1"
 
 app = FastAPI(title="Beeline", docs_url="/api/docs")
 
@@ -377,6 +389,11 @@ def api_path(request: PathRequest) -> PathResult:
         # narration is written, so the prose describes the path you actually get.
         result = fill_path_gaps(result)
         result = narrate(result)
+        # The Path Agent builds from the concept it resolved, so the result would
+        # otherwise echo back "transformer" when the learner typed "how do
+        # transformers work". Keep their words; target_concepts already records
+        # what it resolved to.
+        result = result.model_copy(update={"query": request.query})
 
     store_cache(key, result.model_dump())
     return with_media_base(result)
@@ -427,7 +444,7 @@ def fill_path_gaps(result: PathResult) -> PathResult:
     and pretending otherwise is the same lie as a clip that merely mentions its
     concept. Those stay listed, with a pointer to the real thing.
     """
-    if CANNED_ONLY or not result.gaps:
+    if not ALLOW_GAP_FILL or CANNED_ONLY or not result.gaps:
         return result
 
     try:
@@ -517,6 +534,15 @@ def api_fill(request: FillRequest) -> dict:
             return cached_fill
         raise HTTPException(
             status_code=503, detail="Canned mode: this gap has not been pre-filled."
+        )
+
+    if not ALLOW_GAP_FILL:
+        cached_fill = gapfill_cached(request.concept)
+        if cached_fill:
+            return cached_fill
+        raise HTTPException(
+            status_code=503,
+            detail="Live gap filling is disabled here; this gap is not pre-filled.",
         )
 
     try:

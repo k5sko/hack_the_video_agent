@@ -58,11 +58,23 @@ export function mediaSrc(clip: ClipSegment): string {
 }
 
 function offlinePath(query: string, known: string[], mode: Mode): PathResult {
-  if (mode === "search_only") {
-    return { ...SEARCH_ONLY, query, known: [...known] };
-  }
-  const base = known.some((c) => FOUNDATIONAL.has(c)) ? KNOWN : COLD;
-  return { ...base, query, known: [...known] };
+  const base =
+    mode === "search_only"
+      ? SEARCH_ONLY
+      : known.some((c) => FOUNDATIONAL.has(c))
+        ? KNOWN
+        : COLD;
+  // The fixtures describe an illustrative path, not the real corpus, and their
+  // clip ids do not exist on the media host. Leaving media_url set made the
+  // player report "could not load v5_c1.mp4", which reads as a broken deploy
+  // rather than as sample data. Blank it so the player says what is actually
+  // true: there is no video for this.
+  return {
+    ...base,
+    query,
+    known: [...known],
+    playlist: base.playlist.map((clip) => ({ ...clip, media_url: "" })),
+  };
 }
 
 export interface PathOutcome {

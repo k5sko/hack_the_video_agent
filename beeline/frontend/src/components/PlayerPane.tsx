@@ -118,12 +118,20 @@ export default function PlayerPane({
         />
         <video ref={preloadRef} className="player-preload" preload="auto" muted />
 
-        {failed && (
+        {clip && !src && (
+          <div className="player-veil player-veil-error">
+            <span className="player-veil-label">
+              Sample path — the live service is unreachable, so there is no video
+              for this clip.
+            </span>
+          </div>
+        )}
+        {src && failed && (
           <div className="player-veil player-veil-error">
             <span className="player-veil-label">{failed}</span>
           </div>
         )}
-        {!failed && !ready && (
+        {src && !failed && !ready && (
           <div className="player-veil">
             <span className="player-veil-label">
               {clip ? `Loading: ${clip.covers.join(", ")}` : "Loading"}
