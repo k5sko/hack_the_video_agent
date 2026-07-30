@@ -28,6 +28,13 @@ in canned mode, an uncached query returns 503 rather than a wrong answer.
 
 ## Deploy
 
+If `docker build` fails with `failed to set up container networking`, the daemon
+cannot create veth pairs in your environment; build with host networking:
+
+```bash
+docker build --network=host -t beeline:latest .
+```
+
 ```bash
 ./deploy/deploy.sh media       # clips  -> S3
 ./deploy/deploy.sh secrets     # .env   -> Secrets Manager (values never printed)
@@ -56,6 +63,21 @@ Finally, rebuild the frontend so it points at the live API:
 ```bash
 BEELINE_API_URL=https://<app-runner-url> ./deploy/deploy.sh frontend
 ```
+
+## Verified locally
+
+The image was built and run against the live Aura instance before shipping:
+
+```
+health          canned_only: true, store: neo4j
+cached query    13 clips, 26.9m, external fills intact
+media_url       https://cdn.example.test/media/v6_c8.mp4   (CDN rewrite)
+uncached query  HTTP 503                                   (refuses, does not guess)
+graph           97 concepts, 181 edges
+```
+
+`clips_cut: 0` inside the container is expected -- the clips are deliberately
+not in the image.
 
 ## Costs
 
