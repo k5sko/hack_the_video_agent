@@ -1,0 +1,388 @@
+{
+  "videos": [
+    {
+      "id": "V1",
+      "title": "But what is a neural network? | Deep learning chapter 1",
+      "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "duration": 1140
+    },
+    {
+      "id": "V2",
+      "title": "Gradient descent, how neural networks learn | Deep learning chapter 2",
+      "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "duration": 1260
+    },
+    {
+      "id": "V3",
+      "title": "What is backpropagation really doing? | Deep learning chapter 3",
+      "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+      "duration": 840
+    },
+    {
+      "id": "V4",
+      "title": "Backpropagation calculus | Deep learning chapter 4",
+      "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+      "duration": 660
+    },
+    {
+      "id": "V5",
+      "title": "But what is a GPT? Visual intro to transformers",
+      "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "duration": 1620
+    },
+    {
+      "id": "V6",
+      "title": "Attention in transformers, visually explained",
+      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "duration": 1560
+    },
+    {
+      "id": "V7",
+      "title": "Vectors and linear algebra, visually explained",
+      "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+      "duration": 1320
+    }
+  ],
+  "clips": [
+    {
+      "id": "v1_c1",
+      "video_id": "V1",
+      "start": 65,
+      "end": 205,
+      "summary": "What a neuron is, what a layer is, and how a network is just a function from 784 numbers to 10 numbers."
+    },
+    {
+      "id": "v1_c2",
+      "video_id": "V1",
+      "start": 205,
+      "end": 355,
+      "summary": "Why there are hidden layers at all, and the hope that each one picks up edges then loops then digits."
+    },
+    {
+      "id": "v1_c3",
+      "video_id": "V1",
+      "start": 430,
+      "end": 580,
+      "summary": "Weights and biases written as a weighted sum, then compressed into a single matrix-vector product."
+    },
+    {
+      "id": "v1_c4",
+      "video_id": "V1",
+      "start": 640,
+      "end": 760,
+      "summary": "Squishing the weighted sum into a range with sigmoid, and why modern networks use ReLU instead."
+    },
+    {
+      "id": "v2_c1",
+      "video_id": "V2",
+      "start": 95,
+      "end": 250,
+      "summary": "Defining a cost function over the training data: the average squared error of the network's output."
+    },
+    {
+      "id": "v2_c2",
+      "video_id": "V2",
+      "start": 300,
+      "end": 470,
+      "summary": "Walking downhill on the cost surface, and the gradient as the direction of steepest ascent."
+    },
+    {
+      "id": "v2_c3",
+      "video_id": "V2",
+      "start": 520,
+      "end": 640,
+      "summary": "Step size and the learning rate: why steps shrink as the slope flattens out."
+    },
+    {
+      "id": "v2_c4",
+      "video_id": "V2",
+      "start": 700,
+      "end": 840,
+      "summary": "The gradient spelled out as a vector of partial derivatives, one per weight and bias."
+    },
+    {
+      "id": "v3_c1",
+      "video_id": "V3",
+      "start": 60,
+      "end": 220,
+      "summary": "Backpropagation as the intuition of nudging every weight in proportion to how much it would help."
+    },
+    {
+      "id": "v3_c2",
+      "video_id": "V3",
+      "start": 260,
+      "end": 420,
+      "summary": "Propagating desired changes backwards layer by layer through the computational graph."
+    },
+    {
+      "id": "v4_c1",
+      "video_id": "V4",
+      "start": 40,
+      "end": 160,
+      "summary": "A refresher on derivatives as limits of tiny nudges, dC over dw, before any network appears."
+    },
+    {
+      "id": "v4_c2",
+      "video_id": "V4",
+      "start": 210,
+      "end": 380,
+      "summary": "The chain rule applied through a one-neuron-per-layer network, multiplying sensitivities together."
+    },
+    {
+      "id": "v4_c3",
+      "video_id": "V4",
+      "start": 430,
+      "end": 560,
+      "summary": "Partial derivatives of a multivariable cost with respect to each individual weight."
+    },
+    {
+      "id": "v5_c1",
+      "video_id": "V5",
+      "start": 120,
+      "end": 250,
+      "summary": "Breaking text into tokens, and why tokens are not the same thing as words."
+    },
+    {
+      "id": "v5_c4",
+      "video_id": "V5",
+      "start": 730,
+      "end": 880,
+      "summary": "The embedding matrix: every token becomes a high-dimensional vector whose directions carry meaning."
+    },
+    {
+      "id": "v5_c6",
+      "video_id": "V5",
+      "start": 1100,
+      "end": 1200,
+      "summary": "Turning the final logits into a probability distribution with softmax and its exponentials."
+    },
+    {
+      "id": "v5_c8",
+      "video_id": "V5",
+      "start": 1330,
+      "end": 1480,
+      "summary": "Assembling the whole transformer: alternating attention blocks and multilayer perceptron blocks."
+    },
+    {
+      "id": "v6_c1",
+      "video_id": "V6",
+      "start": 45,
+      "end": 175,
+      "summary": "Dot products between embedding vectors as a measure of how much one word attends to another."
+    },
+    {
+      "id": "v6_c2",
+      "video_id": "V6",
+      "start": 220,
+      "end": 535,
+      "summary": "The attention pattern itself: scores over all previous tokens, normalised into weights."
+    },
+    {
+      "id": "v6_c3",
+      "video_id": "V6",
+      "start": 535,
+      "end": 720,
+      "summary": "Query, key and value matrices, and the matrix multiplications that produce them."
+    },
+    {
+      "id": "v7_c1",
+      "video_id": "V7",
+      "start": 30,
+      "end": 170,
+      "summary": "What a vector actually is: an arrow, a list of numbers, and the thing all of linear algebra acts on."
+    },
+    {
+      "id": "v7_c2",
+      "video_id": "V7",
+      "start": 200,
+      "end": 350,
+      "summary": "Basis vectors, span, and why every vector is a linear combination of i-hat and j-hat."
+    },
+    {
+      "id": "v7_c3",
+      "video_id": "V7",
+      "start": 380,
+      "end": 540,
+      "summary": "Linear transformations as grid-preserving movements of space, tracked by where the basis lands."
+    },
+    {
+      "id": "v7_c4",
+      "video_id": "V7",
+      "start": 600,
+      "end": 760,
+      "summary": "Matrix multiplication as the composition of two linear transformations, applied right to left."
+    },
+    {
+      "id": "v7_c5",
+      "video_id": "V7",
+      "start": 800,
+      "end": 930,
+      "summary": "The dot product geometrically: projection times length, and why order does not matter."
+    }
+  ],
+  "concepts": [
+    { "name": "linear algebra", "aliases": ["linear algebra basics", "matrix math"] },
+    { "name": "vectors", "aliases": ["vector", "vector space", "arrows in space"] },
+    { "name": "basis vectors", "aliases": ["basis", "span", "i-hat and j-hat"] },
+    { "name": "linear transformation", "aliases": ["linear map", "linear transformations"] },
+    { "name": "matrix multiplication", "aliases": ["matmul", "matrix product", "matrix-vector product"] },
+    { "name": "dot product", "aliases": ["inner product", "scalar product"] },
+    { "name": "exponential function", "aliases": ["exp", "e to the x"] },
+    { "name": "limit", "aliases": ["limits", "infinitesimal"] },
+    { "name": "derivative", "aliases": ["derivatives", "slope of a function", "calculus derivative"] },
+    { "name": "chain rule", "aliases": ["chain-rule"] },
+    { "name": "partial derivative", "aliases": ["partial derivatives"] },
+    { "name": "multivariable function", "aliases": ["multivariable calculus", "function of many variables"] },
+    { "name": "gradient", "aliases": ["gradient vector", "steepest ascent"] },
+    { "name": "neural network", "aliases": ["neural net", "neural networks", "network"] },
+    { "name": "activation function", "aliases": ["activation", "nonlinearity"] },
+    { "name": "sigmoid", "aliases": ["logistic function", "sigmoid squishification"] },
+    { "name": "relu", "aliases": ["rectified linear unit", "ReLU"] },
+    { "name": "hidden layer", "aliases": ["hidden layers"] },
+    { "name": "weights and biases", "aliases": ["weights", "biases", "parameters"] },
+    { "name": "training data", "aliases": ["training set", "labelled examples"] },
+    { "name": "cost function", "aliases": ["loss function", "cost", "loss"] },
+    { "name": "mean squared error", "aliases": ["mse", "squared error"] },
+    { "name": "learning rate", "aliases": ["step size"] },
+    { "name": "gradient descent", "aliases": ["how a network learns", "learning", "training a network", "gradient decent"] },
+    { "name": "stochastic gradient descent", "aliases": ["sgd", "mini-batch gradient descent"] },
+    { "name": "backpropagation", "aliases": ["backprop", "back propagation", "backwards pass"] },
+    { "name": "computational graph", "aliases": ["compute graph"] },
+    { "name": "deep learning", "aliases": ["deep neural network"] },
+    { "name": "tokenization", "aliases": ["tokens", "tokenizer"] },
+    { "name": "embedding", "aliases": ["embeddings", "word embedding", "embedding matrix"] },
+    { "name": "softmax", "aliases": ["soft max", "softmax function"] },
+    { "name": "logits", "aliases": ["unnormalised scores"] },
+    { "name": "output layer", "aliases": ["final layer", "unembedding"] },
+    { "name": "temperature", "aliases": ["sampling temperature"] },
+    { "name": "cross entropy loss", "aliases": ["cross-entropy", "log loss"] },
+    { "name": "positional encoding", "aliases": ["positional embeddings", "position encoding"] },
+    { "name": "query key value", "aliases": ["qkv", "query key and value", "key query value matrices"] },
+    { "name": "attention", "aliases": ["self-attention", "self attention", "attention mechanism"] },
+    { "name": "multi-head attention", "aliases": ["multi head attention", "attention heads"] },
+    { "name": "layer normalization", "aliases": ["layer norm", "layernorm"] },
+    { "name": "multilayer perceptron", "aliases": ["mlp", "feed forward layer", "feedforward block"] },
+    { "name": "transformer", "aliases": ["transformers", "gpt", "transformer architecture"] }
+  ],
+  "explains": [
+    { "clip_id": "v1_c1", "concept": "neural network", "score": 0.95 },
+    { "clip_id": "v1_c2", "concept": "hidden layer", "score": 0.9 },
+    { "clip_id": "v1_c2", "concept": "neural network", "score": 0.6 },
+    { "clip_id": "v1_c3", "concept": "matrix multiplication", "score": 0.88 },
+    { "clip_id": "v1_c3", "concept": "weights and biases", "score": 0.92 },
+    { "clip_id": "v1_c4", "concept": "activation function", "score": 0.93 },
+    { "clip_id": "v1_c4", "concept": "sigmoid", "score": 0.9 },
+    { "clip_id": "v1_c4", "concept": "relu", "score": 0.85 },
+    { "clip_id": "v1_c4", "concept": "exponential function", "score": 0.4 },
+    { "clip_id": "v2_c1", "concept": "cost function", "score": 0.95 },
+    { "clip_id": "v2_c1", "concept": "training data", "score": 0.8 },
+    { "clip_id": "v2_c1", "concept": "mean squared error", "score": 0.55 },
+    { "clip_id": "v2_c2", "concept": "gradient descent", "score": 0.96 },
+    { "clip_id": "v2_c2", "concept": "gradient", "score": 0.85 },
+    { "clip_id": "v2_c3", "concept": "learning rate", "score": 0.9 },
+    { "clip_id": "v2_c4", "concept": "partial derivative", "score": 0.88 },
+    { "clip_id": "v2_c4", "concept": "gradient", "score": 0.8 },
+    { "clip_id": "v3_c1", "concept": "backpropagation", "score": 0.95 },
+    { "clip_id": "v3_c2", "concept": "computational graph", "score": 0.8 },
+    { "clip_id": "v3_c2", "concept": "weights and biases", "score": 0.6 },
+    { "clip_id": "v4_c1", "concept": "derivative", "score": 0.9 },
+    { "clip_id": "v4_c1", "concept": "limit", "score": 0.85 },
+    { "clip_id": "v4_c2", "concept": "chain rule", "score": 0.94 },
+    { "clip_id": "v4_c3", "concept": "partial derivative", "score": 0.9 },
+    { "clip_id": "v4_c3", "concept": "multivariable function", "score": 0.75 },
+    { "clip_id": "v5_c1", "concept": "tokenization", "score": 0.93 },
+    { "clip_id": "v5_c4", "concept": "embedding", "score": 0.88 },
+    { "clip_id": "v5_c4", "concept": "vectors", "score": 0.5 },
+    { "clip_id": "v5_c6", "concept": "softmax", "score": 0.94 },
+    { "clip_id": "v5_c6", "concept": "logits", "score": 0.85 },
+    { "clip_id": "v5_c6", "concept": "exponential function", "score": 0.7 },
+    { "clip_id": "v5_c8", "concept": "transformer", "score": 0.9 },
+    { "clip_id": "v5_c8", "concept": "multilayer perceptron", "score": 0.7 },
+    { "clip_id": "v6_c1", "concept": "dot product", "score": 0.93 },
+    { "clip_id": "v6_c1", "concept": "vectors", "score": 0.55 },
+    { "clip_id": "v6_c2", "concept": "attention", "score": 0.94 },
+    { "clip_id": "v6_c2", "concept": "softmax", "score": 0.5 },
+    { "clip_id": "v6_c3", "concept": "query key value", "score": 0.95 },
+    { "clip_id": "v6_c3", "concept": "matrix multiplication", "score": 0.5 },
+    { "clip_id": "v7_c1", "concept": "vectors", "score": 0.95 },
+    { "clip_id": "v7_c1", "concept": "linear algebra", "score": 0.8 },
+    { "clip_id": "v7_c2", "concept": "basis vectors", "score": 0.93 },
+    { "clip_id": "v7_c2", "concept": "vectors", "score": 0.5 },
+    { "clip_id": "v7_c3", "concept": "linear transformation", "score": 0.94 },
+    { "clip_id": "v7_c3", "concept": "basis vectors", "score": 0.6 },
+    { "clip_id": "v7_c4", "concept": "matrix multiplication", "score": 0.92 },
+    { "clip_id": "v7_c4", "concept": "linear transformation", "score": 0.6 },
+    { "clip_id": "v7_c5", "concept": "dot product", "score": 0.88 },
+    { "clip_id": "v7_c5", "concept": "vectors", "score": 0.5 }
+  ],
+  "requires": [
+    { "from": "vectors", "to": "linear algebra", "confidence": 3 },
+    { "from": "basis vectors", "to": "vectors", "confidence": 3 },
+    { "from": "linear transformation", "to": "basis vectors", "confidence": 3 },
+    { "from": "linear transformation", "to": "vectors", "confidence": 3 },
+    { "from": "matrix multiplication", "to": "linear transformation", "confidence": 3 },
+    { "from": "matrix multiplication", "to": "linear algebra", "confidence": 2 },
+    { "from": "dot product", "to": "vectors", "confidence": 3 },
+    { "from": "derivative", "to": "limit", "confidence": 3 },
+    { "from": "chain rule", "to": "derivative", "confidence": 3 },
+    { "from": "partial derivative", "to": "derivative", "confidence": 3 },
+    { "from": "partial derivative", "to": "multivariable function", "confidence": 2 },
+    { "from": "multivariable function", "to": "vectors", "confidence": 2 },
+    { "from": "gradient", "to": "partial derivative", "confidence": 3 },
+    { "from": "gradient", "to": "vectors", "confidence": 3 },
+    { "from": "sigmoid", "to": "exponential function", "confidence": 3 },
+    { "from": "activation function", "to": "sigmoid", "confidence": 2 },
+    { "from": "activation function", "to": "relu", "confidence": 2 },
+    { "from": "neural network", "to": "matrix multiplication", "confidence": 3 },
+    { "from": "neural network", "to": "activation function", "confidence": 3 },
+    { "from": "hidden layer", "to": "neural network", "confidence": 3 },
+    { "from": "deep learning", "to": "hidden layer", "confidence": 3 },
+    { "from": "deep learning", "to": "neural network", "confidence": 3 },
+    { "from": "weights and biases", "to": "matrix multiplication", "confidence": 2 },
+    { "from": "cost function", "to": "weights and biases", "confidence": 3 },
+    { "from": "cost function", "to": "training data", "confidence": 3 },
+    { "from": "mean squared error", "to": "cost function", "confidence": 3 },
+    { "from": "learning rate", "to": "derivative", "confidence": 2 },
+    { "from": "gradient descent", "to": "neural network", "confidence": 3 },
+    { "from": "gradient descent", "to": "cost function", "confidence": 3 },
+    { "from": "gradient descent", "to": "gradient", "confidence": 3 },
+    { "from": "gradient descent", "to": "learning rate", "confidence": 2 },
+    { "from": "stochastic gradient descent", "to": "gradient descent", "confidence": 3 },
+    { "from": "backpropagation", "to": "gradient descent", "confidence": 3 },
+    { "from": "backpropagation", "to": "neural network", "confidence": 3 },
+    { "from": "backpropagation", "to": "chain rule", "confidence": 3 },
+    { "from": "backpropagation", "to": "computational graph", "confidence": 2 },
+    { "from": "computational graph", "to": "neural network", "confidence": 2 },
+    { "from": "embedding", "to": "vectors", "confidence": 3 },
+    { "from": "embedding", "to": "neural network", "confidence": 2 },
+    { "from": "embedding", "to": "tokenization", "confidence": 3 },
+    { "from": "softmax", "to": "vectors", "confidence": 3 },
+    { "from": "softmax", "to": "exponential function", "confidence": 3 },
+    { "from": "positional encoding", "to": "vectors", "confidence": 3 },
+    { "from": "query key value", "to": "matrix multiplication", "confidence": 3 },
+    { "from": "query key value", "to": "embedding", "confidence": 2 },
+    { "from": "attention", "to": "embedding", "confidence": 3 },
+    { "from": "attention", "to": "softmax", "confidence": 3 },
+    { "from": "attention", "to": "dot product", "confidence": 3 },
+    { "from": "attention", "to": "positional encoding", "confidence": 2 },
+    { "from": "attention", "to": "query key value", "confidence": 3 },
+    { "from": "multi-head attention", "to": "attention", "confidence": 3 },
+    { "from": "layer normalization", "to": "vectors", "confidence": 2 },
+    { "from": "multilayer perceptron", "to": "neural network", "confidence": 3 },
+    { "from": "multilayer perceptron", "to": "matrix multiplication", "confidence": 2 },
+    { "from": "transformer", "to": "multi-head attention", "confidence": 3 },
+    { "from": "transformer", "to": "layer normalization", "confidence": 2 },
+    { "from": "transformer", "to": "multilayer perceptron", "confidence": 3 },
+    { "from": "transformer", "to": "embedding", "confidence": 3 },
+    { "from": "output layer", "to": "softmax", "confidence": 3 },
+    { "from": "output layer", "to": "neural network", "confidence": 2 },
+    { "from": "logits", "to": "output layer", "confidence": 3 },
+    { "from": "temperature", "to": "softmax", "confidence": 3 },
+    { "from": "temperature", "to": "logits", "confidence": 2 },
+    { "from": "cross entropy loss", "to": "softmax", "confidence": 2 },
+    { "from": "cross entropy loss", "to": "cost function", "confidence": 3 },
+    { "from": "cost function", "to": "gradient descent", "confidence": 1 },
+    { "from": "softmax", "to": "logits", "confidence": 2 },
+    { "from": "embedding", "to": "attention", "confidence": 1 }
+  ]
+}

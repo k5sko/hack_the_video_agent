@@ -1,0 +1,481 @@
+{
+  "corpus_name": "3Blue1Brown — Neural Networks",
+  "concepts": [
+    {
+      "id": "vector",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 330,
+        "end_seconds": 415,
+        "explains_score": 0.61
+      }
+    },
+    {
+      "id": "linear algebra",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 640,
+        "end_seconds": 760,
+        "explains_score": 0.58
+      }
+    },
+    {
+      "id": "matrix multiplication",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 180,
+        "end_seconds": 440,
+        "explains_score": 0.88
+      }
+    },
+    {
+      "id": "dot product",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, visually explained",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 45,
+        "end_seconds": 175,
+        "explains_score": 0.93
+      }
+    },
+    {
+      "id": "function",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 950,
+        "end_seconds": 1030,
+        "explains_score": 0.54
+      }
+    },
+    {
+      "id": "calculus",
+      "evidence": {
+        "video_id": "V4",
+        "video_title": "Backpropagation calculus",
+        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+        "start_seconds": 20,
+        "end_seconds": 120,
+        "explains_score": 0.66
+      }
+    },
+    {
+      "id": "derivative",
+      "evidence": {
+        "video_id": "V4",
+        "video_title": "Backpropagation calculus",
+        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+        "start_seconds": 120,
+        "end_seconds": 235,
+        "explains_score": 0.81
+      }
+    },
+    {
+      "id": "chain rule",
+      "evidence": {
+        "video_id": "V4",
+        "video_title": "Backpropagation calculus",
+        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+        "start_seconds": 235,
+        "end_seconds": 400,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "partial derivative",
+      "evidence": {
+        "video_id": "V4",
+        "video_title": "Backpropagation calculus",
+        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+        "start_seconds": 400,
+        "end_seconds": 520,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "exponential function",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1200,
+        "end_seconds": 1265,
+        "explains_score": 0.52
+      }
+    },
+    {
+      "id": "probability distribution",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 300,
+        "end_seconds": 400,
+        "explains_score": 0.72
+      }
+    },
+    {
+      "id": "neuron",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 27,
+        "end_seconds": 262,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "weight",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 415,
+        "end_seconds": 530,
+        "explains_score": 0.87
+      }
+    },
+    {
+      "id": "bias",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 530,
+        "end_seconds": 605,
+        "explains_score": 0.83
+      }
+    },
+    {
+      "id": "layer",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 27,
+        "end_seconds": 262,
+        "explains_score": 0.91
+      }
+    },
+    {
+      "id": "activation function",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 605,
+        "end_seconds": 700,
+        "explains_score": 0.86
+      }
+    },
+    {
+      "id": "sigmoid",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 700,
+        "end_seconds": 775,
+        "explains_score": 0.79
+      }
+    },
+    {
+      "id": "ReLU",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 1060,
+        "end_seconds": 1120,
+        "explains_score": 0.74
+      }
+    },
+    {
+      "id": "neural network",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 262,
+        "end_seconds": 487,
+        "explains_score": 0.94
+      }
+    },
+    {
+      "id": "training data",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 60,
+        "end_seconds": 175,
+        "explains_score": 0.77
+      }
+    },
+    {
+      "id": "loss function",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 175,
+        "end_seconds": 330,
+        "explains_score": 0.92
+      }
+    },
+    {
+      "id": "gradient",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 330,
+        "end_seconds": 445,
+        "explains_score": 0.88
+      }
+    },
+    {
+      "id": "gradient descent",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 445,
+        "end_seconds": 640,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "learning rate",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 640,
+        "end_seconds": 705,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "backpropagation",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 95,
+        "end_seconds": 430,
+        "explains_score": 0.96
+      }
+    },
+    {
+      "id": "token",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 640,
+        "end_seconds": 730,
+        "explains_score": 0.84
+      }
+    },
+    {
+      "id": "embedding",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 730,
+        "end_seconds": 905,
+        "explains_score": 0.93
+      }
+    },
+    {
+      "id": "softmax",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1100,
+        "end_seconds": 1200,
+        "explains_score": 0.91
+      }
+    },
+    {
+      "id": "temperature",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1265,
+        "end_seconds": 1385,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "attention",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, visually explained",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 220,
+        "end_seconds": 535,
+        "explains_score": 0.97
+      }
+    },
+    {
+      "id": "query key value",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, visually explained",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 535,
+        "end_seconds": 790,
+        "explains_score": 0.94
+      }
+    },
+    {
+      "id": "multi-head attention",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, visually explained",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1080,
+        "end_seconds": 1320,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "positional encoding",
+      "evidence": null
+    },
+    {
+      "id": "context window",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 905,
+        "end_seconds": 985,
+        "explains_score": 0.75
+      }
+    },
+    {
+      "id": "MLP block",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 180,
+        "end_seconds": 520,
+        "explains_score": 0.92
+      }
+    },
+    {
+      "id": "unembedding",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 985,
+        "end_seconds": 1100,
+        "explains_score": 0.78
+      }
+    },
+    {
+      "id": "transformer",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 440,
+        "end_seconds": 640,
+        "explains_score": 0.89
+      }
+    },
+    {
+      "id": "next token prediction",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 60,
+        "end_seconds": 180,
+        "explains_score": 0.86
+      }
+    }
+  ],
+  "requires": [
+    { "from": "linear algebra", "to": "vector" },
+    { "from": "matrix multiplication", "to": "linear algebra" },
+    { "from": "matrix multiplication", "to": "vector" },
+    { "from": "dot product", "to": "vector" },
+    { "from": "dot product", "to": "linear algebra" },
+    { "from": "calculus", "to": "function" },
+    { "from": "derivative", "to": "calculus" },
+    { "from": "derivative", "to": "function" },
+    { "from": "chain rule", "to": "derivative" },
+    { "from": "partial derivative", "to": "derivative" },
+    { "from": "exponential function", "to": "function" },
+    { "from": "probability distribution", "to": "function" },
+    { "from": "neuron", "to": "function" },
+    { "from": "weight", "to": "neuron" },
+    { "from": "bias", "to": "neuron" },
+    { "from": "layer", "to": "neuron" },
+    { "from": "layer", "to": "weight" },
+    { "from": "layer", "to": "bias" },
+    { "from": "activation function", "to": "neuron" },
+    { "from": "sigmoid", "to": "activation function" },
+    { "from": "sigmoid", "to": "exponential function" },
+    { "from": "ReLU", "to": "activation function" },
+    { "from": "neural network", "to": "layer" },
+    { "from": "neural network", "to": "activation function" },
+    { "from": "neural network", "to": "matrix multiplication" },
+    { "from": "loss function", "to": "neural network" },
+    { "from": "loss function", "to": "training data" },
+    { "from": "gradient", "to": "partial derivative" },
+    { "from": "gradient", "to": "vector" },
+    { "from": "gradient descent", "to": "gradient" },
+    { "from": "gradient descent", "to": "loss function" },
+    { "from": "learning rate", "to": "gradient descent" },
+    { "from": "backpropagation", "to": "gradient descent" },
+    { "from": "backpropagation", "to": "chain rule" },
+    { "from": "backpropagation", "to": "neural network" },
+    { "from": "embedding", "to": "token" },
+    { "from": "embedding", "to": "vector" },
+    { "from": "embedding", "to": "neural network" },
+    { "from": "softmax", "to": "exponential function" },
+    { "from": "softmax", "to": "probability distribution" },
+    { "from": "softmax", "to": "vector" },
+    { "from": "temperature", "to": "softmax" },
+    { "from": "positional encoding", "to": "embedding" },
+    { "from": "attention", "to": "dot product" },
+    { "from": "attention", "to": "softmax" },
+    { "from": "attention", "to": "embedding" },
+    { "from": "attention", "to": "positional encoding" },
+    { "from": "query key value", "to": "attention" },
+    { "from": "query key value", "to": "matrix multiplication" },
+    { "from": "multi-head attention", "to": "attention" },
+    { "from": "multi-head attention", "to": "query key value" },
+    { "from": "context window", "to": "attention" },
+    { "from": "context window", "to": "token" },
+    { "from": "MLP block", "to": "neural network" },
+    { "from": "MLP block", "to": "layer" },
+    { "from": "unembedding", "to": "embedding" },
+    { "from": "unembedding", "to": "softmax" },
+    { "from": "transformer", "to": "multi-head attention" },
+    { "from": "transformer", "to": "MLP block" },
+    { "from": "transformer", "to": "embedding" },
+    { "from": "next token prediction", "to": "transformer" },
+    { "from": "next token prediction", "to": "unembedding" },
+    { "from": "next token prediction", "to": "probability distribution" }
+  ]
+}

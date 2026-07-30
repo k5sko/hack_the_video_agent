@@ -1,0 +1,23 @@
+{
+  "query": "attention",
+  "mode": "search_only",
+  "target_concepts": ["attention"],
+  "known": [],
+  "needed_concepts": [],
+  "playlist": [
+    {
+      "clip_id": "v6_c2",
+      "video_id": "V6",
+      "video_title": "Attention in transformers, visually explained",
+      "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "start_seconds": 220,
+      "end_seconds": 535,
+      "covers": ["attention"],
+      "why": "Keyword match: the transcript says \"attention\" here. Why it is being said, and what it assumes, is not represented."
+    }
+  ],
+  "gaps": [],
+  "total_corpus_seconds": 8400,
+  "watch_seconds": 315,
+  "narration": "The current moment is visible, but what it assumes, what you can skip, and what order to watch cannot be determined."
+}

@@ -1,0 +1,21 @@
+{
+  "backpropagation": ["backprop", "the backward pass", "backward pass", "chain rule walkthrough", "back propagation", "backpropagation algorithm"],
+  "attention": ["self-attention", "self attention", "attention head", "attention mechanism", "attention block", "attention pattern", "multi-head attention", "masked attention"],
+  "embedding": ["word embedding", "embedding vector", "token embedding", "embeddings", "embedding matrix", "word vector", "vector embedding"],
+  "neural network": ["network", "multilayer perceptron", "mlp", "neural net", "neural nets", "artificial neural network", "feedforward network", "deep neural network"],
+  "gradient descent": ["gradient descent algorithm", "stochastic gradient descent", "sgd"],
+  "softmax": ["softmax function", "soft max", "softmax layer"],
+  "positional encoding": ["positional embedding", "position encoding", "positional encodings"],
+  "dot product": ["inner product", "dot products"],
+  "cost function": ["loss function", "cost", "loss"],
+  "matrix multiplication": ["matrix multiply", "matrix product", "matrix vector product"],
+  "transformer": ["transformer model", "transformer architecture", "transformers"],
+  "activation function": ["activation", "activations", "nonlinearity"],
+  "weights": ["weight", "weight matrix", "parameters", "weights and biases"],
+  "large language model": ["llm", "llms", "gpt", "generative pretrained transformer"],
+  "chain rule": ["the chain rule", "chain rule of calculus"],
+  "training data": ["training set", "training examples"],
+  "vector": ["vectors", "high dimensional vector"],
+  "derivative": ["derivatives", "partial derivative", "partial derivatives"],
+  "multilayer perceptron block": ["mlp block", "feedforward layer", "feed forward layer"]
+}

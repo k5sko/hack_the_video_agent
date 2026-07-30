@@ -10,3 +10,11 @@ dist/
 *.mp4
 *.mkv
 *.webm
+
+# Downloaded source video, chunks, captions and run logs (437MB, re-fetchable
+# with fetch_media). data/cache/ is deliberately NOT ignored — the committed
+# cache is what lets the demo run with the network cable pulled.
+beeline/data/media/
+
+*.tsbuildinfo
+.pytest_cache/

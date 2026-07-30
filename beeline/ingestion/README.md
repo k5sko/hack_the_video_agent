@@ -23,13 +23,26 @@ videos:
 }
 ```
 
-**How to run:**
+**How to run:** (all commands from the REPO ROOT, using the repo venv)
 
 ```bash
-cd ingestion
-python -m ingest            # full run
-python -m ingest --from-cache   # rebuild payload with zero API calls
+# 0. one-time: fetch the corpus + captions into data/media/ (not committed)
+.venv/bin/python -m beeline.ingestion.fetch_media
+
+# 1. optional but recommended: index every chunk concurrently (wall-clock bound)
+.venv/bin/python -m beeline.ingestion.upload_stage
+
+# 2. full agent run
+.venv/bin/python -m beeline.ingestion.ingest
+
+# 3. rebuild the payload from cache with ZERO API calls (this is the demo path)
+.venv/bin/python -m beeline.ingestion.ingest --from-cache
 ```
+
+Credentials load from the **repo root** `.env` (gitignored): `TWELVELABS_API_KEY`,
+`TWELVELABS_INDEX_ID`, `OPENAI_API_KEY`. The index must carry **both** a Marengo
+model (search) and a Pegasus model (chapter generation); `upload_stage` assumes
+`TWELVELABS_INDEX_ID` already points at such an index.
 
 **Constraints:** every tool caches its API response to `data/cache/` keyed by
 request hash — a re-run must cost zero API calls. Videos over ~20 min are split
