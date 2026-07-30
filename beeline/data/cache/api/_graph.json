@@ -1,0 +1,1663 @@
+{
+  "corpus_name": "3Blue1Brown \u2014 Neural Networks",
+  "concepts": [
+    {
+      "id": "activation function",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 593.0,
+        "end_seconds": 747.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "and gate",
+      "evidence": null
+    },
+    {
+      "id": "attention",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 338.0,
+        "end_seconds": 500.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "attention scores",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1252.0,
+        "end_seconds": 1334.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "attention weights",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 308.0,
+        "end_seconds": 606.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "backpropagation",
+      "evidence": {
+        "video_id": "V4",
+        "video_title": "Backpropagation calculus",
+        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+        "start_seconds": 100.0,
+        "end_seconds": 200.0,
+        "explains_score": 1.0
+      }
+    },
+    {
+      "id": "basic machine learning",
+      "evidence": null
+    },
+    {
+      "id": "basic probability",
+      "evidence": null
+    },
+    {
+      "id": "bias adjustment",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 188.0,
+        "end_seconds": 280.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "calculus",
+      "evidence": null
+    },
+    {
+      "id": "chain rule",
+      "evidence": {
+        "video_id": "V4",
+        "video_title": "Backpropagation calculus",
+        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+        "start_seconds": 35.0,
+        "end_seconds": 100.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "complex pattern recognition",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 338.0,
+        "end_seconds": 593.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "contextual relationships",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1200.0,
+        "end_seconds": 1252.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "contextual word vectors",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1014.0,
+        "end_seconds": 1108.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "cost function",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 35.0,
+        "end_seconds": 65.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "cost function sensitivity",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 65.0,
+        "end_seconds": 126.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "data flow visualization",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 215.0,
+        "end_seconds": 308.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "data representation",
+      "evidence": null
+    },
+    {
+      "id": "deep learning",
+      "evidence": null
+    },
+    {
+      "id": "derivative",
+      "evidence": {
+        "video_id": "V4",
+        "video_title": "Backpropagation calculus",
+        "youtube_url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+        "start_seconds": 100.0,
+        "end_seconds": 200.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "digit recognition",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 749.0,
+        "end_seconds": 970.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "dimensionality",
+      "evidence": null
+    },
+    {
+      "id": "dot product",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 912.0,
+        "end_seconds": 1014.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "early layer features",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 338.0,
+        "end_seconds": 593.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "embedding refinement",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1252.0,
+        "end_seconds": 1334.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "embedding space",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 719.0,
+        "end_seconds": 815.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "embedding vectors",
+      "evidence": null
+    },
+    {
+      "id": "exponentiation of inputs",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1347.0,
+        "end_seconds": 1434.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "factual knowledge representation",
+      "evidence": null
+    },
+    {
+      "id": "feature detection",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 338.0,
+        "end_seconds": 593.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "forward propagation",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 280.0,
+        "end_seconds": 487.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "function composition",
+      "evidence": null
+    },
+    {
+      "id": "gradient computation",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 395.0,
+        "end_seconds": 603.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "gradient descent",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 603.0,
+        "end_seconds": 749.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "gradient vector",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 65.0,
+        "end_seconds": 126.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "hidden layers",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 545.0,
+        "end_seconds": 605.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "hierarchical representations",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 338.0,
+        "end_seconds": 593.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "high-dimensional vectors",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 1056.0,
+        "end_seconds": 1205.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "input sequence",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1099.0,
+        "end_seconds": 1160.0,
+        "explains_score": 0.6
+      }
+    },
+    {
+      "id": "input vectors",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 606.0,
+        "end_seconds": 751.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "key computation",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 308.0,
+        "end_seconds": 606.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "language model",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 0.0,
+        "end_seconds": 63.0,
+        "explains_score": 0.6
+      }
+    },
+    {
+      "id": "language modeling",
+      "evidence": null
+    },
+    {
+      "id": "large language models",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1500.0,
+        "end_seconds": 1538.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "large-scale pre-training",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 0.0,
+        "end_seconds": 154.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "layer",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 606.0,
+        "end_seconds": 667.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "layered neural networks",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 338.0,
+        "end_seconds": 593.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "linear algebra",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 747.0,
+        "end_seconds": 960.0,
+        "explains_score": 0.75
+      }
+    },
+    {
+      "id": "linear inputs",
+      "evidence": null
+    },
+    {
+      "id": "linear transformation",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 606.0,
+        "end_seconds": 732.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "matrices",
+      "evidence": null
+    },
+    {
+      "id": "matrix multiplication",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 747.0,
+        "end_seconds": 960.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "matrix operations",
+      "evidence": null
+    },
+    {
+      "id": "mlp layers",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 63.0,
+        "end_seconds": 133.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "mnist dataset",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 135.0,
+        "end_seconds": 185.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "multilayer perceptron block",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 942.0,
+        "end_seconds": 1056.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "negative gradient",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 603.0,
+        "end_seconds": 749.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "neural network",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 0.0,
+        "end_seconds": 102.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "neural network architecture",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 102.0,
+        "end_seconds": 338.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "neural network layers",
+      "evidence": null
+    },
+    {
+      "id": "neural network parameters",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 747.0,
+        "end_seconds": 960.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "neuron output behavior",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 960.0,
+        "end_seconds": 1054.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "next-word prediction",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 0.0,
+        "end_seconds": 154.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "non-linear function",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 606.0,
+        "end_seconds": 732.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "output layer",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 0.0,
+        "end_seconds": 102.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "output neuron target",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 188.0,
+        "end_seconds": 280.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "output projection",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1334.0,
+        "end_seconds": 1400.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "parallelization",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1470.0,
+        "end_seconds": 1500.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "parameter distribution",
+      "evidence": {
+        "video_id": "V7",
+        "video_title": "How might LLMs store facts",
+        "youtube_url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8",
+        "start_seconds": 942.0,
+        "end_seconds": 1056.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "parameter optimization",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 185.0,
+        "end_seconds": 285.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "positional encoding",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1400.0,
+        "end_seconds": 1470.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "predicted output",
+      "evidence": null
+    },
+    {
+      "id": "probability distributions",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1347.0,
+        "end_seconds": 1434.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "query vectors",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 606.0,
+        "end_seconds": 751.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "relu activation function",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 960.0,
+        "end_seconds": 1054.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "semantic representation",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1014.0,
+        "end_seconds": 1108.0,
+        "explains_score": 0.7
+      }
+    },
+    {
+      "id": "semantic similarity",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 912.0,
+        "end_seconds": 1014.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "sequence prediction",
+      "evidence": null
+    },
+    {
+      "id": "sequential dependency",
+      "evidence": null
+    },
+    {
+      "id": "softmax",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1347.0,
+        "end_seconds": 1434.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "softmax normalization",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 308.0,
+        "end_seconds": 606.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "source and target sequences",
+      "evidence": null
+    },
+    {
+      "id": "token vectors",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 1108.0,
+        "end_seconds": 1205.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "tokenization",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 154.0,
+        "end_seconds": 338.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "training data",
+      "evidence": null
+    },
+    {
+      "id": "training efficiency",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 960.0,
+        "end_seconds": 1054.0,
+        "explains_score": 0.6
+      }
+    },
+    {
+      "id": "training neural networks",
+      "evidence": null
+    },
+    {
+      "id": "training process",
+      "evidence": {
+        "video_id": "V2",
+        "video_title": "Gradient descent, how neural networks learn",
+        "youtube_url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+        "start_seconds": 135.0,
+        "end_seconds": 185.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "transformer",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 1400.0,
+        "end_seconds": 1470.0,
+        "explains_score": 0.95
+      }
+    },
+    {
+      "id": "translation tasks",
+      "evidence": null
+    },
+    {
+      "id": "value vectors",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 751.0,
+        "end_seconds": 935.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "vector calculus",
+      "evidence": null
+    },
+    {
+      "id": "vector representation",
+      "evidence": {
+        "video_id": "V5",
+        "video_title": "But what is a GPT? Visual intro to transformers",
+        "youtube_url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+        "start_seconds": 154.0,
+        "end_seconds": 338.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "vector space",
+      "evidence": null
+    },
+    {
+      "id": "weight adjustment",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 188.0,
+        "end_seconds": 280.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "weight optimization",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 65.0,
+        "end_seconds": 126.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "weight updates",
+      "evidence": {
+        "video_id": "V3",
+        "video_title": "What is backpropagation really doing?",
+        "youtube_url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+        "start_seconds": 126.0,
+        "end_seconds": 188.0,
+        "explains_score": 0.85
+      }
+    },
+    {
+      "id": "weighted sums",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 593.0,
+        "end_seconds": 747.0,
+        "explains_score": 0.9
+      }
+    },
+    {
+      "id": "weights",
+      "evidence": {
+        "video_id": "V1",
+        "video_title": "But what is a neural network?",
+        "youtube_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+        "start_seconds": 1054.0,
+        "end_seconds": 1120.0,
+        "explains_score": 0.8
+      }
+    },
+    {
+      "id": "word embeddings",
+      "evidence": {
+        "video_id": "V6",
+        "video_title": "Attention in transformers, step-by-step",
+        "youtube_url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+        "start_seconds": 31.0,
+        "end_seconds": 61.0,
+        "explains_score": 0.9
+      }
+    }
+  ],
+  "requires": [
+    {
+      "from": "activation function",
+      "to": "matrix operations"
+    },
+    {
+      "from": "activation function",
+      "to": "neural network"
+    },
+    {
+      "from": "attention",
+      "to": "contextual word vectors"
+    },
+    {
+      "from": "attention",
+      "to": "embedding vectors"
+    },
+    {
+      "from": "attention",
+      "to": "input sequence"
+    },
+    {
+      "from": "attention",
+      "to": "language model"
+    },
+    {
+      "from": "attention",
+      "to": "linear algebra"
+    },
+    {
+      "from": "attention",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "attention",
+      "to": "neural network"
+    },
+    {
+      "from": "attention",
+      "to": "tokenization"
+    },
+    {
+      "from": "attention",
+      "to": "transformer"
+    },
+    {
+      "from": "attention",
+      "to": "value vectors"
+    },
+    {
+      "from": "attention",
+      "to": "vector representation"
+    },
+    {
+      "from": "attention weights",
+      "to": "contextual word vectors"
+    },
+    {
+      "from": "attention weights",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "attention weights",
+      "to": "vector representation"
+    },
+    {
+      "from": "backpropagation",
+      "to": "activation function"
+    },
+    {
+      "from": "backpropagation",
+      "to": "calculus"
+    },
+    {
+      "from": "backpropagation",
+      "to": "cost function"
+    },
+    {
+      "from": "backpropagation",
+      "to": "forward propagation"
+    },
+    {
+      "from": "backpropagation",
+      "to": "gradient descent"
+    },
+    {
+      "from": "backpropagation",
+      "to": "mnist dataset"
+    },
+    {
+      "from": "backpropagation",
+      "to": "neural network"
+    },
+    {
+      "from": "backpropagation",
+      "to": "neural network layers"
+    },
+    {
+      "from": "backpropagation",
+      "to": "parameter optimization"
+    },
+    {
+      "from": "backpropagation",
+      "to": "training data"
+    },
+    {
+      "from": "bias adjustment",
+      "to": "cost function"
+    },
+    {
+      "from": "bias adjustment",
+      "to": "feature detection"
+    },
+    {
+      "from": "bias adjustment",
+      "to": "gradient descent"
+    },
+    {
+      "from": "bias adjustment",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "bias adjustment",
+      "to": "mlp layers"
+    },
+    {
+      "from": "bias adjustment",
+      "to": "neural network"
+    },
+    {
+      "from": "bias adjustment",
+      "to": "training data"
+    },
+    {
+      "from": "chain rule",
+      "to": "calculus"
+    },
+    {
+      "from": "chain rule",
+      "to": "cost function"
+    },
+    {
+      "from": "chain rule",
+      "to": "gradient descent"
+    },
+    {
+      "from": "chain rule",
+      "to": "neural network"
+    },
+    {
+      "from": "chain rule",
+      "to": "neural network layers"
+    },
+    {
+      "from": "complex pattern recognition",
+      "to": "feature detection"
+    },
+    {
+      "from": "contextual word vectors",
+      "to": "neural network"
+    },
+    {
+      "from": "contextual word vectors",
+      "to": "vector representation"
+    },
+    {
+      "from": "contextual word vectors",
+      "to": "word embeddings"
+    },
+    {
+      "from": "cost function",
+      "to": "basic machine learning"
+    },
+    {
+      "from": "cost function",
+      "to": "calculus"
+    },
+    {
+      "from": "cost function",
+      "to": "derivative"
+    },
+    {
+      "from": "cost function",
+      "to": "neural network"
+    },
+    {
+      "from": "cost function",
+      "to": "predicted output"
+    },
+    {
+      "from": "cost function",
+      "to": "training data"
+    },
+    {
+      "from": "cost function sensitivity",
+      "to": "neural network"
+    },
+    {
+      "from": "data flow visualization",
+      "to": "neural network"
+    },
+    {
+      "from": "data flow visualization",
+      "to": "vector representation"
+    },
+    {
+      "from": "derivative",
+      "to": "calculus"
+    },
+    {
+      "from": "derivative",
+      "to": "neural network layers"
+    },
+    {
+      "from": "dot product",
+      "to": "contextual word vectors"
+    },
+    {
+      "from": "dot product",
+      "to": "linear algebra"
+    },
+    {
+      "from": "dot product",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "dot product",
+      "to": "vector representation"
+    },
+    {
+      "from": "early layer features",
+      "to": "feature detection"
+    },
+    {
+      "from": "embedding space",
+      "to": "attention"
+    },
+    {
+      "from": "embedding space",
+      "to": "high-dimensional vectors"
+    },
+    {
+      "from": "embedding space",
+      "to": "linear algebra"
+    },
+    {
+      "from": "embedding space",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "embedding space",
+      "to": "neural network"
+    },
+    {
+      "from": "embedding space",
+      "to": "transformer"
+    },
+    {
+      "from": "embedding space",
+      "to": "vector representation"
+    },
+    {
+      "from": "embedding space",
+      "to": "word embeddings"
+    },
+    {
+      "from": "exponentiation of inputs",
+      "to": "basic probability"
+    },
+    {
+      "from": "feature detection",
+      "to": "digit recognition"
+    },
+    {
+      "from": "feature detection",
+      "to": "neural network"
+    },
+    {
+      "from": "gradient computation",
+      "to": "cost function"
+    },
+    {
+      "from": "gradient descent",
+      "to": "calculus"
+    },
+    {
+      "from": "gradient descent",
+      "to": "cost function"
+    },
+    {
+      "from": "gradient descent",
+      "to": "derivative"
+    },
+    {
+      "from": "gradient descent",
+      "to": "neural network"
+    },
+    {
+      "from": "gradient descent",
+      "to": "predicted output"
+    },
+    {
+      "from": "gradient descent",
+      "to": "training data"
+    },
+    {
+      "from": "gradient descent",
+      "to": "vector calculus"
+    },
+    {
+      "from": "hidden layers",
+      "to": "digit recognition"
+    },
+    {
+      "from": "hidden layers",
+      "to": "feature detection"
+    },
+    {
+      "from": "hidden layers",
+      "to": "layer"
+    },
+    {
+      "from": "hidden layers",
+      "to": "matrix operations"
+    },
+    {
+      "from": "hidden layers",
+      "to": "neural network"
+    },
+    {
+      "from": "hidden layers",
+      "to": "training data"
+    },
+    {
+      "from": "hidden layers",
+      "to": "training process"
+    },
+    {
+      "from": "hierarchical representations",
+      "to": "digit recognition"
+    },
+    {
+      "from": "hierarchical representations",
+      "to": "feature detection"
+    },
+    {
+      "from": "hierarchical representations",
+      "to": "neural network"
+    },
+    {
+      "from": "high-dimensional vectors",
+      "to": "dimensionality"
+    },
+    {
+      "from": "high-dimensional vectors",
+      "to": "linear algebra"
+    },
+    {
+      "from": "high-dimensional vectors",
+      "to": "neural network"
+    },
+    {
+      "from": "high-dimensional vectors",
+      "to": "vector representation"
+    },
+    {
+      "from": "high-dimensional vectors",
+      "to": "vector space"
+    },
+    {
+      "from": "high-dimensional vectors",
+      "to": "word embeddings"
+    },
+    {
+      "from": "input sequence",
+      "to": "language model"
+    },
+    {
+      "from": "input sequence",
+      "to": "sequential dependency"
+    },
+    {
+      "from": "input sequence",
+      "to": "source and target sequences"
+    },
+    {
+      "from": "input sequence",
+      "to": "translation tasks"
+    },
+    {
+      "from": "input vectors",
+      "to": "basic machine learning"
+    },
+    {
+      "from": "input vectors",
+      "to": "vector representation"
+    },
+    {
+      "from": "key computation",
+      "to": "contextual word vectors"
+    },
+    {
+      "from": "key computation",
+      "to": "linear algebra"
+    },
+    {
+      "from": "key computation",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "key computation",
+      "to": "probability distributions"
+    },
+    {
+      "from": "key computation",
+      "to": "vector representation"
+    },
+    {
+      "from": "large language models",
+      "to": "basic machine learning"
+    },
+    {
+      "from": "large language models",
+      "to": "deep learning"
+    },
+    {
+      "from": "large language models",
+      "to": "neural network"
+    },
+    {
+      "from": "large language models",
+      "to": "transformer"
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "language modeling"
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "neural network"
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "probability distributions"
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "sequence prediction"
+    },
+    {
+      "from": "large-scale pre-training",
+      "to": "tokenization"
+    },
+    {
+      "from": "layered neural networks",
+      "to": "feature detection"
+    },
+    {
+      "from": "matrix multiplication",
+      "to": "linear algebra"
+    },
+    {
+      "from": "matrix multiplication",
+      "to": "matrices"
+    },
+    {
+      "from": "matrix multiplication",
+      "to": "matrix operations"
+    },
+    {
+      "from": "matrix multiplication",
+      "to": "neural network"
+    },
+    {
+      "from": "matrix multiplication",
+      "to": "query vectors"
+    },
+    {
+      "from": "matrix multiplication",
+      "to": "vector representation"
+    },
+    {
+      "from": "mlp layers",
+      "to": "neural network"
+    },
+    {
+      "from": "negative gradient",
+      "to": "neural network"
+    },
+    {
+      "from": "negative gradient",
+      "to": "vector calculus"
+    },
+    {
+      "from": "neural network",
+      "to": "basic machine learning"
+    },
+    {
+      "from": "neural network",
+      "to": "factual knowledge representation"
+    },
+    {
+      "from": "neural network",
+      "to": "function composition"
+    },
+    {
+      "from": "neural network",
+      "to": "linear algebra"
+    },
+    {
+      "from": "neural network",
+      "to": "linear transformation"
+    },
+    {
+      "from": "neural network",
+      "to": "neural network layers"
+    },
+    {
+      "from": "neural network",
+      "to": "token vectors"
+    },
+    {
+      "from": "neural network",
+      "to": "vector representation"
+    },
+    {
+      "from": "neural network architecture",
+      "to": "data representation"
+    },
+    {
+      "from": "neural network architecture",
+      "to": "neural network"
+    },
+    {
+      "from": "neural network parameters",
+      "to": "neural network"
+    },
+    {
+      "from": "neuron output behavior",
+      "to": "neural network"
+    },
+    {
+      "from": "next-word prediction",
+      "to": "basic probability"
+    },
+    {
+      "from": "next-word prediction",
+      "to": "language model"
+    },
+    {
+      "from": "next-word prediction",
+      "to": "neural network"
+    },
+    {
+      "from": "next-word prediction",
+      "to": "tokenization"
+    },
+    {
+      "from": "non-linear function",
+      "to": "activation function"
+    },
+    {
+      "from": "non-linear function",
+      "to": "neural network"
+    },
+    {
+      "from": "non-linear function",
+      "to": "vector representation"
+    },
+    {
+      "from": "output layer",
+      "to": "neural network"
+    },
+    {
+      "from": "output projection",
+      "to": "transformer"
+    },
+    {
+      "from": "parameter distribution",
+      "to": "neural network parameters"
+    },
+    {
+      "from": "positional encoding",
+      "to": "neural network"
+    },
+    {
+      "from": "positional encoding",
+      "to": "vector representation"
+    },
+    {
+      "from": "probability distributions",
+      "to": "basic probability"
+    },
+    {
+      "from": "relu activation function",
+      "to": "activation function"
+    },
+    {
+      "from": "relu activation function",
+      "to": "and gate"
+    },
+    {
+      "from": "relu activation function",
+      "to": "contextual relationships"
+    },
+    {
+      "from": "relu activation function",
+      "to": "deep learning"
+    },
+    {
+      "from": "relu activation function",
+      "to": "linear inputs"
+    },
+    {
+      "from": "relu activation function",
+      "to": "neural network"
+    },
+    {
+      "from": "relu activation function",
+      "to": "training neural networks"
+    },
+    {
+      "from": "semantic representation",
+      "to": "neural network"
+    },
+    {
+      "from": "semantic representation",
+      "to": "vector representation"
+    },
+    {
+      "from": "semantic similarity",
+      "to": "linear algebra"
+    },
+    {
+      "from": "softmax",
+      "to": "basic probability"
+    },
+    {
+      "from": "softmax",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "softmax",
+      "to": "vector representation"
+    },
+    {
+      "from": "softmax normalization",
+      "to": "basic probability"
+    },
+    {
+      "from": "softmax normalization",
+      "to": "contextual word vectors"
+    },
+    {
+      "from": "tokenization",
+      "to": "high-dimensional vectors"
+    },
+    {
+      "from": "tokenization",
+      "to": "neural network"
+    },
+    {
+      "from": "training efficiency",
+      "to": "neural network"
+    },
+    {
+      "from": "training process",
+      "to": "neural network"
+    },
+    {
+      "from": "transformer",
+      "to": "basic machine learning"
+    },
+    {
+      "from": "transformer",
+      "to": "contextual word vectors"
+    },
+    {
+      "from": "transformer",
+      "to": "language model"
+    },
+    {
+      "from": "transformer",
+      "to": "language modeling"
+    },
+    {
+      "from": "transformer",
+      "to": "matrix multiplication"
+    },
+    {
+      "from": "transformer",
+      "to": "neural network"
+    },
+    {
+      "from": "transformer",
+      "to": "tokenization"
+    },
+    {
+      "from": "weight adjustment",
+      "to": "neural network"
+    },
+    {
+      "from": "weight adjustment",
+      "to": "training data"
+    },
+    {
+      "from": "weight optimization",
+      "to": "cost function"
+    },
+    {
+      "from": "weights",
+      "to": "calculus"
+    },
+    {
+      "from": "weights",
+      "to": "neural network"
+    },
+    {
+      "from": "word embeddings",
+      "to": "neural network"
+    },
+    {
+      "from": "word embeddings",
+      "to": "vector representation"
+    }
+  ]
+}

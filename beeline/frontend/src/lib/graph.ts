@@ -39,16 +39,31 @@ type RawConcept = {
   evidence: ConceptEvidence | null;
 }
 
-type RawGraph = {
+export type RawGraph = {
   corpus_name: string;
   concepts: RawConcept[];
   requires: { from: string; to: string }[];
 }
 
-const RAW = rawGraph as unknown as RawGraph;
+/**
+ * The corpus topology. Starts as the bundled fixture so the app renders with no
+ * backend, and is replaced by the real graph from /api/graph once it arrives —
+ * the fixture describes 38 concepts where the live corpus has 100, and this
+ * panel is meant to be the evidence for the path, not a decoration.
+ */
+let RAW = rawGraph as unknown as RawGraph;
 
-export const CONCEPT_COUNT = RAW.concepts.length;
-export const EDGE_COUNT = RAW.requires.length;
+export function setGraphSource(graph: RawGraph): void {
+  RAW = graph;
+}
+
+export function conceptCount(): number {
+  return RAW.concepts.length;
+}
+
+export function edgeCount(): number {
+  return RAW.requires.length;
+}
 
 /**
  * Build a fresh, mutable graph-data object. Call ONCE per mount and keep the

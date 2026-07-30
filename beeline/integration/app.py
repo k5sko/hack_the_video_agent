@@ -324,6 +324,60 @@ def media(clip_file: str) -> FileResponse:
     return FileResponse(path, media_type="video/mp4")
 
 
+@app.get("/api/graph")
+def api_graph() -> dict:
+    """The concept graph the visualisation draws.
+
+    The frontend shipped with a hand-written fixture of 38 concepts while the
+    real corpus has 100 and 181 edges, so the panel presented as "the proof" was
+    showing something other than what the paths were computed from. This serves
+    the actual topology in the same shape, with each concept's strongest
+    explaining clip as its evidence.
+    """
+    cache_file = CACHE_DIR / "_graph.json"
+    if cache_file.exists():
+        return json.loads(cache_file.read_text())
+
+    s = store()
+    videos = {v.id: v for v in s.videos()}
+    clips = {c.id: c for c in s.clips()}
+
+    best: dict = {}
+    for e in s.explains():
+        concept = normalize(e.concept)
+        if concept not in best or e.score > best[concept].score:
+            best[concept] = e
+
+    concepts = []
+    for concept in s.concepts():
+        name = normalize(concept.name)
+        evidence = None
+        hit = best.get(name)
+        if hit and hit.clip_id in clips:
+            clip = clips[hit.clip_id]
+            video = videos.get(clip.video_id)
+            evidence = {
+                "video_id": clip.video_id,
+                "video_title": video.title if video else clip.video_id,
+                "youtube_url": video.youtube_url if video else "",
+                "start_seconds": clip.start,
+                "end_seconds": clip.end,
+                "explains_score": hit.score,
+            }
+        concepts.append({"id": name, "evidence": evidence})
+
+    payload = {
+        "corpus_name": "3Blue1Brown — Neural Networks",
+        "concepts": sorted(concepts, key=lambda c: c["id"]),
+        "requires": [
+            {"from": normalize(e.source), "to": normalize(e.target)}
+            for e in s.requires_edges()
+        ],
+    }
+    cache_file.write_text(json.dumps(payload, indent=2) + "\n")
+    return payload
+
+
 @app.get("/api/health")
 def health() -> dict:
     cut = len(list(CLIPS_DIR.glob("*.mp4"))) if CLIPS_DIR.exists() else 0

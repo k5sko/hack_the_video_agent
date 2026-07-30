@@ -5,9 +5,9 @@ import PlayerPane from "./components/PlayerPane";
 import Counter from "./components/Counter";
 import ConceptGraph, { NODE_COLORS } from "./components/ConceptGraph";
 import EvidenceCard from "./components/EvidenceCard";
-import { getPath, type Mode } from "./lib/resolvePath";
+import { getGraph, getPath, type Mode } from "./lib/resolvePath";
 import type { PathResult } from "@shared/types";
-import { clipIndexForConcept, deriveNodeStates } from "./lib/graph";
+import { clipIndexForConcept, deriveNodeStates, setGraphSource, type RawGraph } from "./lib/graph";
 import coldFixture from "./data/path_attention_cold.json";
 
 const LEGEND: { state: NodeState; label: string }[] = [
@@ -31,6 +31,22 @@ export default function App() {
   const [offline, setOffline] = useState(false);
 
   const knownKey = known.slice().sort().join(",");
+
+  // Swap the bundled fixture for the live corpus topology once, before the first
+  // path renders, so the graph panel shows what the paths were actually
+  // computed from.
+  const [graphReady, setGraphReady] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    getGraph().then((graph) => {
+      if (cancelled) return;
+      if (graph) setGraphSource(graph as RawGraph);
+      setGraphReady(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -218,6 +234,10 @@ export default function App() {
 
         <div className="panel-body">
           <ConceptGraph
+            /* Remount when the live topology replaces the fixture:
+               buildGraphData() is called once per mount by design, because
+               react-force-graph mutates nodes in place. */
+            key={graphReady ? "live" : "fixture"}
             states={states}
             currentConcepts={currentConcepts}
             completedConcepts={completedConcepts}

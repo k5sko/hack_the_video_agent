@@ -2,7 +2,7 @@ import type { FormEvent } from "react";
 import type { PathResult } from "@shared/types";
 import { fmtBig, fmtClock } from "../lib/format";
 import { KNOWABLE_CONCEPTS, type Mode } from "../lib/resolvePath";
-import { CONCEPT_COUNT, EDGE_COUNT } from "../lib/graph";
+import { conceptCount, edgeCount } from "../lib/graph";
 
 interface Props {
   queryInput: string;
@@ -53,7 +53,7 @@ export default function Sidebar({
       <div className="corpus">
         <span className="corpus-title">Neural Networks — 7 lectures · 2h 20m</span>
         <span className="corpus-sub">
-          {CONCEPT_COUNT} concepts · {EDGE_COUNT} prerequisite edges
+          {conceptCount()} concepts · {edgeCount()} prerequisite edges
         </span>
       </div>
 

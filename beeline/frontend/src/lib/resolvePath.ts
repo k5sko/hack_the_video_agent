@@ -97,5 +97,16 @@ export async function getPath(
   }
 }
 
+/** The live concept graph, or null if the API is unreachable (keep the fixture). */
+export async function getGraph(): Promise<unknown | null> {
+  try {
+    const response = await fetch(`${API_BASE}/api/graph`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
 /** The full corpus length, used by the counter's left-hand side. */
 export const TOTAL_CORPUS_SECONDS = COLD.total_corpus_seconds;
