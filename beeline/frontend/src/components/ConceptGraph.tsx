@@ -29,6 +29,12 @@ interface Props {
   completedConcepts: string[];
   selected: string | null;
   onSelect: (conceptId: string) => void;
+  /**
+   * Show only the concepts that bear on this query, rather than all 100. The
+   * full corpus is the honest picture but it reads as homework; what a learner
+   * needs to see is their own route and the handful of things around it.
+   */
+  focus: boolean;
 }
 
 export default function ConceptGraph({
@@ -37,10 +43,42 @@ export default function ConceptGraph({
   completedConcepts,
   selected,
   onSelect,
+  focus,
 }: Props) {
-  // Built once. react-force-graph mutates these nodes with x/y, so a new object
-  // identity would blow the layout away every time the path changes.
-  const graphData = useMemo(() => buildGraphData(), []);
+  // Everything relevant to this query: the path itself, what was pruned as
+  // known, the gaps, and one hop of context so the path has something to sit in.
+  const relevantKey = [...states.entries()]
+    .filter(([, s]) => s !== "not_needed")
+    .map(([id]) => id)
+    .sort()
+    .join("|");
+
+  // react-force-graph mutates these nodes with x/y, so the object identity has
+  // to stay stable or the layout is thrown away. It only changes when the set of
+  // shown nodes actually changes.
+  const graphData = useMemo(() => {
+    const full = buildGraphData();
+    if (!focus) return full;
+
+    const core = new Set(relevantKey ? relevantKey.split("|") : []);
+    if (core.size === 0) return full;
+
+    const keep = new Set(core);
+    for (const node of full.nodes) {
+      if (!core.has(node.id)) continue;
+      for (const neighbour of [...node.assumes, ...node.requiredBy]) {
+        keep.add(neighbour);
+      }
+    }
+    const nodes = full.nodes.filter((n) => keep.has(n.id));
+    const ids = new Set(nodes.map((n) => n.id));
+    const links = full.links.filter((l) => {
+      const source = typeof l.source === "string" ? l.source : l.source.id;
+      const target = typeof l.target === "string" ? l.target : l.target.id;
+      return ids.has(source) && ids.has(target);
+    });
+    return { nodes, links };
+  }, [focus, relevantKey]);
 
   const wrapRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- imperative kapsule handle
@@ -78,7 +116,7 @@ export default function ConceptGraph({
     (window as unknown as Record<string, unknown>).__fg = fg;
     const t = window.setTimeout(() => fgRef.current?.zoomToFit(400, 46), 4200);
     return () => window.clearTimeout(t);
-  }, [size.width, size.height]);
+  }, [size.width, size.height, graphData]);
 
   // Drives the pulse. Only runs while a clip is actually playing.
   useEffect(() => {

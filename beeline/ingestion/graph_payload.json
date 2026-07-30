@@ -846,10 +846,6 @@
       ]
     },
     {
-      "name": "gradient vector",
-      "aliases": []
-    },
-    {
       "name": "hidden layers",
       "aliases": [
         "hidden layer behavior",
@@ -970,13 +966,6 @@
       "aliases": []
     },
     {
-      "name": "multilayer perceptron block",
-      "aliases": [
-        "mlp block",
-        "mlp blocks"
-      ]
-    },
-    {
       "name": "negative gradient",
       "aliases": [
         "negative gradient vector"
@@ -1040,12 +1029,6 @@
       "name": "output layer",
       "aliases": [
         "output layers"
-      ]
-    },
-    {
-      "name": "output neuron target",
-      "aliases": [
-        "output neuron error aggregation"
       ]
     },
     {
@@ -1319,41 +1302,6 @@
       "score": 0.9
     },
     {
-      "clip_id": "v1_c5",
-      "concept": "linear algebra",
-      "score": 0.75
-    },
-    {
-      "clip_id": "v1_c5",
-      "concept": "matrix multiplication",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v1_c5",
-      "concept": "neural network parameters",
-      "score": 0.85
-    },
-    {
-      "clip_id": "v1_c6",
-      "concept": "activation function",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v1_c6",
-      "concept": "neuron output behavior",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v1_c6",
-      "concept": "relu activation function",
-      "score": 0.95
-    },
-    {
-      "clip_id": "v1_c6",
-      "concept": "training efficiency",
-      "score": 0.6
-    },
-    {
       "clip_id": "v1_c7",
       "concept": "backpropagation",
       "score": 0.6
@@ -1386,16 +1334,6 @@
     {
       "clip_id": "v2_c1",
       "concept": "gradient descent",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v2_c1",
-      "concept": "hidden layers",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v2_c1",
-      "concept": "neural network",
       "score": 0.9
     },
     {
@@ -1474,11 +1412,6 @@
       "score": 0.7
     },
     {
-      "clip_id": "v2_c5",
-      "concept": "weights",
-      "score": 0.8
-    },
-    {
       "clip_id": "v2_c6",
       "concept": "gradient descent",
       "score": 0.9
@@ -1534,26 +1467,6 @@
       "score": 0.85
     },
     {
-      "clip_id": "v2_c9",
-      "concept": "digit recognition",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v2_c9",
-      "concept": "gradient descent",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v2_c9",
-      "concept": "hidden layers",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v2_c9",
-      "concept": "neural network architecture",
-      "score": 0.9
-    },
-    {
       "clip_id": "v3_c1",
       "concept": "backpropagation",
       "score": 0.95
@@ -1562,11 +1475,6 @@
       "clip_id": "v3_c1",
       "concept": "forward propagation",
       "score": 0.75
-    },
-    {
-      "clip_id": "v3_c1",
-      "concept": "gradient descent",
-      "score": 0.7
     },
     {
       "clip_id": "v3_c2",
@@ -1584,11 +1492,6 @@
       "score": 0.95
     },
     {
-      "clip_id": "v3_c2",
-      "concept": "weight adjustment",
-      "score": 0.85
-    },
-    {
       "clip_id": "v3_c3",
       "concept": "bias adjustment",
       "score": 0.7
@@ -1599,16 +1502,6 @@
       "score": 0.8
     },
     {
-      "clip_id": "v3_c3",
-      "concept": "gradient vector",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v3_c3",
-      "concept": "weight optimization",
-      "score": 0.85
-    },
-    {
       "clip_id": "v3_c4",
       "concept": "activation function",
       "score": 0.75
@@ -1617,11 +1510,6 @@
       "clip_id": "v3_c4",
       "concept": "backpropagation",
       "score": 0.95
-    },
-    {
-      "clip_id": "v3_c4",
-      "concept": "bias adjustment",
-      "score": 0.8
     },
     {
       "clip_id": "v3_c4",
@@ -1637,31 +1525,6 @@
       "clip_id": "v3_c5",
       "concept": "backpropagation",
       "score": 0.7
-    },
-    {
-      "clip_id": "v3_c5",
-      "concept": "bias adjustment",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v3_c5",
-      "concept": "output neuron target",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v3_c5",
-      "concept": "weight adjustment",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v3_c6",
-      "concept": "forward propagation",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v3_c6",
-      "concept": "output neuron target",
-      "score": 0.6
     },
     {
       "clip_id": "v3_c6",
@@ -1684,124 +1547,24 @@
       "score": 0.9
     },
     {
-      "clip_id": "v3_c8",
-      "concept": "bias adjustment",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v3_c8",
-      "concept": "weight optimization",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v4_c1",
-      "concept": "backpropagation",
-      "score": 0.95
-    },
-    {
-      "clip_id": "v4_c1",
-      "concept": "chain rule",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v4_c1",
-      "concept": "cost function",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v4_c1",
-      "concept": "cost function sensitivity",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v4_c1",
-      "concept": "neural network parameters",
-      "score": 0.6
-    },
-    {
       "clip_id": "v4_c2",
       "concept": "activation function",
       "score": 0.8
     },
     {
-      "clip_id": "v4_c2",
-      "concept": "chain rule",
-      "score": 0.95
-    },
-    {
-      "clip_id": "v4_c2",
-      "concept": "cost function",
-      "score": 0.85
-    },
-    {
-      "clip_id": "v4_c2",
-      "concept": "neural network",
-      "score": 0.9
-    },
-    {
       "clip_id": "v4_c3",
       "concept": "backpropagation",
       "score": 1.0
     },
     {
-      "clip_id": "v4_c3",
-      "concept": "chain rule",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v4_c3",
-      "concept": "derivative",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v4_c4",
-      "concept": "chain rule",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v4_c4",
-      "concept": "cost function",
-      "score": 0.75
-    },
-    {
-      "clip_id": "v4_c5",
-      "concept": "backpropagation",
-      "score": 0.9
-    },
-    {
       "clip_id": "v4_c6",
       "concept": "backpropagation",
       "score": 1.0
-    },
-    {
-      "clip_id": "v4_c6",
-      "concept": "chain rule",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v4_c6",
-      "concept": "derivative",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v4_c6",
-      "concept": "gradient vector",
-      "score": 0.9
     },
     {
       "clip_id": "v4_c6",
       "concept": "weights",
       "score": 0.6
-    },
-    {
-      "clip_id": "v4_c7",
-      "concept": "gradient descent",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v5_c1",
-      "concept": "large-scale pre-training",
-      "score": 0.9
     },
     {
       "clip_id": "v5_c1",
@@ -1817,31 +1580,6 @@
       "clip_id": "v5_c10",
       "concept": "contextual word vectors",
       "score": 0.9
-    },
-    {
-      "clip_id": "v5_c10",
-      "concept": "positional encoding",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v5_c10",
-      "concept": "semantic representation",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v5_c10",
-      "concept": "word embeddings",
-      "score": 0.6
-    },
-    {
-      "clip_id": "v5_c11",
-      "concept": "next-word prediction",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v5_c11",
-      "concept": "token vectors",
-      "score": 0.8
     },
     {
       "clip_id": "v5_c12",
@@ -1877,31 +1615,6 @@
       "clip_id": "v5_c14",
       "concept": "parameter distribution",
       "score": 0.6
-    },
-    {
-      "clip_id": "v5_c15",
-      "concept": "attention",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v5_c15",
-      "concept": "dot product",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v5_c15",
-      "concept": "matrix multiplication",
-      "score": 0.6
-    },
-    {
-      "clip_id": "v5_c15",
-      "concept": "word embeddings",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v5_c16",
-      "concept": "attention",
-      "score": 0.7
     },
     {
       "clip_id": "v5_c2",
@@ -1955,11 +1668,6 @@
     },
     {
       "clip_id": "v5_c4",
-      "concept": "neural network",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v5_c4",
       "concept": "non-linear function",
       "score": 0.75
     },
@@ -1971,16 +1679,6 @@
     {
       "clip_id": "v5_c5",
       "concept": "layer",
-      "score": 0.9
-    },
-    {
-      "clip_id": "v5_c5",
-      "concept": "matrix multiplication",
-      "score": 0.85
-    },
-    {
-      "clip_id": "v5_c5",
-      "concept": "neural network architecture",
       "score": 0.9
     },
     {
@@ -2064,19 +1762,9 @@
       "score": 0.9
     },
     {
-      "clip_id": "v6_c11",
-      "concept": "input sequence",
-      "score": 0.6
-    },
-    {
       "clip_id": "v6_c12",
       "concept": "attention",
       "score": 0.9
-    },
-    {
-      "clip_id": "v6_c12",
-      "concept": "transformer",
-      "score": 0.8
     },
     {
       "clip_id": "v6_c13",
@@ -2119,21 +1807,6 @@
       "score": 0.7
     },
     {
-      "clip_id": "v6_c15",
-      "concept": "output projection",
-      "score": 0.8
-    },
-    {
-      "clip_id": "v6_c15",
-      "concept": "parameter optimization",
-      "score": 0.5
-    },
-    {
-      "clip_id": "v6_c15",
-      "concept": "transformer",
-      "score": 0.6
-    },
-    {
       "clip_id": "v6_c16",
       "concept": "attention",
       "score": 0.9
@@ -2172,11 +1845,6 @@
       "clip_id": "v6_c17",
       "concept": "parallelization",
       "score": 0.8
-    },
-    {
-      "clip_id": "v6_c18",
-      "concept": "large language models",
-      "score": 0.7
     },
     {
       "clip_id": "v6_c2",
@@ -2219,11 +1887,6 @@
       "score": 0.95
     },
     {
-      "clip_id": "v6_c4",
-      "concept": "contextual word vectors",
-      "score": 0.85
-    },
-    {
       "clip_id": "v6_c5",
       "concept": "attention",
       "score": 0.9
@@ -2244,11 +1907,6 @@
       "score": 0.7
     },
     {
-      "clip_id": "v6_c5",
-      "concept": "word embeddings",
-      "score": 0.8
-    },
-    {
       "clip_id": "v6_c6",
       "concept": "attention",
       "score": 0.9
@@ -2257,11 +1915,6 @@
       "clip_id": "v6_c6",
       "concept": "contextual word vectors",
       "score": 0.7
-    },
-    {
-      "clip_id": "v6_c6",
-      "concept": "data flow visualization",
-      "score": 0.8
     },
     {
       "clip_id": "v6_c6",
@@ -2277,11 +1930,6 @@
       "clip_id": "v6_c7",
       "concept": "dot product",
       "score": 0.95
-    },
-    {
-      "clip_id": "v6_c7",
-      "concept": "key computation",
-      "score": 0.9
     },
     {
       "clip_id": "v6_c7",
@@ -2374,11 +2022,6 @@
       "score": 0.8
     },
     {
-      "clip_id": "v7_c12",
-      "concept": "transformer",
-      "score": 0.95
-    },
-    {
       "clip_id": "v7_c13",
       "concept": "backpropagation",
       "score": 0.8
@@ -2387,11 +2030,6 @@
       "clip_id": "v7_c13",
       "concept": "cost function",
       "score": 0.8
-    },
-    {
-      "clip_id": "v7_c13",
-      "concept": "transformer",
-      "score": 0.9
     },
     {
       "clip_id": "v7_c2",
@@ -2412,11 +2050,6 @@
       "clip_id": "v7_c2",
       "concept": "tokenization",
       "score": 0.8
-    },
-    {
-      "clip_id": "v7_c2",
-      "concept": "transformer",
-      "score": 0.9
     },
     {
       "clip_id": "v7_c3",
@@ -2445,18 +2078,8 @@
     },
     {
       "clip_id": "v7_c4",
-      "concept": "dot product",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v7_c4",
       "concept": "matrix multiplication",
       "score": 0.9
-    },
-    {
-      "clip_id": "v7_c4",
-      "concept": "multilayer perceptron block",
-      "score": 0.8
     },
     {
       "clip_id": "v7_c5",
@@ -2466,21 +2089,6 @@
     {
       "clip_id": "v7_c5",
       "concept": "bias adjustment",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v7_c6",
-      "concept": "activation function",
-      "score": 0.7
-    },
-    {
-      "clip_id": "v7_c6",
-      "concept": "hidden layers",
-      "score": 0.95
-    },
-    {
-      "clip_id": "v7_c6",
-      "concept": "matrix multiplication",
       "score": 0.7
     },
     {
@@ -2522,16 +2130,6 @@
       "clip_id": "v7_c9",
       "concept": "bias adjustment",
       "score": 0.7
-    },
-    {
-      "clip_id": "v7_c9",
-      "concept": "multilayer perceptron block",
-      "score": 0.85
-    },
-    {
-      "clip_id": "v7_c9",
-      "concept": "parameter distribution",
-      "score": 0.9
     }
   ],
   "requires": [
