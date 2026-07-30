@@ -1,0 +1,11 @@
+{
+  "concept": "linear algebra",
+  "kind": "background",
+  "segment": null,
+  "resource": {
+    "title": "Eigenvectors and eigenvalues | Chapter 14, Essence of linear algebra",
+    "channel": "3Blue1Brown",
+    "url": "https://www.youtube.com/watch?v=PFDu9oVAE-g"
+  },
+  "note": "This series assumes you already know linear algebra. It is a subject, not a single idea, so Beeline will not pretend a few minutes of video covers it."
+}

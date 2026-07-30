@@ -27,6 +27,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
+from pydantic import BaseModel
 
 HERE = Path(__file__).resolve().parent
 BEELINE = HERE.parent
@@ -369,6 +370,53 @@ def media(clip_file: str) -> FileResponse:
             detail=f"{clip_file} not cut yet -- run beeline.ingestion.cut",
         )
     return FileResponse(path, media_type="video/mp4")
+
+
+class FillRequest(BaseModel):
+    concept: str
+
+
+@app.post("/api/fill")
+def api_fill(request: FillRequest) -> dict:
+    """Find outside material for a concept this corpus never teaches.
+
+    Kept as a separate, explicit call rather than folded into /api/path. A gap is
+    a real finding and worth showing as one; silently patching every hole would
+    throw away the only thing here nobody else says out loud. So the path reports
+    the gap, and filling it is something the learner asks for.
+
+    Returns {"kind", "segment", "resource", "note"}. Only a "concept" gap gets a
+    playable segment -- a "background" gap names a whole subject the series
+    assumes, and gets a pointer to the real thing instead of a three-minute
+    excerpt pretending to cover it.
+    """
+    if CANNED_ONLY:
+        cached_fill = gapfill_cached(request.concept)
+        if cached_fill:
+            return cached_fill
+        raise HTTPException(
+            status_code=503, detail="Canned mode: this gap has not been pre-filled."
+        )
+
+    try:
+        import gapfill
+
+        return gapfill.fill_gap(request.concept)
+    except Exception as exc:
+        print(f"  gap fill failed: {type(exc).__name__}: {exc}", file=sys.stderr)
+        raise HTTPException(status_code=502, detail="Could not find outside material.")
+
+
+def gapfill_cached(concept: str) -> Optional[dict]:
+    try:
+        import gapfill
+
+        path = gapfill._cache_path(concept)
+        if path.exists():
+            return json.loads(path.read_text())
+    except Exception:
+        pass
+    return None
 
 
 @app.get("/api/graph")

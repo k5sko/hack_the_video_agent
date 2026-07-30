@@ -30,7 +30,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 from dotenv import load_dotenv
 
@@ -50,6 +50,10 @@ CACHE = BEELINE / "data" / "cache" / "gapfill"
 CLIPS = BEELINE / "data" / "clips"
 CACHE.mkdir(parents=True, exist_ok=True)
 CLIPS.mkdir(parents=True, exist_ok=True)
+
+# The corpus author. Material from the same source is the best possible fill:
+# same voice, same notation, same visual language as everything around it.
+CORPUS_AUTHOR = "3blue1brown"
 
 SEARCH_COUNT = 5
 # Long enough to teach something, short enough to stay a detour rather than a
@@ -81,9 +85,102 @@ def _cache_path(concept: str) -> Path:
     return CACHE / f"{slug}.json"
 
 
+def _kind_cache() -> Path:
+    return CACHE / "_gap_kinds.json"
+
+
+def classify_gap(concept: str) -> str:
+    """Is this gap a concept a clip can teach, or a subject the series assumes?
+
+    Not every hole is patchable, and treating them alike produces nonsense. Given
+    the gap 'linear algebra', a search happily returns a good 3.5-minute chapter
+    on linear combinations and span -- but that is *a* linear algebra topic, not
+    linear algebra. Dropping it into the path pretends a subject has been covered
+    in three minutes, which is the same category error as a clip that merely
+    mentions the thing it claims to teach.
+
+    So:
+      "concept"    -- a specific idea one clip can genuinely teach
+                      (positional encoding, dot product, softmax) -> fill it
+      "background" -- a subject the corpus assumes wholesale
+                      (linear algebra, calculus, machine learning) -> say so
+
+    3Blue1Brown states outright that this series assumes linear algebra. Telling
+    a learner that, and pointing at the whole series that covers it, is honest
+    and useful. Splicing in one chapter of it is neither.
+    """
+    cache_file = _kind_cache()
+    kinds: Dict[str, str] = {}
+    if cache_file.exists():
+        try:
+            kinds = json.loads(cache_file.read_text())
+        except json.JSONDecodeError:
+            kinds = {}
+    if concept in kinds:
+        return kinds[concept]
+    if not os.getenv("OPENAI_API_KEY"):
+        return "concept"
+
+    try:
+        from openai import OpenAI
+
+        response = OpenAI().chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "user",
+                    "content": (
+                        f"Term: {concept!r}, appearing as a prerequisite in a "
+                        f"neural-network lecture series.\n\n"
+                        'Answer "concept" if a single focused video segment of a '
+                        "few minutes could genuinely teach it to someone who does "
+                        "not know it (e.g. positional encoding, dot product, "
+                        "softmax, tokenization).\n"
+                        'Answer "background" if it names a whole field or course '
+                        "that no single segment could teach, and which a series "
+                        "would simply assume (e.g. linear algebra, calculus, "
+                        "probability, machine learning).\n\n"
+                        'Return JSON {"kind": "concept"|"background"}.'
+                    ),
+                }
+            ],
+            response_format={"type": "json_object"},
+            timeout=30,
+        )
+        kind = json.loads(response.choices[0].message.content).get("kind")
+        kind = kind if kind in ("concept", "background") else "concept"
+    except Exception as exc:
+        print(f"  gap classification failed ({exc}); assuming concept", file=sys.stderr)
+        kind = "concept"
+
+    kinds[concept] = kind
+    cache_file.write_text(json.dumps(kinds, indent=1, sort_keys=True))
+    return kind
+
+
 def search_candidates(concept: str) -> List[dict]:
-    """yt-dlp search, returning each hit with whatever chapters it declares."""
-    query = f"ytsearch{SEARCH_COUNT}:{concept} explained"
+    """Search YouTube, returning each hit with whatever chapters it declares.
+
+    Two queries, not one. A bare "<concept> explained" search returns whatever is
+    optimised for search -- the first run for 'linear algebra' produced "Give Me
+    30 min, I will make Linear Algebra Click Forever", which is a poor neighbour
+    for a 3Blue1Brown path. But the corpus author very often covers the gap
+    elsewhere: 3Blue1Brown has a whole Essence of Linear Algebra series. Material
+    from the same author is the best possible fill, because the voice, notation
+    and visual language already match everything around it.
+    """
+    seen: Dict[str, dict] = {}
+    for query in (
+        f"ytsearch{SEARCH_COUNT}:{CORPUS_AUTHOR} {concept}",
+        f"ytsearch{SEARCH_COUNT}:{concept} explained",
+    ):
+        for video in _search_one(query):
+            if video["id"] and video["id"] not in seen:
+                seen[video["id"]] = video
+    return list(seen.values())
+
+
+def _search_one(query: str) -> List[dict]:
     proc = subprocess.run(
         [_yt_dlp(), query, "--dump-json", "--no-warnings", "--skip-download"],
         capture_output=True,
@@ -179,10 +276,15 @@ def choose_segment(concept: str, candidates: List[dict]) -> Optional[dict]:
                 {
                     "role": "user",
                     "content": (
-                        f"A learner needs to understand {concept!r}. Which one of "
-                        f"these video sections best *teaches* it (not merely "
-                        f"mentions it)? Prefer a focused explanation from a "
-                        f"credible educational channel.\n"
+                        f"A learner needs to understand {concept!r}. Which one "
+                        f"of these video sections best *teaches* it (not merely "
+                        f"mentions it)?\n\n"
+                        f"This fills a gap in a {CORPUS_AUTHOR} lecture path, so "
+                        f"strongly prefer {CORPUS_AUTHOR}'s own material when it "
+                        f"covers the concept -- the notation and visual language "
+                        f"will already match. Otherwise prefer a focused "
+                        f"explanation from a credible educational channel over "
+                        f"anything with a clickbait title.\n"
                         f"{json.dumps(listing, indent=2)}\n\n"
                         'Return JSON: {"index": int, "why": str} where `why` is one '
                         "sentence, second person, saying what it gives the learner."
@@ -252,29 +354,80 @@ def fetch_and_cut(concept: str, choice: dict) -> Optional[str]:
     return clip_id
 
 
-def fill_gap(concept: str, refresh: bool = False) -> Optional[ClipSegment]:
-    """Return a playable ClipSegment covering ``concept``, or None."""
+def fill_gap(concept: str, refresh: bool = False) -> dict:
+    """Resolve a gap: a playable clip for a concept, or a pointer for a subject.
+
+    Returns {"concept", "kind", "segment", "resource", "note"}. ``segment`` is
+    only ever set for a "concept" gap. A "background" gap deliberately gets no
+    clip -- see :func:`classify_gap` for why splicing three minutes of a subject
+    into the path is worse than saying the series assumes it.
+    """
     cache_file = _cache_path(concept)
     if cache_file.exists() and not refresh:
         cached = json.loads(cache_file.read_text())
-        if cached.get("segment"):
-            segment = ClipSegment(**cached["segment"])
-            if (CLIPS / f"{segment.clip_id}.mp4").exists():
-                return segment
+        if cached.get("kind"):
+            segment = cached.get("segment")
+            if not segment or (CLIPS / f"{ClipSegment(**segment).clip_id}.mp4").exists():
+                return cached
 
-    print(f"  searching for {concept!r}...")
+    kind = classify_gap(concept)
+    print(f"  searching for {concept!r} ({kind})...")
     candidates = search_candidates(concept)
+
+    if kind == "background":
+        # Point at the whole thing, do not excerpt it. The most-viewed match from
+        # the corpus author (or failing that, anyone) is the resource to name.
+        # Prefer the corpus author's own treatment of the subject -- for this
+        # corpus that is 3Blue1Brown's Essence of Linear Algebra, which is both
+        # better and a far more natural continuation than whatever a generic
+        # search surfaces. Longest match as a tiebreak: a subject needs a series,
+        # not a short.
+        def resource_rank(video: dict) -> tuple:
+            same_author = CORPUS_AUTHOR.lower() in (video["channel"] or "").lower()
+            return (same_author, video["duration"])
+
+        best = max(candidates, key=resource_rank, default=None) if candidates else None
+        record = {
+            "concept": concept,
+            "kind": "background",
+            "segment": None,
+            "resource": (
+                {
+                    "title": best["title"],
+                    "channel": best["channel"],
+                    "url": f"https://www.youtube.com/watch?v={best['id']}",
+                }
+                if best
+                else None
+            ),
+            "note": (
+                f"This series assumes you already know {concept}. It is a subject, "
+                f"not a single idea, so Beeline will not pretend a few minutes of "
+                f"video covers it."
+            ),
+        }
+        cache_file.write_text(json.dumps(record, indent=2) + "\n")
+        return record
+
     if not candidates:
-        return None
+        return {
+            "concept": concept,
+            "kind": kind,
+            "segment": None,
+            "resource": None,
+            "note": f"Nothing found online that teaches {concept}.",
+        }
 
     choice = choose_segment(concept, candidates)
-    if not choice:
-        print(f"  no usable section found for {concept!r}", file=sys.stderr)
-        return None
-
-    clip_id = fetch_and_cut(concept, choice)
-    if not clip_id:
-        return None
+    clip_id = fetch_and_cut(concept, choice) if choice else None
+    if not choice or not clip_id:
+        return {
+            "concept": concept,
+            "kind": kind,
+            "segment": None,
+            "resource": None,
+            "note": f"No usable section found that teaches {concept}.",
+        }
 
     segment = ClipSegment(
         clip_id=clip_id,
@@ -292,14 +445,19 @@ def fill_gap(concept: str, refresh: bool = False) -> Optional[ClipSegment]:
         ),
         source="external",
     )
-    cache_file.write_text(
-        json.dumps(
-            {"concept": concept, "choice": choice, "segment": segment.model_dump()},
-            indent=2,
-        )
-        + "\n"
-    )
-    return segment
+    record = {
+        "concept": concept,
+        "kind": "concept",
+        "segment": segment.model_dump(),
+        "resource": {
+            "title": choice["video_title"],
+            "channel": choice["channel"],
+            "url": f"https://www.youtube.com/watch?v={choice['video_id']}",
+        },
+        "note": f"{concept} is never taught in this corpus; this fills it in.",
+    }
+    cache_file.write_text(json.dumps(record, indent=2) + "\n")
+    return record
 
 
 def main() -> int:
@@ -313,15 +471,19 @@ def main() -> int:
 
     failed = 0
     for concept in args.concepts:
-        segment = fill_gap(concept, args.refresh)
-        if segment:
+        record = fill_gap(concept, args.refresh)
+        if record["kind"] == "background":
+            resource = record.get("resource") or {}
+            print(f"  {concept!r} -> assumed background; see {resource.get('title', 'n/a')[:55]}")
+        elif record.get("segment"):
+            seg = record["segment"]
             print(
-                f"  {concept!r} -> {segment.clip_id} "
-                f"({segment.end_seconds:.0f}s) {segment.video_title[:60]}"
+                f"  {concept!r} -> {seg['clip_id']} "
+                f"({seg['end_seconds']:.0f}s) {seg['video_title'][:55]}"
             )
         else:
             failed += 1
-            print(f"  {concept!r} -> no fill found", file=sys.stderr)
+            print(f"  {concept!r} -> {record['note']}", file=sys.stderr)
     return 1 if failed else 0
 
 

@@ -1,0 +1,24 @@
+{
+  "concept": "positional encoding",
+  "kind": "concept",
+  "segment": {
+    "clip_id": "gap_positional_encoding",
+    "video_id": "IHu3QehUmrQ",
+    "video_title": "How do Transformer Models keep track of the order of words? Positional Encoding",
+    "youtube_url": "https://www.youtube.com/watch?v=IHu3QehUmrQ",
+    "media_url": "/media/gap_positional_encoding.mp4",
+    "start_seconds": 0.0,
+    "end_seconds": 209.0,
+    "covers": [
+      "positional encoding"
+    ],
+    "why": "This section explains the formulas for positional encoding in detail, providing you with a clear understanding of how they work in transformers.",
+    "source": "external"
+  },
+  "resource": {
+    "title": "How do Transformer Models keep track of the order of words? Positional Encoding",
+    "channel": "Luis Serrano Academy",
+    "url": "https://www.youtube.com/watch?v=IHu3QehUmrQ"
+  },
+  "note": "positional encoding is never taught in this corpus; this fills it in."
+}
